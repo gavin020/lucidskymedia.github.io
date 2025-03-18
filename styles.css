@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -26,8 +26,8 @@ body {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    height: 40px; /* Adjust based on your logo size */
+    width: auto;
 }
 
 .nav-links {
@@ -47,34 +47,64 @@ body {
 }
 
 .nav-links a:hover {
-    color: #00ffcc;
+    color: #ff00ff; /* Matching logo purple */
 }
 
-/* Hero Section */
+/* Hero Section with Video Background */
 .hero {
+    position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1510519138106-0d5b5a1cf0b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
+    overflow: hidden;
 }
 
-.hero-content h1 {
-    font-size: 48px;
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-logo {
+    height: 150px; /* Adjust based on your logo size */
+    width: auto;
     margin-bottom: 20px;
 }
 
 .hero-content p {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 30px;
+    color: #fff;
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background: #00ffcc;
-    color: #000;
+    background: #ff00ff; /* Logo-inspired purple */
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -82,7 +112,7 @@ body {
 }
 
 .cta-button:hover {
-    background: #00b394;
+    background: #cc00cc;
 }
 
 /* Services Section */
@@ -93,35 +123,42 @@ body {
 }
 
 .services h2 {
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 40px;
+    color: #ff00ff;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .service-item {
     padding: 20px;
-    background: #222;
-    border-radius: 10px;
+    background: rgba(255, 0, 255, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
 }
 
 .service-item img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
 .service-item h3 {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 10px;
+    color: #ff00ff;
 }
 
 .service-item p {
@@ -137,14 +174,15 @@ body {
 }
 
 .portfolio h2 {
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 40px;
+    color: #ff00ff;
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -152,28 +190,36 @@ body {
 .portfolio-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 15px;
+    background: rgba(255, 0, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
-    transition: transform 0.3s;
+    transition: opacity 0.3s;
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.05);
+    opacity: 0.8;
 }
 
 .portfolio-item h3 {
-    font-size: 20px;
-    margin: 10px 0;
+    font-size: 22px;
+    margin: 15px 0;
+    color: #ff00ff;
 }
 
 .portfolio-item p {
     font-size: 14px;
     color: #ccc;
+    padding: 0 10px 10px;
 }
 
 /* Footer */
