@@ -26,7 +26,7 @@ body {
 }
 
 .logo {
-    height: 40px; /* Adjust based on your logo size */
+    height: 40px;
     width: auto;
 }
 
@@ -47,10 +47,10 @@ body {
 }
 
 .nav-links a:hover {
-    color: #ff00ff; /* Matching logo purple */
+    color: #ff00ff;
 }
 
-/* Hero Section with Video Background */
+/* Hero Section */
 .hero {
     position: relative;
     height: 100vh;
@@ -89,7 +89,7 @@ body {
 }
 
 .hero-logo {
-    height: 150px; /* Adjust based on your logo size */
+    height: 150px;
     width: auto;
     margin-bottom: 20px;
 }
@@ -103,7 +103,7 @@ body {
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background: #ff00ff; /* Logo-inspired purple */
+    background: #ff00ff;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -220,6 +220,141 @@ body {
     font-size: 14px;
     color: #ccc;
     padding: 0 10px 10px;
+}
+
+/* Franchise Section */
+.franchise {
+    padding: 80px 20px;
+    background: #111;
+    text-align: center;
+}
+
+.franchise h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ff00ff;
+}
+
+.franchise p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.franchise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.franchise-item {
+    padding: 20px;
+    background: rgba(255, 0, 255, 0.1);
+    border-radius: 15px;
+}
+
+.franchise-item h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ff00ff;
+}
+
+.franchise-item p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* About Section */
+.about {
+    padding: 80px 20px;
+    background: #000;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ff00ff;
+}
+
+.about h3 {
+    font-size: 28px;
+    margin: 30px 0 10px;
+    color: #ff00ff;
+}
+
+.about p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 20px;
+    background: #111;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ff00ff;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #ff00ff;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ff00ff;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+}
+
+.contact textarea {
+    height: 150px;
+}
+
+.contact button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #ff00ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact button:hover {
+    background: #cc00cc;
 }
 
 /* Footer */
