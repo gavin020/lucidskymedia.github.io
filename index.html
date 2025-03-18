@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucid Sky Media</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- Add favicon here -->
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">Lucid Sky Media</div>
+        <img src="lucid-sky-media-logo.png" alt="Lucid Sky Media Logo" class="logo">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -20,55 +21,72 @@
         </ul>
     </nav>
 
-    <!-- Hero Section with Background Image -->
+    <!-- Hero Section with Video Background and Logo -->
     <section class="hero">
+        <div id="video-background" class="video-container">
+            <iframe id="bg-video" 
+                    src="https://www.youtube.com/embed/KyXjyiD5sR0?autoplay=1&mute=1&loop=1&playlist=KyXjyiD5sR0&controls=0&showinfo=0&rel=0" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen></iframe>
+        </div>
         <div class="hero-content">
-            <h1>Creative Solutions with Clear Vision</h1>
+            <img src="lucid-sky-media-logo.png" alt="Lucid Sky Media Logo" class="hero-logo">
             <p>We craft bold, innovative experiences for brands and franchises.</p>
             <a href="#services" class="cta-button">Explore Our Work</a>
         </div>
     </section>
 
-    <!-- Services Section with Icons/Images -->
+    <!-- Services Section with Screenshots -->
     <section id="services" class="services">
         <h2>What We Do</h2>
         <div class="services-grid">
             <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Web Design">
+                <img src="binnenkomt.png" alt="Web Design Example">
                 <h3>Web Design</h3>
                 <p>Stunning, responsive websites tailored to your brand.</p>
             </div>
             <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1617043985406-8c9e59e718b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Motion Graphics">
+                <img src="tiger-illustration.png" alt="Motion Graphics Example">
                 <h3>Motion Graphics</h3>
                 <p>Dynamic visuals that bring your story to life.</p>
             </div>
             <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Franchise Marketing">
+                <img src="vodafone-ad.png" alt="Franchise Marketing Example">
                 <h3>Franchise Marketing</h3>
                 <p>Scalable, localized campaigns for franchise success.</p>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section with Visuals -->
+    <!-- Portfolio Section with Screenshots -->
     <section id="portfolio" class="portfolio">
         <h2>Our Work</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Project 1">
-                <h3>Brand Campaign</h3>
-                <p>A bold design for a global brand.</p>
+                <img src="binnenkomt.png" alt="Payment Interface Design">
+                <h3>Payment Interface</h3>
+                <p>A sleek web design for financial services.</p>
             </div>
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Project 2">
-                <h3>Motion Graphics Ad</h3>
-                <p>Animated visuals for a franchise promo.</p>
+                <img src="tiger-illustration.png" alt="Animated Illustration">
+                <h3>Animated Wildlife</h3>
+                <p>Motion graphics for a nature campaign.</p>
             </div>
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Project 3">
-                <h3>Franchise Toolkit</h3>
-                <p>Localized marketing for franchisees.</p>
+                <img src="bowermans-ad.png" alt="Furniture Campaign">
+                <h3>Furniture Branding</h3>
+                <p>Franchise marketing for Bowermans.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="miyako-cans.png" alt="Drink Branding">
+                <h3>Miyako Drink Launch</h3>
+                <p>Creative packaging and campaign design.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="vodafone-ad.png" alt="Telecom Promotion">
+                <h3>Vodafone Discount Ad</h3>
+                <p>Vibrant franchise promotion design.</p>
             </div>
         </div>
     </section>
@@ -77,5 +95,9 @@
     <footer>
         <p>© 2025 Lucid Sky Media. All rights reserved.</p>
     </footer>
+
+    <!-- YouTube API Script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
 </body>
 </html>
