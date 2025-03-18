@@ -10,6 +10,7 @@ body {
     color: #fff;
     background-color: #000;
     line-height: 1.6;
+    transition: all 0.5s ease;
 }
 
 /* Navigation */
@@ -50,6 +51,19 @@ body {
     color: #ff00ff;
 }
 
+.transition-toggle {
+    padding: 5px 10px;
+    background: #ff00ff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.transition-toggle:hover {
+    background: #cc00cc;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -80,10 +94,19 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
@@ -113,6 +136,26 @@ body {
 
 .cta-button:hover {
     background: #cc00cc;
+}
+
+/* Mission Section */
+.mission {
+    padding: 80px 20px;
+    background: #111;
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ff00ff;
+}
+
+.mission p {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Services Section */
@@ -363,4 +406,18 @@ footer {
     padding: 20px;
     background: #000;
     color: #888;
+}
+
+/* Transition Animation */
+.page-transition {
+    animation: wipe 0.5s ease-in-out;
+}
+
+@keyframes wipe {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+body.no-transition .page-transition {
+    animation: none;
 }
