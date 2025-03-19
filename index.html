@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <img src="lucid-sky-media-logo.png" alt="Lucid Sky Media Logo" class="logo">
         <ul class="nav-links">
@@ -21,14 +22,35 @@
         <button id="transitionToggle" class="transition-toggle">Transition: On</button>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>Welcome to Lucid Sky Media</h1>
-        <p>We’re a Purmerend-based creative studio, bringing world-class design and animation to modernize our neighborhood. With years of experience at agencies like TBWA, MediaMonks, and WPP, we’ve worked with global brands like H&M, McDonald’s, and Ici Paris XL. Now, we’re here to boost your sales with stunning visuals—at 30% less than big agencies. Let’s make Purmerend shine together!</p>
-        <img src="lucid-sky-media_exact_size.png" alt="Lucid Sky Media Hero Image" style="width: 100%; max-width: 600px; margin-top: 20px;">
+        <div id="video-background" class="video-container">
+            <iframe id="bg-video" 
+                    src="https://www.youtube.com/embed/KyXjyiD5sR0?autoplay=1&mute=1&loop=1&playlist=KyXjyiD5sR0&controls=0&showinfo=0&rel=0" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen></iframe>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <img src="lucid-sky-media-logo.png" alt="Lucid Sky Media Logo" class="hero-logo">
+            <p>We craft bold, innovative experiences for brands and franchises.</p>
+            <a href="services.html" class="cta-button">Explore Our Work</a>
+        </div>
     </section>
 
+    <!-- Mission and Goals -->
+    <section class="mission">
+        <h2>Our Mission & Goals</h2>
+        <p>At Lucid Sky Media, our mission is to transform bold ideas into captivating realities for brands and franchises worldwide. With a passion for design, motion graphics, and marketing, we aim to empower businesses with innovative solutions that drive engagement and growth. Brands should join us to unlock creative excellence, scalable success, and a partner dedicated to making their vision soar.</p>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>© 2025 Lucid Sky Media. All rights reserved.</p>
     </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
 </body>
 </html>
