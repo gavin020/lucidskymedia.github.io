@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lucid Sky Media Image Gallery - View all our project images in one place.">
+    <meta name="keywords" content="Lucid Sky Media, Purmerend, animation, branding, illustration, gallery">
+    <meta name="author" content="Lucid Sky Media">
+    <title>Lucid Sky Media - Image Gallery</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1A1A2E;
+            color: #E0E0E0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #0F3460;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #F5A623;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lucid Sky Media - Image Gallery</h1>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/02.png" alt="02">
+                <p>02.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/03.png" alt="03">
+                <p>03.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/04_Bardot.png" alt="04_Bardot">
+                <p>04_Bardot.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/05_Bardot branding en design.png" alt="05_Bardot branding en design">
+                <p>05_Bardot branding en design.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/06.png" alt="06">
+                <p>06.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/07_bradot and design Restaurant.jpg" alt="07_bradot and design Restaurant">
+                <p>07_bradot and design Restaurant.jpg</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/08.jpg" alt="08">
+                <p>08.jpg</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/09.png" alt="09">
+                <p>09.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Adidas - Nitrocharge.jpeg" alt="Adidas - Nitrocharge">
+                <p>Adidas - Nitrocharge.jpeg</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Aegon chaos-2.png" alt="Aegon chaos-2">
+                <p>Aegon chaos-2.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Aegon chaos.png" alt="Aegon chaos">
+                <p>Aegon chaos.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Animation for jetix.png" alt="Animation for jetix">
+                <p>Animation for jetix.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome Restaurant Branding Design __01.png" alt="Arome Restaurant Branding Design __01">
+                <p>Arome Restaurant Branding Design __01.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__00.png" alt="Arome__00">
+                <p>Arome__00.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__02.png" alt="Arome__02">
+                <p>Arome__02.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__03.png" alt="Arome__03">
+                <p>Arome__03.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__04.png" alt="Arome__04">
+                <p>Arome__04.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__04b.png" alt="Arome__04b">
+                <p>Arome__04b.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__05.png" alt="Arome__05">
+                <p>Arome__05.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__06.png" alt="Arome__06">
+                <p>Arome__06.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__07.png" alt="Arome__07">
+                <p>Arome__07.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__08.png" alt="Arome__08">
+                <p>Arome__08.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__09.png" alt="Arome__09">
+                <p>Arome__09.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__10.png" alt="Arome__10">
+                <p>Arome__10.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__11.png" alt="Arome__11">
+                <p>Arome__11.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__12.png" alt="Arome__12">
+                <p>Arome__12.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/BabiesClubX - Andy.png" alt="BabiesClubX - Andy">
+                <p>BabiesClubX - Andy.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/BabiesClubX Andy vs JakePaul.png" alt="BabiesClubX Andy vs JakePaul">
+                <p>BabiesClubX Andy vs JakePaul.png</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/binnenkomt.png" alt="binnenkomt">
+                <p>binnenkomt.png</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
