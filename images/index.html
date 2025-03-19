@@ -76,6 +76,14 @@
             transform: scale(1.05);
         }
 
+        /* Loading and Error Messages */
+        .loading, .error {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #F5A623;
+            margin: 20px 0;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
@@ -91,128 +99,67 @@
 <body>
     <div class="container">
         <h1>Lucid Sky Media - Image Gallery</h1>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/02.png" alt="02">
-                <p>02.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/03.png" alt="03">
-                <p>03.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/04_Bardot.png" alt="04_Bardot">
-                <p>04_Bardot.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/05_Bardot branding en design.png" alt="05_Bardot branding en design">
-                <p>05_Bardot branding en design.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/06.png" alt="06">
-                <p>06.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/07_bradot and design Restaurant.jpg" alt="07_bradot and design Restaurant">
-                <p>07_bradot and design Restaurant.jpg</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/08.jpg" alt="08">
-                <p>08.jpg</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/09.png" alt="09">
-                <p>09.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Adidas - Nitrocharge.jpeg" alt="Adidas - Nitrocharge">
-                <p>Adidas - Nitrocharge.jpeg</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Aegon chaos-2.png" alt="Aegon chaos-2">
-                <p>Aegon chaos-2.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Aegon chaos.png" alt="Aegon chaos">
-                <p>Aegon chaos.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Animation for jetix.png" alt="Animation for jetix">
-                <p>Animation for jetix.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome Restaurant Branding Design __01.png" alt="Arome Restaurant Branding Design __01">
-                <p>Arome Restaurant Branding Design __01.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__00.png" alt="Arome__00">
-                <p>Arome__00.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__02.png" alt="Arome__02">
-                <p>Arome__02.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__03.png" alt="Arome__03">
-                <p>Arome__03.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__04.png" alt="Arome__04">
-                <p>Arome__04.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__04b.png" alt="Arome__04b">
-                <p>Arome__04b.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__05.png" alt="Arome__05">
-                <p>Arome__05.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__06.png" alt="Arome__06">
-                <p>Arome__06.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__07.png" alt="Arome__07">
-                <p>Arome__07.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__08.png" alt="Arome__08">
-                <p>Arome__08.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__09.png" alt="Arome__09">
-                <p>Arome__09.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__10.png" alt="Arome__10">
-                <p>Arome__10.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__11.png" alt="Arome__11">
-                <p>Arome__11.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/Arome__12.png" alt="Arome__12">
-                <p>Arome__12.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/BabiesClubX - Andy.png" alt="BabiesClubX - Andy">
-                <p>BabiesClubX - Andy.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/BabiesClubX Andy vs JakePaul.png" alt="BabiesClubX Andy vs JakePaul">
-                <p>BabiesClubX Andy vs JakePaul.png</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://gavin020.github.io/lucidskymedia.github.io/images/binnenkomt.png" alt="binnenkomt">
-                <p>binnenkomt.png</p>
-            </div>
-        </div>
+        <div class="loading">Loading images...</div>
+        <div class="error" style="display: none;">Failed to load images. Please try again later.</div>
+        <div class="gallery-grid" id="galleryGrid"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to load images dynamically from images.json
+        async function loadImages() {
+            try {
+                // Fetch the images.json file
+                const response = await fetch('https://gavin020.github.io/lucidskymedia.github.io/images.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch images.json');
+                }
+
+                const data = await response.json();
+                const imageList = data.images;
+                const galleryGrid = document.getElementById('galleryGrid');
+
+                // Hide loading message and error message
+                document.querySelector('.loading').style.display = 'none';
+                document.querySelector('.error').style.display = 'none';
+
+                // If no images are found, show a message
+                if (imageList.length === 0) {
+                    galleryGrid.innerHTML = '<p style="text-align: center; color: #F5A623;">No images found.</p>';
+                    return;
+                }
+
+                // Create gallery items dynamically
+                imageList.forEach(image => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+
+                    const img = document.createElement('img');
+                    img.src = `https://gavin020.github.io/lucidskymedia.github.io/images/${image}`;
+                    img.alt = image;
+                    img.onerror = () => {
+                        img.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found'; // Fallback if image fails to load
+                        img.alt = 'Image Not Found';
+                    };
+
+                    const caption = document.createElement('p');
+                    caption.textContent = image;
+
+                    galleryItem.appendChild(img);
+                    galleryItem.appendChild(caption);
+                    galleryGrid.appendChild(galleryItem);
+                });
+            } catch (error) {
+                console.error('Error loading images:', error);
+                document.querySelector('.loading').style.display = 'none';
+                document.querySelector('.error').style.display = 'block';
+            }
+        }
+
+        // Load images when the page loads
+        window.onload = loadImages;
+    </script>
 </body>
 </html>
