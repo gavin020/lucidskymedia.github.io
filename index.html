@@ -3,54 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lucid Sky Media - Bringing Dreams to Reality with animation, branding, and video editing in Purmerend.">
     <title>Lucid Sky Media</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <img src="lucid-sky-media-logo.png" alt="Lucid Sky Media Logo" class="logo">
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="franchise.html">Franchise Marketing</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button id="transitionToggle" class="transition-toggle">Transition: On</button>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div id="video-background" class="video-container">
-            <iframe id="bg-video" 
-                    src="https://www.youtube.com/embed/KyXjyiD5sR0?autoplay=1&mute=1&loop=1&playlist=KyXjyiD5sR0&controls=0&showinfo=0&rel=0" 
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media" 
-                    allowfullscreen></iframe>
-            <div class="overlay"></div>
+    <!-- Header with McBreak Concert Background -->
+    <header class="hero" style="background-image: url('images/mcbreak-concert.jpg');">
+        <div class="overlay">
+            <img src="images/logo-transparent.png" alt="Lucid Sky Media Logo" class="logo">
+            <h1 class="tagline" data-en="Bringing Dreams to Reality—Your Vision, Our Craft." data-nl="Dromen Werkelijkheid Maken—Jouw Visie, Ons Ambacht.">Bringing Dreams to Reality—Your Vision, Our Craft.</h1>
+            <a href="#services" class="cta" data-en="See What We Can Do for You" data-nl="Ontdek Wat We Voor Je Kunnen Doen">See What We Can Do for You</a>
         </div>
-        <div class="hero-content">
-            <img src="lucid-sky-media-logo.png" alt="Lucid Sky Media Logo" class="hero-logo">
-            <p>We craft bold, innovative experiences for brands and franchises.</p>
-            <a href="services.html" class="cta-button">Explore Our Work</a>
+    </header>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button onclick="toggleLanguage()">EN/NL</button>
+    </div>
+
+    <!-- About Us -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 data-en="Who We Are" data-nl="Wie We Zijn">Who We Are</h2>
+            <div class="split">
+                <div class="text">
+                    <p data-en="We’re a tight-knit crew of dreamers and doers, proud to call Purmerend home. Our Creative Director spent years leading the charge at AAA agencies—think TBWA, MediaMonks, WPP—crafting campaigns for brands like McDonald’s, H&M, and Ici Paris XL. After rocking the global stage, we’ve started something new: Lucid Sky Media. Why? Because we feel a duty to modernize our neighborhood, one bold idea at a time." data-nl="We zijn een hecht team van dromers en doeners, trots om Purmerend onze thuisbasis te noemen. Onze Creative Director heeft jarenlang leiding gegeven bij AAA-bureaus—denk aan TBWA, MediaMonks, WPP—en campagnes gemaakt voor merken als McDonald’s, H&M en Ici Paris XL. Na wereldwijd succes zijn we iets nieuws begonnen: Lucid Sky Media. Waarom? Omdat we ons verplicht voelen om onze buurt te moderniseren, één gedurfd idee tegelijk.">
+                        We’re a tight-knit crew of dreamers and doers, proud to call Purmerend home. Our Creative Director spent years leading the charge at AAA agencies—think TBWA, MediaMonks, WPP—crafting campaigns for brands like McDonald’s, H&M, and Ici Paris XL. After rocking the global stage, we’ve started something new: Lucid Sky Media. Why? Because we feel a duty to modernize our neighborhood, one bold idea at a time.
+                    </p>
+                    <h3 data-en="Our Mission & Goals" data-nl="Onze Missie & Doelen">Our Mission & Goals</h3>
+                    <p data-en="At Lucid Sky Media, we aim to transform ideas into impactful realities. Whether it’s through animation, branding, or video editing, we’re here to elevate your vision with creativity and precision." data-nl="Bij Lucid Sky Media willen we ideeën omzetten in impactvolle realiteiten. Of het nu gaat om animatie, branding of videobewerking, wij zijn er om jouw visie te verheffen met creativiteit en precisie.">
+                        At Lucid Sky Media, we aim to transform ideas into impactful realities. Whether it’s through animation, branding, or video editing, we’re here to elevate your vision with creativity and precision.
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="images/team.jpg" alt="Lucid Sky Media Team">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Mission and Goals -->
-    <section class="mission">
-        <h2>Our Mission & Goals</h2>
-        <p>At Lucid Sky Media, our mission is to transform bold ideas into captivating realities for brands and franchises worldwide. With a passion for design, motion graphics, and marketing, we aim to empower businesses with innovative solutions that drive engagement and growth. Brands should join us to unlock creative excellence, scalable success, and a partner dedicated to making their vision soar.</p>
+    <!-- Services -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 data-en="What We Do" data-nl="Wat We Doen">What We Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 data-en="Animation" data-nl="Animatie">Animation</h3>
+                    <p data-en="From 2D to 3D, we bring stories to life with stunning visuals that captivate and inspire." data-nl="Van 2D tot 3D, we brengen verhalen tot leven met verbluffende visuals die boeien en inspireren.">
+                        From 2D to 3D, we bring stories to life with stunning visuals that captivate and inspire.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <h3 data-en="Branding" data-nl="Branding">Branding</h3>
+                    <p data-en="We craft identities that resonate, ensuring your brand stands out in a crowded market." data-nl="We creëren identiteiten die resoneren, zodat jouw merk opvalt in een drukke markt.">
+                        We craft identities that resonate, ensuring your brand stands out in a crowded market.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <h3 data-en="Video Editing" data-nl="Videobewerking">Video Editing</h3>
+                    <p data-en="Polished, dynamic, and engaging—our video edits make your message unforgettable." data-nl="Gepolijst, dynamisch en boeiend—onze videobewerkingen maken jouw boodschap onvergetelijk.">
+                        Polished, dynamic, and engaging—our video edits make your message unforgettable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 data-en="Portfolio" data-nl="Portfolio">Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/mc-backstage.jpg" alt="McDonald's Backstage Logo">
+                    <p data-en="McDonald's Backstage Logo Design" data-nl="McDonald's Backstage Logo Ontwerp">McDonald's Backstage Logo Design</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/mcbreak-concert.jpg" alt="McDonald's McBreak Concert Campaign">
+                    <p data-en="McDonald's McBreak Concert Campaign" data-nl="McDonald's McBreak Concert Campagne">McDonald's McBreak Concert Campaign</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/mcbreak-ballet.jpg" alt="McDonald's McBreak Ballet Campaign">
+                    <p data-en="McDonald's McBreak Ballet Campaign" data-nl="McDonald's McBreak Ballet Campagne">McDonald's McBreak Ballet Campaign</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/mcnuggets-scooter.jpg" alt="McDonald's Chicken McNuggets Campaign">
+                    <p data-en="McDonald's Chicken McNuggets 2 for 1 Campaign" data-nl="McDonald's Chicken McNuggets 2 voor 1 Campagne">McDonald's Chicken McNuggets 2 for 1 Campaign</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/linkedin-skills1.jpg" alt="LinkedIn Skill Visualization">
+                    <p data-en="LinkedIn Skill Visualization (Geometric)" data-nl="LinkedIn Vaardigheden Visualisatie (Geometrisch)">LinkedIn Skill Visualization (Geometric)</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/linkedin-skills2.jpg" alt="LinkedIn Skill Visualization Hexagons">
+                    <p data-en="LinkedIn Skill Visualization (Hexagons)" data-nl="LinkedIn Vaardigheden Visualisatie (Hexagons)">LinkedIn Skill Visualization (Hexagons)</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/postnl-delivery.jpg" alt="PostNL Delivery Scene">
+                    <p data-en="PostNL Delivery Scene" data-nl="PostNL Bezorgscène">PostNL Delivery Scene</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/financial-illustration.jpg" alt="Financial Illustration">
+                    <p data-en="Financial Illustration with Euro Symbols" data-nl="Financiële Illustratie met Euro Symbolen">Financial Illustration with Euro Symbols</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-en="Get in Touch" data-nl="Neem Contact Op">Get in Touch</h2>
+            <p data-en="Ready to bring your vision to life? Let’s create something extraordinary together." data-nl="Klaar om jouw visie tot leven te brengen? Laten we samen iets buitengewoons creëren.">
+                Ready to bring your vision to life? Let’s create something extraordinary together.
+            </p>
+            <a href="mailto:info@lucidskymedia.com" class="cta" data-en="Contact Us" data-nl="Neem Contact Op">Contact Us</a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Lucid Sky Media. All rights reserved.</p>
+        <p>&copy; 2025 Lucid Sky Media. All rights reserved.</p>
     </footer>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
 </html>
