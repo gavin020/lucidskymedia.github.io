@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Image Gallery</title>
-  <style>
-    /* Basic styling for the gallery */
-    #gallery {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .thumbnail {
-      width: 200px;
-      margin: 10px;
-    }
-    .thumbnail img {
-      width: 100%;
-      height: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .thumbnail {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-  <div id="gallery"></div>
-
-  <script>
-    async function loadGallery() {
-      try {
-        const response = await fetch('/images');
-        const images = await response.json();
-        const gallery = document.getElementById('gallery');
-        images.forEach(image => {
-          const imgDiv = document.createElement('div');
-          imgDiv.classList.add('thumbnail');
-          const img = document.createElement('img');
-          img.src = `/images/${image}`;
-          img.alt = image;
-          imgDiv.appendChild(img);
-          gallery.appendChild(imgDiv);
-        });
-      } catch (error) {
-        console.error('Error loading images:', error);
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', loadGallery);
-  </script>
+    <h1>Image Gallery</h1>
+    <div id="gallery"></div>
+    
+    <script>
+        async function loadGallery() {
+            try {
+                const response = await fetch('https://gavin020.github.io/lucidskymedia.github.io/images/index.html');
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const links = doc.querySelectorAll('a');
+                const gallery = document.getElementById('gallery');
+                
+                links.forEach(link => {
+                    const imageUrl = link.getAttribute('href');
+                    if (imageUrl.endsWith('.jpg') || imageUrl.endsWith('.png') || imageUrl.endsWith('.jpeg') || imageUrl.endsWith('.gif')) {
+                        const imgDiv = document.createElement('div');
+                        imgDiv.classList.add('thumbnail');
+                        const img = document.createElement('img');
+                        img.src = `https://gavin020.github.io/lucidskymedia.github.io/images/${imageUrl}`;
+                        img.alt = imageUrl;
+                        imgDiv.appendChild(img);
+                        gallery.appendChild(imgDiv);
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading images:', error);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadGallery);
+    </script>
 </body>
 </html>
