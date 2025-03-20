@@ -1,20 +1,9 @@
-// Language Toggle Functionality
-function toggleLanguage() {
-    const elements = document.querySelectorAll('[data-en][data-nl]');
-    const currentLang = document.querySelector('.language-toggle button').innerText === 'EN/NL' ? 'nl' : 'en';
-    
-    elements.forEach(element => {
-        element.innerText = currentLang === 'en' ? element.getAttribute('data-en') : element.getAttribute('data-nl');
-    });
-
-    document.querySelector('.language-toggle button').innerText = currentLang === 'en' ? 'EN/NL' : 'NL/EN';
-}
-
-// Smooth Scroll for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Smooth scrolling for navigation links
+document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
     });
 });
