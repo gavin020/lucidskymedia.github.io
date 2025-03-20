@@ -1,0 +1,29 @@
+  name: Update Image List
+
+  on:
+    push:
+      paths:
+        - 'images/**'
+
+  jobs:
+    generate-image-list:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v2
+
+        - name: Generate Image List
+          run: |
+            FILES=$(find images -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.gif' \))
+            JSON_ARRAY=$(printf '%s\n' "$FILES" | jq -R . | jq -s .)
+            echo "$JSON_ARRAY" > images/imageList.json
+
+        - name: Commit and Push Changes
+          run: |
+            git config --global user.name 'GitHub Actions'
+            git config --global user.email 'actions@github.com'
+            git add images/imageList.json
+            git commit -m 'Update image list'
+            git push
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
