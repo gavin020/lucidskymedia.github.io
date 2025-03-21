@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="Lucid_Sky_Logo_Alpha.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucid Sky Media</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <img src="lucid-sky-media-logo.png" alt="Lucid Sky Media Logo" class="logo">
+        <img src="Lucid_Sky_Logo_Alpha.png" alt="Lucid Sky Media Logo" class="logo">
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#franchise">Franchise Marketing</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html" data-en="Home" data-nl="Home">Home</a></li>
+            <li><a href="#services" data-en="Services" data-nl="Diensten">Services</a></li>
+            <li><a href="#portfolio" data-en="Portfolio" data-nl="Portfolio">Portfolio</a></li>
+            <li><a href="#franchise" data-en="Franchise Marketing" data-nl="Franchise Marketing">Franchise Marketing</a></li>
+            <li><a href="#about" data-en="About" data-nl="Over Ons">About</a></li>
+            <li><a href="#contact" data-en="Contact" data-nl="Contact">Contact</a></li>
             <li>
                 <button id="language-toggle" onclick="toggleLanguage()">English</button>
             </li>
         </ul>
     </nav>
 
-    <!-- Homepage (Hero Section with Video Background and Logo) -->
+    <!-- Hero Section with Video Background and Transparent Logo -->
     <section class="hero">
         <div id="video-background" class="video-container">
             <iframe id="bg-video" 
@@ -36,9 +35,13 @@
                 allowfullscreen>
             </iframe>
             <div class="video-overlay"></div>
+            <img src="Lucid_Sky_Logo_Alpha.png" alt="Lucid Sky Media Transparent Logo" class="hero-logo">
         </div>
+    </section>
+
+    <!-- Hero Content Section (Moved Below Showreel) -->
+    <section class="hero-content-section">
         <div class="hero-content">
-            <img src="lucid-sky-media-logo.png" alt="Lucid Sky Media Logo" class="hero-logo">
             <h1 data-en="See the Sky Clearly – We Bring Your Brand to Life" data-nl="Zie de hemel duidelijk – Wij brengen uw merk tot leven">See the Sky Clearly – We Bring Your Brand to Life</h1>
             <h2 data-en="At Lucid Sky Media, our mantra is simple: Stunning visuals spark growth. We’re a team of creatives who live to turn ideas into eye-catching realities—whether it’s for your digital displays, your logo, or your next big sale." data-nl="Bij Lucid Sky Media is onze mantra eenvoudig: Verbluffende visuals stimuleren groei. Wij zijn een team van creatievelingen die ideeën omzetten in opvallende realiteiten—of het nu gaat om uw digitale displays, uw logo of uw volgende grote uitverkoop.">At Lucid Sky Media, our mantra is simple: Stunning visuals spark growth. We’re a team of creatives who live to turn ideas into eye-catching realities—whether it’s for your digital displays, your logo, or your next big sale.</h2>
             <p data-en="We’re here to help local franchises shine in a digital world. From video editing to animations, we craft bold, modern designs that make your brand impossible to ignore. With a creative director who’s worked on AAA brands and agencies, we know what it takes to grow—and we promise to bring that same energy to your story. Ready to modernize your brand? Let’s make it happen." data-nl="Wij zijn hier om lokale franchises te laten schitteren in een digitale wereld. Van videobewerking tot animaties, wij maken gedurfde, moderne ontwerpen die uw merk onmogelijk te negeren maken. Met een creatief directeur die heeft gewerkt aan AAA-merken en bureaus, weten we wat nodig is om te groeien—en we beloven dezelfde energie in uw verhaal te stoppen. Klaar om uw merk te moderniseren? Laten we het waarmaken.">We’re here to help local franchises shine in a digital world. From video editing to animations, we craft bold, modern designs that make your brand impossible to ignore. With a creative director who’s worked on AAA brands and agencies, we know what it takes to grow—and we promise to bring that same energy to your story. Ready to modernize your brand? Let’s make it happen.</p>
@@ -64,9 +67,9 @@
     <section id="portfolio" class="section work-section">
         <h2 data-en="Where Creativity Meets Craft" data-nl="Waar creativiteit vakmanschap ontmoet">Where Creativity Meets Craft</h2>
         <p data-en="Take a peek at what we’ve been up to! We’ve poured our hearts into projects that bring local brands to life—think animated logos, slick web intros, and motion graphics that turn heads. Below are some examples of our craftsmanship (and trust us, there’s more to come):" data-nl="Neem een kijkje naar wat we hebben gedaan! We hebben ons hart gestoken in projecten die lokale merken tot leven brengen—denk aan geanimeerde logo's, strakke webintro's en motion graphics die de aandacht trekken. Hieronder enkele voorbeelden van ons vakmanschap (en geloof ons, er komt nog meer):">Take a peek at what we’ve been up to! We’ve poured our hearts into projects that bring local brands to life—think animated logos, slick web intros, and motion graphics that turn heads. Below are some examples of our craftsmanship (and trust us, there’s more to come):</p>
-        <p><a href="www.radhaengavin.com" target="_blank" data-en="Radha & Gavin" data-nl="Radha & Gavin">Radha & Gavin</a>: <span data-en="A blend of elegance and motion that screams modern." data-nl="Een mix van elegantie en beweging die moderniteit uitstraalt.">A blend of elegance and motion that screams modern.</span></p>
-        <p><a href="www.gavinkempenaar.eu" target="_blank" data-en="Gavin Kempenaar" data-nl="Gavin Kempenaar">Gavin Kempenaar</a>: <span data-en="Bold designs with a personal touch." data-nl="Gedurfde ontwerpen met een persoonlijke touch.">Bold designs with a personal touch.</span></p>
-        <p><a href="www.behance.net/sir_gk" target="_blank" data-en="Behance Showcase" data-nl="Behance Showcase">Behance Showcase</a>: <span data-en="Our playground of creativity—animations, illustrations, and more." data-nl="Onze speeltuin van creativiteit—animaties, illustraties en meer.">Our playground of creativity—animations, illustrations, and more.</span></p>
+        <p data-en="Radha & Gavin: A blend of elegance and motion that screams modern." data-nl="Radha & Gavin: Een mix van elegantie en beweging die moderniteit uitstraalt.">Radha & Gavin: A blend of elegance and motion that screams modern.</p>
+        <p data-en="Gavin Kempenaar: Bold designs with a personal touch." data-nl="Gavin Kempenaar: Gedurfde ontwerpen met een persoonlijke touch.">Gavin Kempenaar: Bold designs with a personal touch.</p>
+        <p data-en="Behance Showcase: Our playground of creativity—animations, illustrations, and more." data-nl="Behance Showcase: Onze speeltuin van creativiteit—animaties, illustraties en meer.">Behance Showcase: Our playground of creativity—animations, illustrations, and more.</p>
         <p data-en="Watch our reel " data-nl="Bekijk onze reel ">Watch our reel <a href="https://youtu.be/PsIdXz9MB4E" target="_blank" data-en="to see the full vibe!" data-nl="om de volledige sfeer te zien!">to see the full vibe!</a> <span data-en="We’re always adding new projects, so keep checking back to see how we’re helping brands like yours shine." data-nl="We voegen altijd nieuwe projecten toe, dus blijf terugkomen om te zien hoe we merken zoals die van u laten schitteren.">We’re always adding new projects, so keep checking back to see how we’re helping brands like yours shine.</span></p>
 
         <!-- Branding -->
@@ -207,7 +210,7 @@
         <div class="work-gallery">
             <div class="work-item">
                 <img src="Tiger_1.png" alt="Tiger Illustration">
-                <p><a href="www.behance.net/sir_gk" target="_blank" data-en="Behance Showcase" data-nl="Behance Showcase">Behance Showcase</a>: <span data-en="Our playground of creativity—illustrations and more." data-nl="Onze speeltuin van creativiteit—illustraties en meer.">Our playground of creativity—illustrations and more.</span></p>
+                <p data-en="Illustrative storytelling for a serene tiger scene." data-nl="Illustratieve storytelling voor een serene tijgerscène.">Illustrative storytelling for a serene tiger scene.</p>
             </div>
             <div class="work-item">
                 <img src="Temple_1.png" alt="Temple Illustration">
@@ -256,7 +259,7 @@
         <div class="work-gallery">
             <div class="work-item">
                 <img src="Gavin_1.png" alt="Mobile App Screens">
-                <p><a href="www.gavinkempenaar.eu" target="_blank" data-en="Gavin Kempenaar" data-nl="Gavin Kempenaar">Gavin Kempenaar</a>: <span data-en="Bold UI/UX designs with a personal touch." data-nl="Gedurfde UI/UX-ontwerpen met een persoonlijke touch.">Bold UI/UX designs with a personal touch.</span></p>
+                <p data-en="Bold UI/UX designs with a personal touch." data-nl="Gedurfde UI/UX-ontwerpen met een persoonlijke touch.">Bold UI/UX designs with a personal touch.</p>
             </div>
             <div class="work-item">
                 <img src="Image_8.png" alt="Notification Bell Graphic">
@@ -293,7 +296,7 @@
         <div class="work-gallery">
             <div class="work-item">
                 <img src="Sparta_1.png" alt="Sparta Test Lab">
-                <p><a href="www.radhaengavin.com" target="_blank" data-en="Radha & Gavin" data-nl="Radha & Gavin">Radha & Gavin</a>: <span data-en="A blend of elegance and motion for Sparta Test Lab." data-nl="Een mix van elegantie en beweging voor Sparta Test Lab.">A blend of elegance and motion for Sparta Test Lab.</span></p>
+                <p data-en="A blend of elegance and motion for Sparta Test Lab." data-nl="Een mix van elegantie en beweging voor Sparta Test Lab.">A blend of elegance and motion for Sparta Test Lab.</p>
             </div>
             <div class="work-item">
                 <img src="Characters_1.png" alt="Animated Characters">
