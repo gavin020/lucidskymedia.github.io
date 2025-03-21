@@ -4,9 +4,45 @@
     <link rel="icon" type="image/png" href="Lucid_Sky_Logo_Alpha.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucid Sky Media</title>
+    <title>Lucid Sky Media | Grow Your Brand with Digital Solutions</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Inline CSS for demo purposes - merge with your styles.css */
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: #1a1a1a; color: #fff; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: rgba(0, 0, 0, 0.8); }
+        .navbar .logo { height: 50px; }
+        .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: #00b4d8; }
+        #language-toggle { background: #7209b7; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; }
+        .hero { position: relative; height: 100vh; overflow: hidden; }
+        .video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        #bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); }
+        .hero-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 50%; }
+        .hero-content-section, .section { padding: 60px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        h1 { font-size: 2.5em; margin: 0 0 20px; }
+        h2 { font-size: 2em; margin: 0 0 20px; }
+        p { font-size: 1.1em; line-height: 1.6; }
+        .cta-button { display: inline-block; padding: 15px 30px; background: linear-gradient(45deg, #00b4d8, #7209b7); color: #fff; text-decoration: none; border-radius: 5px; font-weight: 600; transition: transform 0.3s; }
+        .cta-button:hover { transform: scale(1.05); }
+        .services-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .services-list li { flex: 1 1 300px; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; transition: transform 0.3s; }
+        .services-list li:hover { transform: translateY(-10px); }
+        .work-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .work-item { background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; transition: transform 0.3s; }
+        .work-item:hover { transform: translateY(-10px); }
+        .work-item img { width: 100%; border-radius: 5px; }
+        .process-steps { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .process-steps div { flex: 1 1 300px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        .awards-list { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .awards-list div { flex: 1 1 300px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        .contact-form { max-width: 600px; margin: 20px auto; display: grid; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; }
+        input, textarea { padding: 10px; border-radius: 5px; border: none; }
+        footer { text-align: center; padding: 20px; background: #111; }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -19,13 +55,11 @@
             <li><a href="#franchise" data-en="Franchise Marketing" data-nl="Franchise Marketing">Franchise Marketing</a></li>
             <li><a href="#about" data-en="About" data-nl="Over Ons">About</a></li>
             <li><a href="#contact" data-en="Contact" data-nl="Contact">Contact</a></li>
-            <li>
-                <button id="language-toggle" onclick="toggleLanguage()">English</button>
-            </li>
+            <li><button id="language-toggle" onclick="toggleLanguage()">English</button></li>
         </ul>
     </nav>
 
-    <!-- Hero Section with Video Background and Transparent Logo -->
+    <!-- Hero Section with Video Background -->
     <section class="hero">
         <div id="video-background" class="video-container">
             <iframe id="bg-video" 
@@ -39,294 +73,118 @@
         </div>
     </section>
 
-    <!-- Hero Content Section (Moved Below Showreel) -->
+    <!-- Hero Content Section -->
     <section class="hero-content-section">
         <div class="hero-content">
-            <h1 data-en="See the Sky Clearly – We Bring Your Brand to Life" data-nl="Zie de hemel duidelijk – Wij brengen uw merk tot leven">See the Sky Clearly – We Bring Your Brand to Life</h1>
-            <h2 data-en="At Lucid Sky Media, our mantra is simple: Stunning visuals spark growth. We’re a team of creatives who live to turn ideas into eye-catching realities—whether it’s for your digital displays, your logo, or your next big sale." data-nl="Bij Lucid Sky Media is onze mantra eenvoudig: Verbluffende visuals stimuleren groei. Wij zijn een team van creatievelingen die ideeën omzetten in opvallende realiteiten—of het nu gaat om uw digitale displays, uw logo of uw volgende grote uitverkoop.">At Lucid Sky Media, our mantra is simple: Stunning visuals spark growth. We’re a team of creatives who live to turn ideas into eye-catching realities—whether it’s for your digital displays, your logo, or your next big sale.</h2>
-            <p data-en="We’re here to help local franchises shine in a digital world. From video editing to animations, we craft bold, modern designs that make your brand impossible to ignore. With a creative director who’s worked on AAA brands and agencies, we know what it takes to grow—and we promise to bring that same energy to your story. Ready to modernize your brand? Let’s make it happen." data-nl="Wij zijn hier om lokale franchises te laten schitteren in een digitale wereld. Van videobewerking tot animaties, wij maken gedurfde, moderne ontwerpen die uw merk onmogelijk te negeren maken. Met een creatief directeur die heeft gewerkt aan AAA-merken en bureaus, weten we wat nodig is om te groeien—en we beloven dezelfde energie in uw verhaal te stoppen. Klaar om uw merk te moderniseren? Laten we het waarmaken.">We’re here to help local franchises shine in a digital world. From video editing to animations, we craft bold, modern designs that make your brand impossible to ignore. With a creative director who’s worked on AAA brands and agencies, we know what it takes to grow—and we promise to bring that same energy to your story. Ready to modernize your brand? Let’s make it happen.</p>
-            <div class="work-item">
-                <img src="Arome__00.png" alt="Arome Branding">
-                <p data-en="Modern branding for Arome, focusing on clean aesthetics." data-nl="Moderne branding voor Arome, gericht op een strakke esthetiek.">Modern branding for Arome, focusing on clean aesthetics.</p>
+            <h1 data-en="Grow Your Brand with Cutting-Edge Digital Solutions" data-nl="Laat uw merk groeien met geavanceerde digitale oplossingen">Grow Your Brand with Cutting-Edge Digital Solutions</h1>
+            <h2 data-en="From animated menus to viral videos, we help small franchises shine online." data-nl="Van geanimeerde menu's tot virale video's, wij helpen kleine franchises online schitteren.">From animated menus to viral videos, we help small franchises shine online.</h2>
+            <p data-en="We’re Lucid Sky Media—your partners in turning ideas into stunning digital realities. With expertise from AAA brands, we craft bold animations, videos, and designs that boost your sales and views. Ready to unlock 500,000 more impressions? Let’s make it happen." data-nl="Wij zijn Lucid Sky Media—uw partners in het omzetten van ideeën in verbluffende digitale realiteiten. Met expertise van AAA-merken maken we gedurfde animaties, video’s en ontwerpen die uw omzet en views verhogen. Klaar om 500.000 extra impressies te ontsluiten? Laten we het waarmaken.">We’re Lucid Sky Media—your partners in turning ideas into stunning digital realities. With expertise from AAA brands, we craft bold animations, videos, and designs that boost your sales and views. Ready to unlock 500,000 more impressions? Let’s make it happen.</p>
+            <a href="#contact" class="cta-button" data-en="Start Growing Today" data-nl="Begin vandaag met groeien">Start Growing Today</a>
+        </div>
     </section>
 
     <!-- Our Services Section -->
     <section id="services" class="section">
         <h2 data-en="What We Do to Lift Your Brand" data-nl="Wat we doen om uw merk te versterken">What We Do to Lift Your Brand</h2>
-        <p data-en="We’re your go-to crew for digital brand modernization. Here’s how we can help:" data-nl="Wij zijn uw team voor digitale merkmodernisering. Dit is hoe we kunnen helpen:">We’re your go-to crew for digital brand modernization. Here’s how we can help:</p>
-        
+        <p data-en="We deliver modern digital solutions to make your franchise impossible to ignore." data-nl="Wij leveren moderne digitale oplossingen om uw franchise onmogelijk te negeren te maken.">We deliver modern digital solutions to make your franchise impossible to ignore.</p>
         <ul class="services-list">
-            <li><strong data-en="Video Editing:" data-nl="Videobewerking:">Video Editing:</strong> <span data-en="Slick, polished cuts that grab attention." data-nl="Strakke, gepolijste cuts die de aandacht trekken.">Slick, polished cuts that grab attention.</span></li>
-            <li><strong data-en="Illustrations:" data-nl="Illustraties:">Illustrations:</strong> <span data-en="Custom artwork that tells your story." data-nl="Aangepaste kunstwerken die uw verhaal vertellen.">Custom artwork that tells your story.</span></li>
-            <li><strong data-en="Animations & Motion Graphics:" data-nl="Animaties & Motion Graphics:">Animations & Motion Graphics:</strong> <span data-en="Dynamic visuals for menus, sales, or intros." data-nl="Dynamische visuals voor menu's, verkopen of intro's.">Dynamic visuals for menus, sales, or intros.</span></li>
-            <li><strong data-en="AI Design & Animation:" data-nl="AI-ontwerp & Animatie:">AI Design & Animation:</strong> <span data-en="Next-level creativity to stand out." data-nl="Creativiteit op het volgende niveau om op te vallen.">Next-level creativity to stand out.</span></li>
-            <li><strong data-en="Web Intros & Design:" data-nl="Webintro's & Ontwerp:">Web Intros & Design:</strong> <span data-en="First impressions that stick." data-nl="Eerste indrukken die blijven hangen.">First impressions that stick.</span></li>
+            <li><strong data-en="Video Editing:" data-nl="Videobewerking:">Video Editing:</strong> <span data-en="Slick promos that drive engagement." data-nl="Strakke promo's die betrokkenheid stimuleren.">Slick promos that drive engagement.</span></li>
+            <li><strong data-en="Animations & Motion Graphics:" data-nl="Animaties & Motion Graphics:">Animations & Motion Graphics:</strong> <span data-en="Dynamic visuals for menus, logos, and more." data-nl="Dynamische visuals voor menu's, logo's en meer.">Dynamic visuals for menus, logos, and more.</span></li>
+            <li><strong data-en="AI Design & Animation:" data-nl="AI-ontwerp & Animatie:">AI Design & Animation:</strong> <span data-en="Next-gen creativity to stand out." data-nl="Next-gen creativiteit om op te vallen.">Next-gen creativity to stand out.</span></li>
+            <li><strong data-en="Web Intros & Design:" data-nl="Webintro's & Ontwerp:">Web Intros & Design:</strong> <span data-en="First impressions that convert." data-nl="Eerste indrukken die converteren.">First impressions that convert.</span></li>
+            <li><strong data-en="Brand Growth:" data-nl="Merkgroei:">Brand Growth:</strong> <span data-en="Strategies to boost sales and visibility." data-nl="Strategieën om omzet en zichtbaarheid te vergroten.">Strategies to boost sales and visibility.</span></li>
         </ul>
-        <p data-en="Why? Because we want your local franchise to pop on every screen—digital displays, websites, you name it. From animated restaurant menus to logos that move, we’ve got the tools to make your brand feel fresh and alive. Check out our reel " data-nl="Waarom? Omdat we willen dat uw lokale franchise opvalt op elk scherm—digitale displays, websites, noem maar op. Van geanimeerde restaurantmenu's tot bewegende logo's, wij hebben de tools om uw merk fris en levendig te maken. Bekijk onze reel ">Why? Because we want your local franchise to pop on every screen—digital displays, websites, you name it. From animated restaurant menus to logos that move, we’ve got the tools to make your brand feel fresh and alive. Check out our reel <a href="https://youtu.be/PsIdXz9MB4E" target="_blank" data-en="here" data-nl="hier">here</a> to see it in action!</p>
+        <p data-en="See it in action—check our reel " data-nl="Zie het in actie—bekijk onze reel ">See it in action—check our reel <a href="https://youtu.be/PsIdXz9MB4E" target="_blank" data-en="here" data-nl="hier">here</a>!</p>
     </section>
 
-    <!-- Our Work (Portfolio Section) -->
+    <!-- Process Section -->
+    <section id="process" class="section">
+        <h2 data-en="How We Help You Succeed" data-nl="Hoe wij u helpen slagen">How We Help You Succeed</h2>
+        <div class="process-steps">
+            <div>
+                <h3 data-en="1. We Analyze" data-nl="1. Wij analyseren">1. We Analyze</h3>
+                <p data-en="Uncover what’s missing from your brand." data-nl="Ontdek wat er ontbreekt aan uw merk.">Uncover what’s missing from your brand.</p>
+            </div>
+            <div>
+                <h3 data-en="2. We Create" data-nl="2. Wij creëren">2. We Create</h3>
+                <p data-en="Stunning animations and videos tailored to you." data-nl="Verbluffende animaties en video’s op maat voor u.">Stunning animations and videos tailored to you.</p>
+            </div>
+            <div>
+                <h3 data-en="3. You Grow" data-nl="3. U groeit">3. You Grow</h3>
+                <p data-en="Watch your sales and visibility soar." data-nl="Zie uw omzet en zichtbaarheid stijgen.">Watch your sales and visibility soar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
     <section id="portfolio" class="section work-section">
-        <h2 data-en="Where Creativity Meets Craft" data-nl="Waar creativiteit vakmanschap ontmoet">Where Creativity Meets Craft</h2>
-        <p data-en="Take a peek at what we’ve been up to! We’ve poured our hearts into projects that bring local brands to life—think animated logos, slick web intros, and motion graphics that turn heads. Below are some examples of our craftsmanship (and trust us, there’s more to come):" data-nl="Neem een kijkje naar wat we hebben gedaan! We hebben ons hart gestoken in projecten die lokale merken tot leven brengen—denk aan geanimeerde logo's, strakke webintro's en motion graphics die de aandacht trekken. Hieronder enkele voorbeelden van ons vakmanschap (en geloof ons, er komt nog meer):">Take a peek at what we’ve been up to! We’ve poured our hearts into projects that bring local brands to life—think animated logos, slick web intros, and motion graphics that turn heads. Below are some examples of our craftsmanship (and trust us, there’s more to come):</p>
-        <div class="work-item">
-            <img src="Arome__02.png" alt="Arome Branding 02">
-            <p data-en="Arome branding with a modern, minimalist design." data-nl="Arome branding met een modern, minimalistisch ontwerp.">Arome branding with a modern, minimalist design.</p>
-        </div>
-        <p data-en="We’re always adding new projects, so keep checking back to see how we’re helping brands like yours shine." data-nl="We voegen altijd nieuwe projecten toe, dus blijf terugkomen om te zien hoe we merken zoals die van u laten schitteren.">We’re always adding new projects, so keep checking back to see how we’re helping brands like yours shine.</p>
-
-        <!-- Branding -->
-        <h3 data-en="Branding" data-nl="Branding">Branding</h3>
+        <h2 data-en="Where Creativity Meets Results" data-nl="Waar creativiteit resultaat ontmoet">Where Creativity Meets Results</h2>
+        <p data-en="Explore our work—animations, videos, and designs that have helped brands grow. Hover to see motion previews (coming soon)." data-nl="Ontdek ons werk—animaties, video’s en ontwerpen die merken hebben geholpen groeien. Hover voor bewegende previews (binnenkort).">Explore our work—animations, videos, and designs that have helped brands grow. Hover to see motion previews (coming soon).</p>
         <div class="work-gallery">
             <div class="work-item">
-                <img src="Arome__00.png" alt="Arome Branding 00">
-                <p data-en="Modern branding for Arome, focusing on clean aesthetics." data-nl="Moderne branding voor Arome, gericht op een strakke esthetiek.">Modern branding for Arome, focusing on clean aesthetics.</p>
-            </div>
-            <div class="work-item">
-                <img src="01_Bardot.gif" alt="Arome Branding 02">
-                <p data-en="Bardot branding with a modern, minimalist design." data-nl="Bardot branding met een modern, minimalistisch ontwerp.">Arome branding with a modern, minimalist design.</p>
-            </div>
-            <div class="work-item">
-                <img src="05_Bardot_brand.png" alt="Bardot Illustrative Branding">
-                <p data-en="Illustrative branding for Bardot, combining art and design." data-nl="Illustratieve branding voor Bardot, een combinatie van kunst en ontwerp.">Illustrative branding for Bardot, combining art and design.</p>
-            </div>
-            <div class="work-item">
-                <img src="BabiesClubX_Andy.png" alt="Babies Club X Andy Branding">
-                <p data-en="Playful branding for The Babies Club X, targeting the crypto audience." data-nl="Speelse branding voor Babies Club X, gericht op het crypto publiek.">Playful branding for Babies Club X, targeting a young audience.</p>
-            </div>
-            <div class="work-item">
-                <img src="gamaju.png" alt="Arome Branding 03">
-                <p data-en="Luxury branding for Gamaju, focusing on design and the graphics." data-nl="Luxe branding voor Gamaju, gericht op elegantie en design.">Luxury branding for Gamaju, focusing on elegance (placeholder).</p>
-            </div>
-            <div class="work-item">
-                <img src="heinekenbakery.png" alt="Heineken Bakery Branding">
-                <p data-en="Branding for Heineken Bakery, Motion for the new bakery brand." data-nl="Branding voor Heineken Bakery, Motie Animatie voor Heinekens nieuwe.">Branding for Heineken Bakery, combining food and beverage elements.</p>
-            </div>
-            <div class="work-item">
-                <img src="bowermans.png" alt="Bowermans Egg Branding">
-                <p data-en="Branding for Bowerman’s Egg,A restaurant brand, rebranding and design." data-nl="Branding voor Bowerman’s Egg, Een restaurantmerk rebranding and design.">Branding for Bowerman’s Egg, likely for a food or restaurant brand.</p>
-            </div>
-            <div class="work-item">
-                <img src="binnenkomt.png" alt="Aegon Notification Design">
-                <p data-en="Aegon, Motion Grafische uitleg Video." data-nl="Aegon, Motion Graphic Uitleg Video.">UI/UX design for Aegon, likely for a notification or interactive feature.</p>
-            </div>
-        </div>
-
-        <!-- Illustration -->
-        <h3 data-en="Illustration" data-nl="Illustratie">Illustration</h3>
-        <div class="work-gallery">
-            <div class="work-item">
-                <img src="StarBucks_coffee-illustration.png" alt="Tiger Illustration">
-                <p data-en="Starbucks, Illustraties en animatie, branding & design." data-nl="Starbucks, Illustrations en animatie, branding en design.">Illustrative storytelling for a serene tiger scene.</p>
-            </div>
-            <div class="work-item">
-                <img src="Warriors_Oath.png" alt="Warriors Illustration">
-                <p data-en="Illustrative storytelling for a serene temple scene." data-nl="Illustratieve storytelling voor een serene tempelscène.">Illustrative storytelling for a serene temple scene.</p>
-            </div>
-            <div class="work-item">
-                <img src="miyako-Branding cans.png" alt="miyako-Branding cans">
-                <p data-en="Miyako Beverage, design—modern and artistic branding." data-nl="Miyako Drank, ontwerp—modern en artistiek voor gebruik.">Abstract pattern design—modern and artistic for versatile use.</p>
-            </div>
-            <div class="work-item">
-                <img src="RedBull_Streamers_Toolkit 2.png" alt="Abstract Illustration">
-                <p data-en="An abstract illustration, possibly for a creative project." data-nl="Een abstracte illustratie, mogelijk voor een creatief project.">An abstract illustration, possibly for a creative project.</p>
-            </div>
-            <div class="work-item">
-                <img src="Smint-Mobiledesign.jpeg" alt="Stylized Illustration">
-                <p data-en="A stylized illustration with a modern, artistic flair." data-nl="Een gestileerde illustratie met een moderne, artistieke flair.">A stylized illustration with a modern, artistic flair.</p>
-            </div>
-            <div class="work-item">
-                <img src="04_Bardot.png" alt="Bardot Illustration">
-                <p data-en="Bardot, Branding, Illustration & Graphic design." data-nl="Bardot, Branding, Illustration & grafisch design .">Illustration for Bardot, possibly a character or scene.</p>
-            </div>
-            <div class="work-item">
-                <img src="StarBucks_coffee-illustration.png" alt="Starbucks Coffee Illustration">
-                <p data-en="Starbucks, Illustraties en animatie, branding & design." data-nl="Starbucks, Illustrations en animatie, branding en design.">Coffee-themed illustration for Starbucks, showcasing artistic detail.</p>
-            </div>
-            <div class="work-item">
-                <img src="The_Babies_Club_Andy_VS.png" alt="Babies Club Andy VS Illustration">
-                <p data-en="The Babies Club, Character design & illustration Jake Paul vs Andy." data-nl="De Babies Club, karakter design & illustratie Jake Paul tegen Andy.">Illustrative character design for Babies Club, likely for a versus campaign.</p>
-            </div>
-        </div>
-
-        <!-- Design -->
-        <h3 data-en="Design" data-nl="Ontwerp">Design</h3>
-        <div class="work-gallery">
-            <div class="work-item">
-                <img src="Smint-Designasset3.jpeg" alt="Mobile App Screens">
-                <p data-en="Smint, WordSmint Brand and UI/UX designs with a personal touch." data-nl="Smint, Wordsmint Brand and UI/UX-ontwerpen met een persoonlijke touch.">Bold UI/UX designs with a personal touch.</p>
-            </div>
-            <div class="work-item">
-                <img src="RedBull_Streamers_Toolkit 3.png" alt="Notification Bell Graphic">
-                <p data-en="The Red Bull Streamers toolkit, Branding, Design, Illustratie UI/UX design." data-nl=" Red Bull Streamers toolkit, Branding, Design, Illustratie UI/UX design.">UI/UX design for a notification feature—engaging and interactive.</p>
-            </div>
-            <div class="work-item">
-                <img src="07_bradot_Restaurant.jpg" alt="Bradot Restaurant Design">
-                <p data-en="Bardot restaurant ,brand & design focusing on ambiance." data-nl="Bardot restaurant, Brand en design gericht op sfeer.">Restaurant design concept for Bradot, focusing on ambiance.</p>
-            </div>
-            <div class="work-item">
-                <img src="Smint-Designasset3.jpeg" alt="Design Mockup">
-                <p data-en="Smint, WordSmint Brand and UI/UX designs with a personal touch." data-nl="Wordsmint Brand and UI/UX-ontwerpen met een persoonlijke touch.">A design mockup, possibly for a product or UI.</p>
-            </div>
-            <div class="work-item">
-                <img src="binnenkomt.png" alt="Notification Design">
-                <p data-en="UI/UX design, likely for a notification or interactive feature." data-nl="UI/UX-ontwerp, waarschijnlijk voor een notificatie- of interactieve functie.">UI/UX design, likely for a notification or interactive feature.</p>
-            </div>
-            <div class="work-item">
-                <img src="draw_triangle_right.png" alt="Geometric Design">
-                <p data-en="Adidas - Nitrocharge, Motion Graphics Animation desktop and mobile." data-nl="Geometrisch ontwerp, mogelijk voor een UI-element of logo.">Geometric design, possibly for a UI element or logo.</p>
-            </div>
-            <div class="work-item">
-                <img src="Smint-Designasset3.jpeg" alt="Smint Design Asset">
-                <p data-en="Design asset for Smint, likely for packaging or digital use." data-nl="Ontwerpelement voor Smint, waarschijnlijk voor verpakking of digitaal gebruik.">Design asset for Smint, likely for packaging or digital use.</p>
-            </div>
-            <div class="work-item">
-                <img src="Smint-Mobiledesign.jpeg" alt="Smint Mobile Design">
-                <p data-en="Mobile design for Smint, focusing on user experience." data-nl="Mobiel ontwerp voor Smint, gericht op gebruikerservaring.">Mobile design for Smint, focusing on user experience.</p>
-            </div>
-        </div>
-
-        <!-- Motion Graphics -->
-        <h3 data-en="Motion Graphics" data-nl="Motion Graphics">Motion Graphics</h3>
-        <div class="work-gallery">
-            <div class="work-item">
-                <img src="Sparta_TestLab_Animation.png" alt="Sparta Test Lab">
-                <p data-en="A blend of elegance and motion for Sparta Test Lab." data-nl="Een mix van elegantie en beweging voor Sparta Test Lab.">A blend of elegance and motion for Sparta Test Lab.</p>
-            </div>
-            <div class="work-item">
-                <img src="BabiesClubX_boxing.png" alt="Animated Characters">
-                <p data-en="Energetic character animations with a punch of color." data-nl="Energieke personage-animaties met een vleugje kleur.">Energetic character animations with a punch of color.</p>
-            </div>
-            <div class="work-item">
-                <img src="RedBull_FlakesHello_2.png" alt="HELLO HELLO Graphic">
-                <p data-en="Playful 'HELLO HELLO' motion graphic—perfect for intros or promotions." data-nl="Speelse 'HELLO HELLO' motion graphic—perfect voor intro's of promoties.">Playful "HELLO HELLO" motion graphic—perfect for intros or promotions.</p>
-            </div>
-            <div class="work-item">
-                <img src="RedBull_Volta_Pro_Lobby.png" alt="VOLTA PRO LOBBY Graphic">
-                <p data-en=" Red Bull High-energy 'VOLTA PRO LOBBY' graphic for gaming or esports." data-nl="Hoogenergetische 'VOLTA PRO LOBBY' graphic voor gaming of esports.">High-energy "VOLTA PRO LOBBY" graphic for gaming or esports.</p>
-            </div>
-            <div class="work-item">
-                <img src="RedBull_Stickers.png" alt="Red Bull Stickers">
-                <p data-en="Red Bull stickers/emojis for digital engagement—fun and vibrant." data-nl="Red Bull stickers/emojis voor digitale betrokkenheid—leuk en levendig.">Red Bull stickers/emojis for digital engagement—fun and vibrant.</p>
-            </div>
-            <div class="work-item">
-                <img src="Animation_for_jetix.png" alt="Jetix Animation">
-                <p data-en="Motion graphic animation for Jetix, likely for a TV or digital intro." data-nl="Motion graphic animatie voor Jettix, waarschijnlijk voor een TV- of digitale intro.">Motion graphic animation for Jettix, likely for a TV or digital intro.</p>
+                <img src="Arome__02.png" alt="Arome Branding">
+                <p data-en="Animated branding for Arome—boosted online views." data-nl="Geanimeerde branding voor Arome—verhoogde online views.">Animated branding for Arome—boosted online views.</p>
             </div>
             <div class="work-item">
                 <img src="Heineken_Bakery_Animation_.png" alt="Heineken Bakery Animation">
-                <p data-en="Animated motion graphic for Heineken Bakery." data-nl="Geanimeerde motion graphic voor Heineken Bakery.">Animated motion graphic for Heineken Bakery.</p>
+                <p data-en="Motion graphic for Heineken Bakery—drove engagement." data-nl="Motion graphic voor Heineken Bakery—stimuleerde betrokkenheid.">Motion graphic for Heineken Bakery—drove engagement.</p>
             </div>
             <div class="work-item">
-                <img src="Korra_Avatar_Game.png" alt="Korra Avatar Game Motion Graphic">
-                <p data-en="Animation & Motion graphics for Korra the avatar game." data-nl="Motion graphic voor een game-avatar, waarschijnlijk voor Korn.">Motion graphic for a game avatar, likely for Korn.</p>
+                <img src="Sparta_TestLab_Animation.png" alt="Sparta Test Lab">
+                <p data-en="Video composite for Sparta—product spotlight." data-nl="Videocomposiet voor Sparta—productspotlight.">Video composite for Sparta—product spotlight.</p>
+            </div>
+            <!-- Add more portfolio items as needed or replace with video placeholders -->
+            <div class="work-item">
+                <img src="placeholder-portfolio4.jpg" alt="Placeholder Animation">
+                <p data-en="Animated menu demo (placeholder—replace with your asset)." data-nl="Geanimeerde menu-demo (placeholder—vervang met uw asset).">Animated menu demo (placeholder—replace with your asset).</p>
             </div>
         </div>
+        <p data-en="More projects coming soon—stay tuned!" data-nl="Meer projecten binnenkort—blijf kijken!">More projects coming soon—stay tuned!</p>
+    </section>
 
-        <!-- Logo Design -->
-        <h3 data-en="Logo Design" data-nl="Logo Ontwerp">Logo Design</h3>
-        <div class="work-gallery">
-            <div class="work-item">
-                <img src="Vichy-New_Branding.png" alt="Vichy Fun Sun Logo">
-                <p data-en="Playful logo for Vichy Fun Sun—vibrant and eye-catching." data-nl="Speels logo voor Vichy Fun Sun—levendig en opvallend.">Playful logo for Vichy Fun Sun—vibrant and eye-catching.</p>
-            </div>
-            <div class="work-item">
-                <img src="Kaplan_green.png" alt="LinkedIn Green Alpha Logo">
-                <p data-en="Logo design for a LinkedIn project, with a green alpha theme." data-nl="Logo-ontwerp voor een LinkedIn-project, met een groen alfa-thema.">Logo design for a LinkedIn project, with a green alpha theme.</p>
-            </div>
-            <!-- Adding more images to reach 8 -->
-            <div class="work-item">
-                <img src="Arome__00.png" alt="Arome Branding 00">
-                <p data-en="Modern branding for Arome, focusing on clean aesthetics." data-nl="Moderne branding voor Arome, gericht op een strakke esthetiek.">Modern branding for Arome, focusing on clean aesthetics.</p>
-            </div>
-            <div class="work-item">
-                <img src="Arome__02.png" alt="Arome Branding 02">
-                <p data-en="Arome branding with a modern, minimalist design." data-nl="Arome branding met een modern, minimalistisch ontwerp.">Arome branding with a modern, minimalist design.</p>
-            </div>
-            <div class="work-item">
-                <img src="05_Bardot_brand.png" alt="Bardot Illustrative Branding">
-                <p data-en="Illustrative branding for Bardot, combining art and design." data-nl="Illustratieve branding voor Bardot, een combinatie van kunst en ontwerp.">Illustrative branding for Bardot, combining art and design.</p>
-            </div>
-            <div class="work-item">
-                <img src="BabiesClubX_Andy.png" alt="Babies Club X Andy Branding">
-                <p data-en="Playful branding for Babies Club X, targeting a young audience." data-nl="Speelse branding voor Babies Club X, gericht op een jong publiek.">Playful branding for Babies Club X, targeting a young audience.</p>
-            </div>
-            <div class="work-item">
-                <img src="heinekenbakery.png" alt="Heineken Bakery Branding">
-                <p data-en="Branding for Heineken Bakery, combining food and beverage elements." data-nl="Branding voor Heineken Bakery, een combinatie van voedsel- en drankelementen.">Branding for Heineken Bakery, combining food and beverage elements.</p>
-            </div>
-            <div class="work-item">
-                <img src="bowermans.png" alt="Bowermans Egg Branding">
-                <p data-en="Branding for Bowerman’s Egg, likely for a food or restaurant brand." data-nl="Branding voor Bowerman’s Egg, waarschijnlijk voor een voedsel- of restaurantmerk.">Branding for Bowerman’s Egg, likely for a food or restaurant brand.</p>
-            </div>
-        </div>
-
-        <!-- Video Editing -->
-        <h3 data-en="Video Editing" data-nl="Videobewerking">Video Editing</h3>
-        <div class="work-gallery">
-            <div class="work-item">
-                <img src="Sparta_TestLab_Animation.png" alt="Sparta Test Lab Bike">
-                <p data-en="Dynamic video compositing for Sparta Test Lab—bringing products to life." data-nl="Dynamische videocompositing voor Sparta Test Lab—brengt producten tot leven.">Dynamic video compositing for Sparta Test Lab—bringing products to life.</p>
-            </div>
-            <div class="work-item">
-                <img src="Kaplan_green.png" alt="Kaplan Project Video Editing">
-                <p data-en="Video editing project for Kaplan, showcased on LinkedIn." data-nl="Videobewerkingsproject voor Kaplan, getoond op LinkedIn.">Video editing project for Kaplan, showcased on LinkedIn.</p>
-            </div>
-            <div class="work-item">
-                <img src="mc-break-1.png" alt="McDonalds Break 1 Video">
-                <p data-en="Video editing snippet for McDonald’s 'break' campaign." data-nl="Videobewerkingsfragment voor McDonald’s 'break' campagne.">Video editing snippet for McDonald’s "break" campaign.</p>
-            </div>
-            <div class="work-item">
-                <img src="mc-break-2.png" alt="McDonalds Break 2 Video">
-                <p data-en="Another snippet for McDonald’s 'break' campaign." data-nl="Nog een fragment voor McDonald’s 'break' campagne.">Another snippet for McDonald’s "break" campaign.</p>
-            </div>
-            <div class="work-item">
-                <img src="mc-break-3.png" alt="McDonalds Break 3 Video">
-                <p data-en="Third snippet for McDonald’s 'break' campaign." data-nl="Derde fragment voor McDonald’s 'break' campagne.">Third snippet for McDonald’s "break" campaign.</p>
-            </div>
-            <div class="work-item">
-                <img src="PostNL_motion 2.png" alt="PostNL Motion 2 Video">
-                <p data-en="Motion video editing for PostNL." data-nl="Motion videobewerking voor PostNL.">Motion video editing for PostNL.</p>
-            </div>
-            <div class="work-item">
-                <img src="postnl-motion.png" alt="PostNL Motion Video">
-                <p data-en="Another motion video editing piece for PostNL." data-nl="Nog een motion videobewerkingsstuk voor PostNL.">Another motion video editing piece for PostNL.</p>
-            </div>
-            <div class="work-item">
-                <img src="Sparta_TestLab_Motion.png" alt="Sparta TestLab Motion Video">
-                <p data-en="Motion video editing for Sparta TestLab." data-nl="Motion videobewerking voor Sparta TestLab.">Motion video editing for Sparta TestLab.</p>
-            </div>
+    <!-- Franchise Marketing Section -->
+    <section id="franchise" class="section">
+        <h2 data-en="We Dream Big for Local Brands" data-nl="We dromen groot voor lokale merken">We Dream Big for Local Brands</h2>
+        <p data-en="Our mission? Give small franchises the digital edge they need to grow. We analyze your brand, craft jaw-dropping visuals, and deliver results—think 500 extra sales or 500,000 more views. Let’s tell your story with animation and video that connects." data-nl="Onze missie? Kleine franchises de digitale voorsprong geven die ze nodig hebben om te groeien. We analyseren uw merk, maken verbluffende visuals en leveren resultaten—denk aan 500 extra verkopen of 500.000 meer views. Laten we uw verhaal vertellen met animatie en video die aanspreekt.">Our mission? Give small franchises the digital edge they need to grow. We analyze your brand, craft jaw-dropping visuals, and deliver results—think 500 extra sales or 500,000 more views. Let’s tell your story with animation and video that connects.</p>
+        <div class="work-item">
+            <img src="Arome__03.png" alt="Arome Branding">
+            <p data-en="Elegant branding for Arome—elevated their presence." data-nl="Elegante branding voor Arome—verhoogde hun aanwezigheid.">Elegant branding for Arome—elevated their presence.</p>
         </div>
     </section>
 
-    <!-- Our Mission (Franchise Marketing Section) -->
-    <section id="franchise" class="section">
-        <h2 data-en="We Dream Big for Local Brands" data-nl="We dromen groot voor lokale merken">We Dream Big for Local Brands</h2>
-        <p data-en="Hey there! We’re Lucid Sky Media, and our mission is to give local franchises the digital glow-up they deserve. We believe every store, restaurant, or business has a story worth telling—and we’re here to tell it through jaw-dropping visuals. Our goal? To modernize your brand with video edits, animations, motion graphics, and AI design that connect with your customers and drive growth. We’ve worked with the big dogs (think AAA brands), and now we’re bringing that expertise to your doorstep. Let’s create something amazing together!" data-nl="Hoi daar! Wij zijn Lucid Sky Media, en onze missie is om lokale franchises de digitale opfrisbeurt te geven die ze verdienen. Wij geloven dat elke winkel, restaurant of bedrijf een verhaal heeft dat het waard is om te vertellen—en wij zijn hier om dat te doen met verbluffende visuals. Ons doel? Uw merk moderniseren met videobewerkingen, animaties, motion graphics en AI-ontwerp die uw klanten aanspreken en groei stimuleren. We hebben gewerkt met de grote spelers (denk aan AAA-merken), en nu brengen we die expertise naar uw voordeur. Laten we samen iets geweldigs creëren!">Hey there! We’re Lucid Sky Media, and our mission is to give local franchises the digital glow-up they deserve. We believe every store, restaurant, or business has a story worth telling—and we’re here to tell it through jaw-dropping visuals. Our goal? To modernize your brand with video edits, animations, motion graphics, and AI design that connect with your customers and drive growth. We’ve worked with the big dogs (think AAA brands), and now we’re bringing that expertise to your doorstep. Let’s create something amazing together!</p>
-        <div class="work-item">
-            <img src="Arome__03.png" alt="Arome Branding 03">
-            <p data-en="Arome branding with a focus on elegance." data-nl="Arome branding met een focus op elegantie.">Arome branding with a focus on elegance.</p>
+    <!-- Awards Section -->
+    <section id="awards" class="section">
+        <h2 data-en="Our Achievements" data-nl="Onze prestaties">Our Achievements</h2>
+        <div class="awards-list">
+            <div>
+                <h3 data-en="Award Name 1" data-nl="Prijsnaam 1">Award Name 1</h3>
+                <p data-en="Year - Description (e.g., Best Motion Graphics)." data-nl="Jaar - Beschrijving (bijv. Beste Motion Graphics).">Year - Description (e.g., Best Motion Graphics).</p>
+            </div>
+            <div>
+                <h3 data-en="Award Name 2" data-nl="Prijsnaam 2">Award Name 2</h3>
+                <p data-en="Year - Description (e.g., Innovation in Video)." data-nl="Jaar - Beschrijving (bijv. Innovatie in Video).">Year - Description (e.g., Innovation in Video).</p>
+            </div>
+            <!-- Add more awards as needed -->
         </div>
     </section>
 
     <!-- About Us Section -->
     <section id="about" class="section">
-        <h2 data-en="Meet the Dreamers Behind the Designs" data-nl="Maak kennis met de dromers achter de ontwerpen">Meet the Dreamers Behind the Designs</h2>
-        <p data-en="We’re Lucid Sky Media—a tight-knit team of creatives who love what we do. Led by a creative director who’s shaped AAA brands at top agencies, we’re a mix of artists, animators, and storytellers with one big drive: crafting stunning work that helps local stores and brands grow." data-nl="Wij zijn Lucid Sky Media—een hecht team van creatievelingen die houden van wat we doen. Onder leiding van een creatief directeur die AAA-merken heeft gevormd bij topbureaus, zijn we een mix van kunstenaars, animatoren en verhalenvertellers met één grote drijfveer: verbluffend werk maken dat lokale winkels en merken helpt groeien.">We’re Lucid Sky Media—a tight-knit team of creatives who love what we do. Led by a creative director who’s shaped AAA brands at top agencies, we’re a mix of artists, animators, and storytellers with one big drive: crafting stunning work that helps local stores and brands grow.</p>
+        <h2 data-en="Meet Your Creative Partners" data-nl="Ontmoet uw creatieve partners">Meet Your Creative Partners</h2>
+        <p data-en="We’re Lucid Sky Media—a team obsessed with helping local brands grow through stunning visuals. Led by a creative director with AAA-brand experience, we bring big-agency expertise to your franchise. From animated menus to web intros, we make your story pop." data-nl="Wij zijn Lucid Sky Media—een team dat geobsedeerd is met het helpen groeien van lokale merken door verbluffende visuals. Onder leiding van een creatief directeur met AAA-merkervaring brengen we expertise van grote bureaus naar uw franchise. Van geanimeerde menu’s tot webintro’s, wij maken uw verhaal opvallend.">We’re Lucid Sky Media—a team obsessed with helping local brands grow through stunning visuals. Led by a creative director with AAA-brand experience, we bring big-agency expertise to your franchise. From animated menus to web intros, we make your story pop.</p>
         <div class="work-item">
-            <img src="BabiesClubX_boxing.png" alt="Babies Club X Boxing Branding">
-            <p data-en="Boxing-themed branding for Babies Club X, possibly for a campaign or event." data-nl="Boksthema branding voor Babies Club X, mogelijk voor een campagne of evenement.">Boxing-themed branding for Babies Club X, possibly for a campaign or event.</p>
+            <img src="BabiesClubX_boxing.png" alt="Babies Club X Boxing">
+            <p data-en="Bold campaign for Babies Club X—punched up their reach." data-nl="Gedurfde campagne voor Babies Club X—verhoogde hun bereik.">Bold campaign for Babies Club X—punched up their reach.</p>
         </div>
-        <p data-en="What gets us out of bed? The chance to animate a sale that packs your shop, design a menu that makes mouths water, or create a web intro that stops scrolls. We’ve seen how visuals transform brands, and we’re obsessed with bringing that magic to you. Want to chat about your next project? We’re all ears!" data-nl="Wat ons uit bed krijgt? De kans om een uitverkoop te animeren die uw winkel vult, een menu te ontwerpen dat het water in de mond doet lopen, of een webintro te maken die scrollen stopt. We hebben gezien hoe visuals merken transformeren, en we zijn geobsedeerd om die magie naar u te brengen. Wilt u praten over uw volgende project? We zijn een en al oor!">What gets us out of bed? The chance to animate a sale that packs your shop, design a menu that makes mouths water, or create a web intro that stops scrolls. We’ve seen how visuals transform brands, and we’re obsessed with bringing that magic to you. Want to chat about your next project? We’re all ears!</p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <h2 data-en="Let’s Create Something Amazing Together" data-nl="Laten we samen iets geweldigs creëren">Let’s Create Something Amazing Together</h2>
-        <p data-en="Got a project in mind? Drop us a message, and we’ll get back to you pronto!" data-nl="Heeft u een project in gedachten? Stuur ons een bericht, en we nemen snel contact met u op!">Got a project in mind? Drop us a message, and we’ll get back to you pronto!</p>
+        <h2 data-en="Let’s Boost Your Brand Together" data-nl="Laten we uw merk samen versterken">Let’s Boost Your Brand Together</h2>
+        <p data-en="Ready to drive 500 extra sales or 500,000 views? Drop us a line!" data-nl="Klaar om 500 extra verkopen of 500.000 views te behalen? Stuur ons een bericht!">Ready to drive 500 extra sales or 500,000 views? Drop us a line!</p>
         <div class="work-item">
             <img src="heinekenbakery.png" alt="Heineken Bakery Branding">
-            <p data-en="Branding for Heineken Bakery, combining food and beverage elements." data-nl="Branding voor Heineken Bakery, een combinatie van voedsel- en drankelementen.">Branding for Heineken Bakery, combining food and beverage elements.</p>
+            <p data-en="Heineken Bakery branding—growth through visuals." data-nl="Heineken Bakery branding—groei door visuals.">Heineken Bakery branding—growth through visuals.</p>
         </div>
         <form action="mailto:info.lucidsky@gmail.com" method="post" enctype="text/plain" class="contact-form">
             <div class="form-group">
@@ -335,7 +193,7 @@
             </div>
             <div class="form-group">
                 <label for="email" data-en="Email" data-nl="E-mail">Email</label>
-            <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="message" data-en="Message" data-nl="Bericht">Message</label>
@@ -345,9 +203,15 @@
         </form>
     </section>
 
+    <!-- Testimonials Section (Placeholder) -->
+    <section id="testimonials" class="section">
+        <h2 data-en="What Our Clients Say" data-nl="Wat onze klanten zeggen">What Our Clients Say</h2>
+        <p data-en="Testimonials coming soon—add yours here!" data-nl="Getuigenissen binnenkort—voeg de uwe hier toe!">Testimonials coming soon—add yours here!</p>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p data-en="© 2025 Lucid Sky Media. Let’s make your brand shine!" data-nl="© 2025 Lucid Sky Media. Laten we uw merk laten schitteren!">© 2025 Lucid Sky Media. Let’s make your brand shine!</p>
+        <p data-en="© 2025 Lucid Sky Media. Ready to grow? Contact us!" data-nl="© 2025 Lucid Sky Media. Klaar om te groeien? Neem contact op!">© 2025 Lucid Sky Media. Ready to grow? <a href="#contact" style="color: #00b4d8;">Contact us!</a></p>
     </footer>
 
     <script>
@@ -356,20 +220,13 @@
             const currentLang = button.textContent === 'English' ? 'en' : 'nl';
             const newLang = currentLang === 'en' ? 'nl' : 'en';
 
-            // Update button text
             button.textContent = newLang === 'en' ? 'English' : 'Nederlands';
-
-            // Update all elements with data-en and data-nl attributes
             document.querySelectorAll('[data-en]').forEach(element => {
                 element.textContent = element.getAttribute(`data-${newLang}`);
             });
-
-            // Update links separately if they contain text
             document.querySelectorAll('a[data-en]').forEach(link => {
                 link.textContent = link.getAttribute(`data-${newLang}`);
             });
-
-            // Update spans inside list items
             document.querySelectorAll('li span[data-en]').forEach(span => {
                 span.textContent = span.getAttribute(`data-${newLang}`);
             });
