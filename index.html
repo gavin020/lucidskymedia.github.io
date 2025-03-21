@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucid Sky Media</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
-            <img src="assets/lucid-sky-logo.png" alt="Lucid Sky Media Logo">
+            <img src="lucid-sky-logo.png" alt="Lucid Sky Media Logo">
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -19,15 +20,25 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Homepage Section -->
+    <!-- Homepage Section with Cinematic Showreel -->
     <section id="home" class="hero">
+        <div class="video-background">
+            <iframe 
+                src="https://www.youtube.com/embed/PsIdXz9MB4E?autoplay=1&mute=1&loop=1&playlist=PsIdXz9MB4E&controls=0" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+            <div class="video-overlay"></div>
+        </div>
         <div class="hero-content">
+            <img src="lucid-sky-logo.png" alt="Lucid Sky Media Logo" class="hero-logo">
             <h1>See the Sky Clearly – We Bring Your Brand to Life</h1>
             <p>At Lucid Sky Media, our mantra is simple: <em>Stunning visuals spark growth</em>. We’re a team of creatives who live to turn ideas into eye-catching realities—whether it’s for your digital displays, your logo, or your next big sale.</p>
-            <a href="https://youtu.be/PsIdXz9MB4E" target="_blank" class="cta-button">Watch Our Reel</a>
         </div>
     </section>
 
@@ -64,35 +75,35 @@
         <p>Take a peek at what we’ve been up to! We’ve poured our hearts into projects that bring local brands to life—think animated logos, slick web intros, and motion graphics that turn heads. Below are some examples of our craftsmanship (and trust us, there’s more to come):</p>
         <div class="work-gallery">
             <div class="work-item">
-                <img src="assets/image1.jpg" alt="Sparta Test Lab">
+                <img src="image-1.png" alt="Sparta Test Lab">
                 <p><a href="www.radhaengavin.com" target="_blank">Radha & Gavin</a>: A blend of elegance and motion that screams modern.</p>
             </div>
             <div class="work-item">
-                <img src="assets/image2.jpg" alt="Mobile App Screens">
+                <img src="image-2.png" alt="Mobile App Screens">
                 <p><a href="www.gavinkempenaar.eu" target="_blank">Gavin Kempenaar</a>: Bold designs with a personal touch.</p>
             </div>
             <div class="work-item">
-                <img src="assets/image3.jpg" alt="Tiger Illustration">
+                <img src="image-3.png" alt="Tiger Illustration">
                 <p><a href="www.behance.net/sir_gk" target="_blank">Behance Showcase</a>: Our playground of creativity—animations, illustrations, and more.</p>
             </div>
             <div class="work-item">
-                <img src="assets/image4.jpg" alt="Sparta Test Lab Bike">
+                <img src="image-4.png" alt="Sparta Test Lab Bike">
                 <p>Dynamic motion graphics for Sparta Test Lab—bringing products to life.</p>
             </div>
             <div class="work-item">
-                <img src="assets/image5.jpg" alt="Vichy Fun Sun">
+                <img src="image-5.png" alt="Vichy Fun Sun">
                 <p>Playful branding for Vichy Fun Sun—vibrant and eye-catching.</p>
             </div>
             <div class="work-item">
-                <img src="assets/image6.jpg" alt="Vichy Fun Sun Products">
+                <img src="image-6.png" alt="Vichy Fun Sun Products">
                 <p>Product visuals for Vichy Fun Sun—fresh and inviting.</p>
             </div>
             <div class="work-item">
-                <img src="assets/image7.jpg" alt="Temple Illustration">
+                <img src="image-7.png" alt="Temple Illustration">
                 <p>Illustrative storytelling for a serene temple scene.</p>
             </div>
             <div class="work-item">
-                <img src="assets/image8.jpg" alt="Animated Characters">
+                <img src="image-8.png" alt="Animated Characters">
                 <p>Energetic character animations with a punch of color.</p>
             </div>
             <div class="work-item placeholder">
@@ -105,9 +116,30 @@
         <p><a href="https://youtu.be/PsIdXz9MB4E" target="_blank">Watch our reel</a> to see the full vibe! We’re always adding new projects, so keep checking back to see how we’re helping brands like yours shine.</p>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Let’s Create Something Amazing Together</h2>
+        <p>Got a project in mind? Drop us a message, and we’ll get back to you pronto!</p>
+        <form action="mailto:info.lucidsky@gmail.com" method="post" enctype="text/plain" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Lucid Sky Media. Let’s make your brand shine!</p>
+        <p>© 2025 Lucid Sky Media. Let’s make your brand shine!</p>
     </footer>
 
     <script src="script.js"></script>
