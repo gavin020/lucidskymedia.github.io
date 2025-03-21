@@ -6,42 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucid Sky Media | Grow Your Brand with Digital Solutions</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Inline CSS for demo purposes - merge with your styles.css */
-        body { margin: 0; font-family: 'Poppins', sans-serif; background: #1a1a1a; color: #fff; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: rgba(0, 0, 0, 0.8); }
-        .navbar .logo { height: 50px; }
-        .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; }
-        .nav-links a { color: #fff; text-decoration: none; font-weight: 600; transition: color 0.3s; }
-        .nav-links a:hover { color: #00b4d8; }
-        #language-toggle { background: #7209b7; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; }
-        .hero { position: relative; height: 100vh; overflow: hidden; }
-        .video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        #bg-video { width: 100%; height: 100%; object-fit: cover; }
-        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); }
-        .hero-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 50%; }
-        .hero-content-section, .section { padding: 60px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
-        h1 { font-size: 2.5em; margin: 0 0 20px; }
-        h2 { font-size: 2em; margin: 0 0 20px; }
-        p { font-size: 1.1em; line-height: 1.6; }
-        .cta-button { display: inline-block; padding: 15px 30px; background: linear-gradient(45deg, #00b4d8, #7209b7); color: #fff; text-decoration: none; border-radius: 5px; font-weight: 600; transition: transform 0.3s; }
-        .cta-button:hover { transform: scale(1.05); }
-        .services-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .services-list li { flex: 1 1 300px; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; transition: transform 0.3s; }
-        .services-list li:hover { transform: translateY(-10px); }
-        .work-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .work-item { background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; transition: transform 0.3s; }
-        .work-item:hover { transform: translateY(-10px); }
-        .work-item img { width: 100%; border-radius: 5px; }
-        .process-steps { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .process-steps div { flex: 1 1 300px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
-        .awards-list { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .awards-list div { flex: 1 1 300px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
-        .contact-form { max-width: 600px; margin: 20px auto; display: grid; gap: 20px; }
-        .form-group { display: flex; flex-direction: column; }
-        input, textarea { padding: 10px; border-radius: 5px; border: none; }
-        footer { text-align: center; padding: 20px; background: #111; }
+        /* Inline overrides to match your preferences */
+        .navbar { 
+            background: #000; /* Black navbar instead of gradient */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+        }
+        .nav-links a:hover { 
+            color: #7209b7; /* Purple hover instead of #f0f0f0 */
+        }
+        #language-toggle { 
+            background: #7209b7; /* Solid purple */
+            border: 2px solid #fff; 
+        }
+        #language-toggle:hover { 
+            background: #9b5de5; /* Lighter purple */
+            transform: scale(1.05); 
+        }
+        .cta-button { 
+            background: #7209b7; /* Solid purple instead of gradient */
+        }
+        .cta-button:hover { 
+            background: #9b5de5; /* Lighter purple */
+            transform: scale(1.05); 
+        }
+        footer { 
+            background: #000; /* Black footer instead of gradient */
+        }
+        footer a { 
+            color: #7209b7; /* Purple link */
+        }
+        footer a:hover { 
+            color: #9b5de5; /* Lighter purple */
+        }
+        .process-steps, .awards-list { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 2rem; 
+            margin-top: 2rem; 
+        }
+        .process-steps div, .awards-list div { 
+            background: #fff; 
+            padding: 1rem; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease; 
+        }
+        .process-steps div:hover, .awards-list div:hover { 
+            transform: translateY(-5px); 
+        }
     </style>
 </head>
 <body>
@@ -119,7 +133,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="section work-section">
         <h2 data-en="Where Creativity Meets Results" data-nl="Waar creativiteit resultaat ontmoet">Where Creativity Meets Results</h2>
-        <p data-en="Explore our work—animations, videos, and designs that have helped brands grow. Hover to see motion previews (coming soon)." data-nl="Ontdek ons werk—animaties, video’s en ontwerpen die merken hebben geholpen groeien. Hover voor bewegende previews (binnenkort).">Explore our work—animations, videos, and designs that have helped brands grow. Hover to see motion previews (coming soon).</p>
+        <p data-en="Explore our work—animations, videos, and designs that have helped brands grow. More motion previews coming soon!" data-nl="Ontdek ons werk—animaties, video’s en ontwerpen die merken hebben geholpen groeien. Meer bewegende previews binnenkort!">Explore our work—animations, videos, and designs that have helped brands grow. More motion previews coming soon!</p>
         <div class="work-gallery">
             <div class="work-item">
                 <img src="Arome__02.png" alt="Arome Branding">
@@ -133,7 +147,6 @@
                 <img src="Sparta_TestLab_Animation.png" alt="Sparta Test Lab">
                 <p data-en="Video composite for Sparta—product spotlight." data-nl="Videocomposiet voor Sparta—productspotlight.">Video composite for Sparta—product spotlight.</p>
             </div>
-            <!-- Add more portfolio items as needed or replace with video placeholders -->
             <div class="work-item">
                 <img src="placeholder-portfolio4.jpg" alt="Placeholder Animation">
                 <p data-en="Animated menu demo (placeholder—replace with your asset)." data-nl="Geanimeerde menu-demo (placeholder—vervang met uw asset).">Animated menu demo (placeholder—replace with your asset).</p>
@@ -211,7 +224,7 @@
 
     <!-- Footer -->
     <footer>
-        <p data-en="© 2025 Lucid Sky Media. Ready to grow? Contact us!" data-nl="© 2025 Lucid Sky Media. Klaar om te groeien? Neem contact op!">© 2025 Lucid Sky Media. Ready to grow? <a href="#contact" style="color: #00b4d8;">Contact us!</a></p>
+        <p data-en="© 2025 Lucid Sky Media. Ready to grow? Contact us!" data-nl="© 2025 Lucid Sky Media. Klaar om te groeien? Neem contact op!">© 2025 Lucid Sky Media. Ready to grow? <a href="#contact">Contact us!</a></p>
     </footer>
 
     <script>
