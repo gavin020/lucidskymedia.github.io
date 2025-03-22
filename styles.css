@@ -330,3 +330,24 @@ footer p {
     font-size: 1rem;
     color: #666666;
 }
+.page-content {
+  animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+nav a {
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  transform: scale(1.1);
+  color: #00b4d8; /* Bright cyan for pop */
+}
+nav {
+  animation: slideDown 0.8s ease-out;
+}
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
