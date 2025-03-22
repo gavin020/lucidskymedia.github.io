@@ -351,3 +351,10 @@ nav {
   from { transform: translateY(-100%); }
   to { transform: translateY(0); }
 }
+.portfolio-item {
+  transition: transform 0.4s ease;
+}
+.portfolio-item:hover {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
