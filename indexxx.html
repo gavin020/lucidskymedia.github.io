@@ -1,505 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Favicon with fallback -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucid Sky Media | Grow Your Brand with Digital Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset default styles */
+        /* Your existing CSS remains unchanged */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* General styles */
         body {
             font-family: 'Raleway', sans-serif;
             color: #333;
             background-color: #f9f9f9;
             line-height: 1.6;
         }
-
-        /* Typography */
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             color: #2c3e50;
         }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        h3 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        p {
-            font-family: 'Raleway', sans-serif;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        /* Navigation */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: #000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            animation: slideDown 0.8s ease-out;
-        }
-
-        .navbar .logo {
-            height: 50px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-right: 0;
-        }
-
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #7209b7;
-            transform: scale(1.1);
-        }
-
-        #language-toggle {
-            background: #7209b7;
-            color: #fff;
-            border: 2px solid #fff;
-            border-radius: 25px;
-            padding: 0.5rem 1rem;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 100px;
-        }
-
-        #language-toggle:hover {
-            background: #9b5de5;
-            transform: scale(1.05);
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-        }
-
+        h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
+        h2 { font-size: 2.5rem; font-weight: 400; margin-bottom: 1.5rem; text-align: center; }
+        h3 { font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; text-align: center; }
+        p { font-family: 'Raleway', sans-serif; font-size: 1.1rem; color: #666; margin-bottom: 1rem; text-align: center; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); position: fixed; width: 100%; top: 0; z-index: 1000; animation: slideDown 0.8s ease-out; }
+        .navbar .logo { height: 50px; }
+        .nav-links { display: flex; list-style: none; align-items: center; flex-wrap: wrap; margin-right: 0; }
+        .nav-links li { margin-left: 1.5rem; }
+        .nav-links a { color: #fff; text-decoration: none; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: #7209b7; transform: scale(1.1); }
+        #language-toggle { background: #7209b7; color: #fff; border: 2px solid #fff; border-radius: 25px; padding: 0.5rem 1rem; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; min-width: 100px; }
+        #language-toggle:hover { background: #9b5de5; transform: scale(1.05); }
+        .hamburger { display: none; font-size: 2rem; background: none; border: none; color: #fff; cursor: pointer; }
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #000;
-                padding: 1rem;
-                text-align: center;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .nav-links li {
-                margin: 1rem 0;
-            }
+            .hamburger { display: block; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #000; padding: 1rem; text-align: center; }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 1rem 0; }
         }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        #bg-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            z-index: 10;
-        }
-
-        /* Hero Content Section */
-        .hero-content-section {
-            background: #fff;
-            padding: 4rem 2rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-content a {
-            color: #6a82fb;
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-
-        .hero-content a:hover {
-            color: #fc5c7d;
-        }
-
-        /* General Section Styles */
-        .section {
-            padding: 4rem 2rem;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .services-list {
-            list-style: none;
-            max-width: 800px;
-            margin: 2rem auto;
-            text-align: left;
-        }
-
-        .services-list li {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .services-list strong {
-            color: #2c3e50;
-        }
-
-        /* Portfolio Section */
-        .work-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .work-item {
-            background: #fff;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease;
-            opacity: 0;
-            transform: translateX(-100px);
-        }
-
-        .work-item.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .work-item:hover {
-            transform: translateY(-5px) scale(1.05) rotate(2deg);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .work-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .work-item p {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* Colored Subsections in Portfolio */
-        .portfolio-subsection {
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-        }
-
-        .motion-graphics {
-            background-color: #e8f0fe; /* Light blue */
-        }
-
-        .animation {
-            background-color: #fef4e8; /* Light orange */
-        }
-
-        .video-editing {
-            background-color: #e8fef4; /* Light green */
-        }
-
-        .design {
-            background-color: #f4e8fe; /* Light purple */
-        }
-
-        .illustration {
-            background-color: #fee8e8; /* Light red */
-        }
-
-        .branding {
-            background-color: #e8fefb; /* Light teal */
-        }
-
-        .logo-design {
-            background-color: #fefbe8; /* Light yellow */
-        }
-
-        /* Contact Section */
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            text-align: left;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Raleway', sans-serif;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-        }
-
-        .cta-button {
-            background: #7209b7;
-            color: #fff;
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 25px;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        .cta-button:hover {
-            background: #9b5de5;
-            transform: scale(1.05);
-            animation: none;
-        }
-
-        /* Footer */
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer p {
-            font-family: 'Raleway', sans-serif;
-            font-size: 1rem;
-            color: #fff;
-        }
-
-        footer a {
-            color: #7209b7;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #9b5de5;
-        }
-
-        /* Awards Section */
-        .awards-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 2rem auto;
-        }
-
-        .awards-list div {
-            text-align: center;
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .awards-list div:hover {
-            transform: translateY(-5px);
-        }
-
-        .awards-list img {
-            width: 100%;
-            height: auto;
-            max-width: 300px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .awards-list img:hover {
-            transform: scale(1.05);
-        }
-
-        .awards-list h3 {
-            font-size: 1.5rem;
-            margin: 1rem 0 0.5rem;
-            color: #333333;
-        }
-
-        .awards-list p {
-            font-size: 1rem;
-            color: #666666;
-        }
-
-        /* Highlight Section */
-        .highlight-section {
-            background: #f0f0f0;
-            padding: 4rem 2rem;
-            margin: 4rem 0;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .highlight-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .highlight-section p {
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-        }
-
-        /* Additional Animations */
-        .page-content {
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        /* Parallax Effect for Hero */
-        .hero {
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-        }
+        .hero { position: relative; height: 100vh; width: 100%; overflow: hidden; }
+        .video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        #bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); }
+        .hero-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; z-index: 10; }
+        .hero-content-section { background: #fff; padding: 4rem 2rem; text-align: center; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero-content a { color: #6a82fb; text-decoration: none; font-weight: 700; transition: color 0.3s ease; }
+        .hero-content a:hover { color: #fc5c7d; }
+        .section { padding: 4rem 2rem; text-align: center; opacity: 0; transform: translateY(50px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        .services-list { list-style: none; max-width: 800px; margin: 2rem auto; text-align: left; }
+        .services-list li { margin-bottom: 1rem; font-size: 1.1rem; }
+        .services-list strong { color: #2c3e50; }
+        .work-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .work-item { background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: transform 0.4s ease; opacity: 0; transform: translateX(-100px); }
+        .work-item.visible { opacity: 1; transform: translateX(0); }
+        .work-item:hover { transform: translateY(-5px) scale(1.05) rotate(2deg); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+        .work-item img { width: 100%; height: auto; border-radius: 5px; }
+        .work-item p { margin-top: 1rem; font-size: 0.9rem; color: #666; }
+        .portfolio-subsection { padding: 2rem; margin-bottom: 2rem; border-radius: 10px; }
+        .motion-graphics { background-color: #e8f0fe; }
+        .animation { background-color: #fef4e8; }
+        .video-editing { background-color: #e8fef4; }
+        .design { background-color: #f4e8fe; }
+        .illustration { background-color: #fee8e8; }
+        .branding { background-color: #e8fefb; }
+        .logo-design { background-color: #fefbe8; }
+        .contact-form { max-width: 600px; margin: 2rem auto; text-align: left; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-family: 'Raleway', sans-serif; font-weight: 700; margin-bottom: 0.5rem; color: #2c3e50; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-family: 'Raleway', sans-serif; font-size: 1rem; }
+        .form-group textarea { resize: vertical; }
+        .cta-button { background: #7209b7; color: #fff; border: none; padding: 0.75rem 2rem; border-radius: 25px; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; animation: pulse 2s infinite ease-in-out; }
+        .cta-button:hover { background: #9b5de5; transform: scale(1.05); animation: none; }
+        footer { background: #000; color: #fff; text-align: center; padding: 1rem; position: relative; bottom: 0; width: 100%; }
+        footer p { font-family: 'Raleway', sans-serif; font-size: 1rem; color: #fff; }
+        footer a { color: #7209b7; text-decoration: none; transition: color 0.3s ease; }
+        footer a:hover { color: #9b5de5; }
+        .awards-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 2rem auto; }
+        .awards-list div { text-align: center; background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; }
+        .awards-list div:hover { transform: translateY(-5px); }
+        .awards-list img { width: 100%; height: auto; max-width: 300px; border-radius: 10px; transition: transform 0.3s ease; }
+        .awards-list img:hover { transform: scale(1.05); }
+        .awards-list h3 { font-size: 1.5rem; margin: 1rem 0 0.5rem; color: #333333; }
+        .awards-list p { font-size: 1rem; color: #666666; }
+        .highlight-section { background: #f0f0f0; padding: 4rem 2rem; margin: 4rem 0; text-align: center; opacity: 0; transform: translateY(50px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .highlight-section.visible { opacity: 1; transform: translateY(0); }
+        .highlight-section p { color: #333; max-width: 800px; margin: 0 auto; font-size: 1.2rem; }
+        .page-content { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        .hero { background-attachment: fixed; background-position: center; background-size: cover; }
     </style>
 </head>
 <body>
@@ -518,18 +114,15 @@
         </ul>
     </nav>
 
-    <!-- Hero Section with Video Background and Fallback -->
+    <!-- Hero Section with Video Background -->
     <section class="hero">
         <div id="video-background" class="video-container">
             <iframe id="bg-video" 
                 src="https://www.youtube.com/embed/PsIdXz9MB4E?autoplay=1&mute=1&loop=1&playlist=PsIdXz9MB4E&controls=0" 
                 frameborder="0" 
                 allow="autoplay; encrypted-media" 
-                allowfullscreen
-                onerror="this.style.display='none'; document.getElementById('video-fallback').style.display='block';">
+                allowfullscreen>
             </iframe>
-            <!-- Fallback Image -->
-            <img id="video-fallback" src="fallback-hero-image.jpg" alt="Fallback Hero Image" style="display: none; width: 100%; height: 100%; object-fit: cover;">
             <div class="video-overlay"></div>
             <img src="Lucid_Sky_Logo_Alpha.png" alt="Lucid Sky Media Transparent Logo" class="hero-logo">
         </div>
@@ -538,305 +131,76 @@
     <!-- Hero Content Section -->
     <section class="hero-content-section">
         <div class="hero-content">
-            <h1 data-en="Grow and Wake Up Your Brand with Motion" data-nl="Laat uw merk groeien met geavanceerde digitale oplossingen">Grow and Wake Up Your Brand with Motion</h1>
-            <h2 data-en="We craft visuals that don’t just sit there—they dance, they lead, they demand attention. For local brands and franchises, this isn’t optional anymore; it’s your edge." data-nl="Wij maken visuals die niet zomaar stilzitten—ze dansen, ze leiden, ze eisen aandacht. Voor lokale merken en franchises is dit geen optie meer; het is uw voorsprong.">We craft visuals that don’t just sit there—they dance, they lead, they demand attention. For local brands and franchises, this isn’t optional anymore; it’s your edge.</h2>
-            <a href="#contact" class="cta-button" data-en="Start Growing Today" data-nl="Begin vandaag met groeien">Start Growing Today</a>
+            <h1 data-en="Wake Up Your Brand with Motion" data-nl="Wek uw merk met beweging">Wake Up Your Brand with Motion</h1>
+            <h2 data-en="We’re Lucid Sky Media—digital creators who live for animation and motion graphics, built on the backbone of exceptional design. For local brands in <span class='dynamic-city-1'>Purmerend</span> or <span class='dynamic-city-2'>Best</span>, standing out is a battle—big-city buzz can feel out of reach. That’s where movement and smart design come in. Great design isn’t just nice to have; it’s essential—it amplifies animation, unlocks more creative possibilities, and makes your motion pop. Our visuals don’t just sit there; they grab eyes and hold hearts in a scrolling world. Tailored to your story, we blend bold design with dynamic motion to help you shine locally and slice through the noise. Updating your design could be the necessity that sparks endless animation options—let’s explore the possibilities together."
+                data-nl="Wij zijn Lucid Sky Media—digitale creators die leven voor animatie en motion graphics, gebouwd op de ruggengraat van uitzonderlijk ontwerp. Voor lokale merken in <span class='dynamic-city-1'>Purmerend</span> of <span class='dynamic-city-2'>Best</span> is opvallen een strijd—de grote-stadsdrukte voelt ver weg. Daar komen beweging en slim ontwerp om de hoek kijken. Geweldig ontwerp is niet zomaar een extraatje; het is essentieel—het versterkt animatie, opent meer creatieve mogelijkheden en laat uw beweging knallen. Onze visuals blijven niet stil; ze grijpen ogen en raken harten in een scrollende wereld. Op maat gemaakt voor uw verhaal, combineren we gedurfd ontwerp met dynamische beweging om u lokaal te laten schitteren en door het lawaai te breken. Het updaten van uw ontwerp kan de noodzaak zijn die eindeloze animatiemogelijkheden ontketent—laten we samen de mogelijkheden verkennen.">We’re Lucid Sky Media—digital creators who live for animation and motion graphics, built on the backbone of exceptional design. For local brands in <span class='dynamic-city-1'>Purmerend</span> or <span class='dynamic-city-2'>Best</span>, standing out is a battle—big-city buzz can feel out of reach. That’s where movement and smart design come in. Great design isn’t just nice to have; it’s essential—it amplifies animation, unlocks more creative possibilities, and makes your motion pop. Our visuals don’t just sit there; they grab eyes and hold hearts in a scrolling world. Tailored to your story, we blend bold design with dynamic motion to help you shine locally and slice through the noise. Updating your design could be the necessity that sparks endless animation options—let’s explore the possibilities together.</h2>
+            <a href="#contact" class="cta-button" data-en="Let’s Get Moving" data-nl="Laten we beginnen">Let’s Get Moving</a>
         </div>
     </section>
 
     <!-- Our Services Section -->
     <section id="services" class="section">
-        <h2 data-en="What We Do to Lift Your Brand" data-nl="Wat we doen om uw merk te versterken">What We Do to Lift Your Brand</h2>
-        <p data-en="We deliver modern digital solutions to make your franchise impossible to ignore." data-nl="Wij leveren moderne digitale oplossingen om uw franchise onmogelijk te negeren te maken.">We deliver modern digital solutions to make your franchise impossible to ignore.</p>
-        <ul class="services-list">
-            <li><strong data-en="Video Editing:" data-nl="Videobewerking:">Video Editing:</strong> <span data-en="Slick promos that drive engagement." data-nl="Strakke promo's die betrokkenheid stimuleren.">Slick promos that drive engagement.</span></li>
-            <li><strong data-en="Animations & Motion Graphics:" data-nl="Animaties & Motion Graphics:">Animations & Motion Graphics:</strong> <span data-en="Dynamic visuals for menus, logos, and more." data-nl="Dynamische visuals voor menu's, logo's en meer.">Dynamic visuals for menus, logos, and more.</span></li>
-            <li><strong data-en="AI Design & Animation:" data-nl="AI-ontwerp & Animatie:">AI Design & Animation:</strong> <span data-en="Next-gen creativity to stand out." data-nl="Next-gen creativiteit om op te vallen.">Next-gen creativity to stand out.</span></li>
-            <li><strong data-en="Web Intros & Design:" data-nl="Webintro's & Ontwerp:">Web Intros & Design:</strong> <span data-en="First impressions that convert." data-nl="Eerste indrukken die converteren.">First impressions that convert.</span></li>
-            <li><strong data-en="Brand Growth:" data-nl="Merkgroei:">Brand Growth:</strong> <span data-en="Strategies to boost sales and visibility." data-nl="Strategieën om omzet en zichtbaarheid te vergroten.">Strategies to boost sales and visibility.</span></li>
-        </ul>
-        <p data-en="See it in action—check our reel " data-nl="Zie het in actie—bekijk onze reel ">See it in action—check our reel <a href="https://youtu.be/PsIdXz9MB4E" target="_blank" data-en="here" data-nl="hier">here</a>!</p>
+        <h2 data-en="Ditch the Static—Stand Out" data-nl="Weg met statisch—val op">Ditch the Static—Stand Out</h2>
+        <p data-en="Static visuals won’t save you from fading against big chains or online giants. If your digital presence is outdated, you’re losing ground. We make everything better with motion—guiding attention where it counts. Our animation hooks scrollers and turns them into fans, with social ads and intros that pop. Tailored for your local market, it’s your edge to stay unmissable." 
+            data-nl="Statische visuals redden u niet van vervaging tegen grote ketens of online reuzen. Als uw digitale aanwezigheid verouderd is, verliest u terrein. Wij maken alles beter met beweging—de aandacht sturend waar het telt. Onze animatie haakt scrollers en maakt ze fans, met sociale advertenties en intro’s die knallen. Op maat voor uw lokale markt, het is uw voorsprong om onmisbaar te blijven.">Static visuals won’t save you from fading against big chains or online giants. If your digital presence is outdated, you’re losing ground. We make everything better with motion—guiding attention where it counts. Our animation hooks scrollers and turns them into fans, with social ads and intros that pop. Tailored for your local market, it’s your edge to stay unmissable.</p>
     </section>
 
     <!-- Process Section -->
     <section id="process" class="section">
-        <h2 data-en="How We Help You Succeed" data-nl="Hoe wij u helpen slagen">How We Help You Succeed</h2>
-        <div class="process-steps">
-            <div>
-                <h3 data-en="1. We Analyze" data-nl="1. Wij analyseren">1. We Analyze</h3>
-                <p data-en="Uncover what’s missing from your brand." data-nl="Ontdek wat er ontbreekt aan uw merk.">Uncover what’s missing from your brand.</p>
-            </div>
-            <div>
-                <h3 data-en="2. We Create" data-nl="2. Wij creëren">2. We Create</h3>
-                <p data-en="Stunning animations and videos tailored to you." data-nl="Verbluffende animaties en video’s op maat voor u.">Stunning animations and videos tailored to you.</p>
-            </div>
-            <div>
-                <h3 data-en="3. You Grow" data-nl="3. U groeit">3. You Grow</h3>
-                <p data-en="Watch your sales and visibility soar." data-nl="Zie uw omzet en zichtbaarheid stijgen.">Watch your sales and visibility soar.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Highlight Section -->
-    <section class="highlight-section">
-        <h3 data-en="Not sure where to start? We’ve got you." data-nl="Niet zeker waar te beginnen? Wij staan klaar.">Not sure where to start? We’ve got you.</h3>
-        <p data-en="Our animation and motion brand analysis digs into your visuals to uncover what’s working—and what’s begging for a boost. We’ll show you exactly where a splash of modern animation or a clever motion graphic can grab your audience’s attention and turn it into action. For smaller brands and franchises, this is the secret sauce to standing out locally and driving engagement. Let’s analyze, enhance, and grow your brand together." data-nl="Weet u niet waar te beginnen? Wij staan voor u klaar. Onze animatie- en motion-brandanalyse duikt in uw visuals om te ontdekken wat werkt—en wat smeekt om een boost. We laten u precies zien waar een vleugje moderne animatie of een slimme motion graphic de aandacht van uw publiek kan grijpen en omzetten in actie. Voor kleinere merken en franchises is dit het geheime ingrediënt om lokaal op te vallen en betrokkenheid te stimuleren. Laten we uw merk samen analyseren, verbeteren en laten groeien.">Our animation and motion brand analysis digs into your visuals to uncover what’s working—and what’s begging for a boost. We’ll show you exactly where a splash of modern animation or a clever motion graphic can grab your audience’s attention and turn it into action. For smaller brands and franchises, this is the secret sauce to standing out locally and driving engagement. Let’s analyze, enhance, and grow your brand together.</p>
+        <h2 data-en="Find Your Visual Edge—Brand Analysis" data-nl="Vind uw visuele voorsprong—merkanalyse">Find Your Visual Edge—Brand Analysis</h2>
+        <p data-en="Not sure why you’re overlooked? We’ve got answers. Our animation and motion brand analysis dives into your visuals, spotting where old tools or tight budgets hold you back. We map out exactly how a smart animation or motion graphic can lift you up and drive action. For franchises in <span class='dynamic-city-3'>Zaandam</span> or <span class='dynamic-city-4'>Krommenie</span>, this is your custom key to breaking through." 
+            data-nl="Niet zeker waarom u over het hoofd wordt gezien? Wij hebben antwoorden. Onze animatie- en motion-merkanalyse duikt in uw visuals, ontdekt waar oude tools of krappe budgetten u tegenhouden. We laten precies zien hoe een slimme animatie of motion graphic u kan opheffen en actie kan stimuleren. Voor franchises in <span class='dynamic-city-3'>Zaandam</span> of <span class='dynamic-city-4'>Krommenie</span> is dit uw persoonlijke sleutel tot doorbraak.">Not sure why you’re overlooked? We’ve got answers. Our animation and motion brand analysis dives into your visuals, spotting where old tools or tight budgets hold you back. We map out exactly how a smart animation or motion graphic can lift you up and drive action. For franchises in <span class='dynamic-city-3'>Zaandam</span> or <span class='dynamic-city-4'>Krommenie</span>, this is your custom key to breaking through.</p>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="section work-section">
         <h2 data-en="Where Creativity Meets Results" data-nl="Waar creativiteit resultaat ontmoet">Where Creativity Meets Results</h2>
-        <p style="margin-bottom: 4rem;" data-en="We’re Lucid Sky Media—digital creators who thrive on animation and motion graphics. For local brands in Purmerend or Best, getting seen is a fight—big-city buzz feels far off. That’s why movement matters. Our visuals don’t sit still; they grab eyes and hold hearts in a scrolling world. Crafted just for your story, we give you the spark to shine locally and cut through the noise" data-nl="Ontdek ons werk—animaties, video’s en ontwerpen die merken hebben geholpen groeien. Meer bewegende previews binnenkort!">We’re Lucid Sky Media—digital creators who thrive on animation and motion graphics. For local brands in Purmerend or Best, getting seen is a fight—big-city buzz feels far off. That’s why movement matters. Our visuals don’t sit still; they grab eyes and hold hearts in a scrolling world. Crafted just for your story, we give you the spark to shine locally and cut through the noise</p>
+        <p style="margin-bottom: 4rem;" data-en="We’re Lucid Sky Media—digital creators who thrive on animation and motion graphics. For local brands in <span class='dynamic-city-1'>Purmerend</span> or <span class='dynamic-city-2'>Best</span>, getting seen is a fight—big-city buzz feels far off. That’s why movement matters. Our visuals don’t sit still; they grab eyes and hold hearts in a scrolling world. Crafted just for your story, we give you the spark to shine locally and cut through the noise" 
+            data-nl="Ontdek ons werk—animaties, video’s en ontwerpen die merken hebben geholpen groeien. Meer bewegende previews binnenkort!">We’re Lucid Sky Media—digital creators who thrive on animation and motion graphics. For local brands in <span class='dynamic-city-1'>Purmerend</span> or <span class='dynamic-city-2'>Best</span>, getting seen is a fight—big-city buzz feels far off. That’s why movement matters. Our visuals don’t sit still; they grab eyes and hold hearts in a scrolling world. Crafted just for your story, we give you the spark to shine locally and cut through the noise</p>
         
-        <!-- Motion Graphics -->
-        <div class="portfolio-subsection motion-graphics">
-            <h3 data-en="Motion Graphics" data-nl="Motion Graphics">Motion Graphics</h3>
-            <p data-en="We’re Lucid Sky Media—a team of digital dreamers who live and breathe animation and motion graphics. Why does this matter for your brand? Because in a world of TikTok scrolls, Instagram stories, and endless feeds, movement is what stops the thumb and captures the heart. We craft visuals that don’t just sit there—they dance, they lead, they demand attention. For local brands and franchises, this isn’t optional anymore; it’s your edge. Let’s make your audience see you like never before." data-nl="Wij zijn Lucid Sky Media—een team van digitale dromers die leven voor animatie en motion graphics. Waarom is dit belangrijk voor uw merk? Omdat in een wereld van TikTok-scrolls, Instagram-verhalen en eindeloze feeds, beweging is wat de duim stopt en het hart verovert. Wij maken visuals die niet zomaar stilzitten—ze dansen, ze leiden, ze eisen aandacht. Voor lokale merken en franchises is dit geen optie meer; het is uw voorsprong. Laten we uw publiek u zien zoals nooit tevoren.">We’re Lucid Sky Media—a team of digital dreamers who live and breathe animation and motion graphics. Why does this matter for your brand? Because in a world of TikTok scrolls, Instagram stories, and endless feeds, movement is what stops the thumb and captures the heart. We craft visuals that don’t just sit there—they dance, they lead, they demand attention. For local brands and franchises, this isn’t optional anymore; it’s your edge. Let’s make your audience see you like never before.</p>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <img src="video_Nitrcharge_Adidas_Gif.gif" alt="Adidas Motion Graphic">
-                    <p data-en="Adidas Nitrocharge, Motion graphics for mobile game which connects to your desktop device." data-nl="Adidas Nitrocharge, Motion graphics voor Adidas mobile spel die connect met je desktop apparaat.">Adidas Nitrocharge, Motion graphics for mobile game which connects to your desktop device.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Sparta_testlab_loop.gif" alt="Sparta Test Lab">
-                    <p data-en="A blend of elegance and motion for Sparta Test Lab." data-nl="Een mix van elegantie en beweging voor Sparta Test Lab.">A blend of elegance and motion for Sparta Test Lab.</p>
-                </div>
-                <div class="work-item">
-                    <img src="video_sunfun_loop.gif" alt="Vichy, Fun Sun">
-                    <p data-en="Vichy, Motion graphics for Vichy's new sunblock product for kids." data-nl="Vichy, Motion graphics voor Vichy's nieuwe zonnebrandcrème voor kinderen.">Vichy, Motion graphics for Vichy's new sunblock product for kids.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Jetix_loop.gif" alt="Jetix Animation">
-                    <p data-en="Jetix, Motion graphic animation for a web intro." data-nl="Jetix, Motion graphic animatie voor een webintro.">Jetix, Motion graphic animation for a web intro.</p>
-                </div>
-                <div class="work-item">
-                    <img src="video_kaplan_gif.gif" alt="Kaplan Project Video Editing">
-                    <p data-en="Kaplan, motion graphics for a LinkedIn project." data-nl="Kaplan, motion graphics voor een LinkedIn-project.">Kaplan, motion graphics for a LinkedIn project.</p>
-                </div>
-                <div class="work-item">
-                    <img src="mc-break-2-loop.gif" alt="McDonalds Break 1 Video">
-                    <p data-en="McDonald’s, Mc break campaign. Responsible for the motion graphics." data-nl="McDonald’s, Mc break campagne. Verantwoordelijk voor de motion graphics.">McDonald’s, Mc break campaign. Responsible for the motion graphics.</p>
-                </div>
-                <div class="work-item">
-                    <img src="mc-break-1-loop.gif" alt="McDonalds Break 2 Video">
-                    <p data-en="Another snippet for McDonald’s Mc break campaign." data-nl="Nog een fragment voor McDonald’s Mc break campagne.">Another snippet for McDonald’s Mc break campaign.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Heinekenbakery_loop.gif" alt="Heineken Bakery Animation">
-                    <p data-en="Heineken Bakery, motion graphics for Heineken's campaign." data-nl="Heineken Bakery, motion graphics voor Heineken's campagne.">Heineken Bakery, motion graphics for Heineken's campaign.</p>
-                </div>
-                <div class="work-item">
-                    <img src="KempenaarKraus_01.gif" alt="Kraus&Kraus, a water & power installation company">
-                    <p data-en="Kraus&Kraus, motion and graphics for their water & power installation company website" data-nl="Kraus&Kraus, motion en graphics voor hun water- en energie-installatiebedrijf website.">Kraus&Kraus, motion and graphics for their water & power installation company website</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Animation -->
-        <div class="portfolio-subsection animation">
-            <h3 data-en="Animation" data-nl="Animatie">Animation</h3>
-            <p data-en="Static visuals won’t save you from fading against big chains or online giants. If your digital presence is outdated, you’re losing ground. We make everything better with motion—guiding attention where it counts. Our animation hooks scrollers and turns them into fans, with social ads and intros that pop. Tailored for your local market, it’s your edge to stay unmissable." data-nl="Statische visuals redden u niet van vervaging tegenover grote ketens of online reuzen. Als uw digitale aanwezigheid verouderd is, verliest u terrein. Wij maken alles beter met beweging—de aandacht richtend waar het telt. Onze animatie haakt scrollers en verandert ze in fans, met sociale advertenties en intro’s die opvallen. Op maat gemaakt voor uw lokale markt, het is uw voorsprong om onmisbaar te blijven.">Static visuals won’t save you from fading against big chains or online giants. If your digital presence is outdated, you’re losing ground. We make everything better with motion—guiding attention where it counts. Our animation hooks scrollers and turns them into fans, with social ads and intros that pop. Tailored for your local market, it’s your edge to stay unmissable.</p>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <img src="video_Postnl_Gif.gif" alt="Animated Characters">
-                    <p data-en="Post NL, a movie we helped with creating animated scenes." data-nl="Post NL, een film waarin wij hebben geholpen met het maken van geanimeerde scènes.">Post NL, a movie we helped with creating animated scenes.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Korra_loop_01.gif" alt="Korra Avatar Game Motion Graphic">
-                    <p data-en="Motion graphics for Korra the Avatar game." data-nl="Motion graphics voor het Korra the Avatar-spel.">Motion graphics for Korra the Avatar game.</p>
-                </div>
-                <div class="work-item">
-                    <img src="RedBull_video_loop_07.gif" alt="Red Bull">
-                    <p data-en="Streamers toolkit game." data-nl="Streamers toolkit-spel.">Streamers toolkit game.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Aegonchaos_loop.gif" alt="Aegon">
-                    <p data-en="Streamers toolkit" data-nl="Streamers toolkit">Streamers toolkit</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Aegon_loop.gif" alt="Aegon">
-                    <p data-en="Streamers toolkit" data-nl="Streamers toolkit">Streamers toolkit</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Warrior_2_loop.gif" alt="Warrior">
-                    <p data-en="Animation for an Anime." data-nl="Animatie voor een anime.">Animation for an Anime.</p>
-                </div>
-                <div class="work-item">
-                    <img src="RedBull_video_loop_06.gif" alt="HELLO HELLO Graphic">
-                    <p data-en="Red Bull, 'HELLO HELLO' motion graphics for the streamers toolkit." data-nl="Red Bull, 'HELLO HELLO' motion graphics voor de streamers toolkit.">Red Bull, 'HELLO HELLO' motion graphics for the streamers toolkit.</p>
-                </div>
-                <div class="work-item">
-                    <img src="RedBull_video_loop_04.gif" alt="VOLTA PRO LOBBY Graphic">
-                    <p data-en="High-energy 'VOLTA PRO LOBBY' graphic for the streamers toolkit for gaming streamsessions." data-nl="Hoogenergetische 'VOLTA PRO LOBBY' graphic voor de streamers toolkit voor gaming streamsessies.">High-energy 'VOLTA PRO LOBBY' graphic for the streamers toolkit for gaming streamsessions.</p>
-                </div>
-                <div class="work-item">
-                    <img src="EK_Appie.gif" alt="EK van Appie Graphic">
-                    <p data-en="EK van Appie." data-nl="EK van Appie.">EK van Appie.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Video Editing -->
-        <div class="portfolio-subsection video-editing">
-            <h3 data-en="Video Editing" data-nl="Videobewerking">Video Editing</h3>
-            <p data-en="Turning passersby into loyalists is tough without a story that sticks. We shoot, edit, and polish videos—brand films, ads, intros—into moments your audience can’t forget. Paired with our motion expertise, it’s a custom fix for digital overwhelm. For randstad brands, this is how you build a following that keeps coming back." data-nl="Het omzetten van voorbijgangers in loyalisten is moeilijk zonder een verhaal dat blijft hangen. Wij filmen, bewerken en polijsten video’s—merkfilms, advertenties, intro’s—tot momenten die uw publiek niet kan vergeten. Gecombineerd met onze motion-expertise is het een op maat gemaakte oplossing voor digitale overvloed. Voor randstad-merken is dit hoe u een aanhang opbouwt die blijft terugkomen.">Turning passersby into loyalists is tough without a story that sticks. We shoot, edit, and polish videos—brand films, ads, intros—into moments your audience can’t forget. Paired with our motion expertise, it’s a custom fix for digital overwhelm. For randstad brands, this is how you build a following that keeps coming back.</p>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <img src="EzGif.gif" alt="Leaseplan">
-                    <p data-en="Leaseplan, video editing." data-nl="Leaseplan, videobewerking.">Leaseplan, video editing.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Video_DCBrandMovie_Loop_01.gif" alt="DC, Brand Movie">
-                    <p data-en="DC brand movie, video editing for a tech agency." data-nl="DC merkfilm, videobewerking voor een techbureau.">DC brand movie, video editing for a tech agency.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Monta_fx.gif" alt="Monta Sports">
-                    <p data-en="Monta Sports, video editing for Edgar Davids." data-nl="Monta Sports, videobewerking voor Edgar Davids.">Monta Sports, puedan editing for Edgar Davids.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Gamaju_loop.gif" alt="Gamaju video edit">
-                    <p data-en="Video editing for Gamaju a Luxury fashion brand." data-nl="Videobewerking voor Gamaju, een luxe modemerk.">Video editing for Gamaju a Luxury fashion brand.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Design -->
-        <div class="portfolio-subsection design">
-            <h3 data-en="Design" data-nl="Ontwerp">Design</h3>
-            <p data-en="Getting seen is a fight—big-city buzz feels far off. That’s why movement matters. Our visuals don’t sit still; they grab eyes and hold hearts in a scrolling world. Crafted just for your story, we give you the spark to shine locally and cut through the noise." data-nl="Opvallen is een strijd—de bruisende sfeer van de grote stad voelt ver weg. Daarom is beweging belangrijk. Onze visuals blijven niet stil; ze grijpen ogen en raken harten in een scrollende wereld. Speciaal voor uw verhaal gemaakt, geven we u de vonk om lokaal te schitteren en door het lawaai heen te breken.">Getting seen is a fight—big-city buzz feels far off. That’s why movement matters. Our visuals don’t sit still; they grab eyes and hold hearts in a scrolling world. Crafted just for your story, we give you the spark to shine locally and cut through the noise.</p>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <img src="Smint-Designasset3.jpeg" alt="Mobile App Screens">
-                    <p data-en="Smint, WordSmint Brand and UI/UX designs with a personal touch." data-nl="Smint, WordSmint merk en UI/UX-ontwerpen met een persoonlijk tintje.">Smint, WordSmint Brand and UI/UX designs with a personal touch.</p>
-                </div>
-                <div class="work-item">
-                    <img src="07_bradot_Restaurant.jpg" alt="Bradot Restaurant Design">
-                    <p data-en="Bardot restaurant brand and design focusing on ambiance." data-nl="Bardot restaurantmerk en ontwerp gericht op sfeer.">Bardot restaurant brand and design focusing on ambiance.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Video_Brain.gif" alt="Branded titles for a company's brand movie">
-                    <p data-en="DC, Branded titles for a tech company's brand movie." data-nl="DC, Merkgebonden titels voor de merkfilm van een techbedrijf.">DC, Branded titles for a tech company's brand movie.</p>
-                </div>
-                <div class="work-item">
-                    <img src="RedBull_streamers_FlakesHello_2.png" alt="Design Mockup">
-                    <p data-en="Red Bull, design streamers toolkit elements for live streaming." data-nl="Red Bull, ontwerp streamers toolkit-elementen voor live streaming.">Red Bull, design streamers toolkit elements for live streaming.</p>
-                </div>
-                <div class="work-item">
-                    <img src="binnenkomt.png" alt="Notification Design">
-                    <p data-en="Aegon, designing a brand informatic movie which fits their brand." data-nl="Aegon, ontwerpen van een merk-informatieve film die bij hun merk past.">Aegon, designing a brand informatic movie which fits their brand.</p>
-                </div>
-                <div class="work-item">
-                    <img src="draw_triangle_right.png" alt="Geometric Design">
-                    <p data-en="Adidas Nitrocharge motion graphics animation design." data-nl="Adidas Nitrocharge motion graphics animatie-ontwerp.">Adidas Nitrocharge motion graphics animation design.</p>
-                </div>
-                <div class="work-item">
-                    <img src="RedBull_Volta_Pro_Lobby.png" alt="Smint Design Asset">
-                    <p data-en="Design asset for Smint, for packaging or digital use." data-nl="Ontwerpelement voor Smint, voor verpakking of digitaal gebruik.">Design asset for Smint, for packaging or digital use.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Smint-Mobiledesign.jpeg" alt="Smint Mobile Design">
-                    <p data-en="Smint, Wordsmint design of visuals." data-nl="Smint, Wordsmint ontwerp van visuals.">Smint, Wordsmint design of visuals.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Illustration -->
-        <div class="portfolio-subsection illustration">
-            <h3 data-en="Illustration" data-nl="Illustratie">Illustration</h3>
-            <p data-en="Engagement fades when you blend into the scroll. We sketch storyboards and craft stunning illustrations in any style, then animate them to pop. It’s a visual combo that turns your identity into a hook for local fans. Check our work—nothing generic, just yours. Let’s stun your audience and make them yours, too." data-nl="Betrokkenheid vervaagt wanneer u opgaat in de scroll. Wij schetsen storyboards en maken verbluffende illustraties in elke stijl, en animeren ze om op te vallen. Het is een visuele combinatie die uw identiteit verandert in een haak voor lokale fans. Bekijk ons werk—niets generieks, alleen van u. Laten we uw publiek verbluffen en ook van u maken.">Engagement fades when you blend into the scroll. We sketch storyboards and craft stunning illustrations in any style, then animate them to pop. It’s a visual combo that turns your identity into a hook for local fans. Check our work—nothing generic, just yours. Let’s stun your audience and make them yours, too.</p>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <img src="StarBucks_coffee-illustration.png" alt="Starbucks Coffee Illustration">
-                    <p data-en="Starbucks, illustration for Starbucks franchises" data-nl="Starbucks, illustratie voor Starbucks-franchises">Starbucks, illustration for Starbucks franchises</p>
-                </div>
-                <div class="work-item">
-                    <img src="video_Illustrations_loop_03.gif" alt="Mobil game background Illustrations">
-                    <p data-en="Into the Shadows game, Background illustrations for a mobile game." data-nl="Into the Shadows-spel, achtergrondillustraties voor een mobiel spel.">Into the Shadows game, Background illustrations for a mobile game.</p>
-                </div>
-                <div class="work-item">
-                    <img src="RedBull_Streamers_Toolkit 2.png" alt="Abstract Illustration">
-                    <p data-en="Red Bull, Illustrations elements for Red Bull signed streamers." data-nl="Red Bull, illustratie-elementen voor door Red Bull ondertekende streamers.">Red Bull, Illustrations elements for Red Bull signed streamers.</p>
-                </div>
-                <div class="work-item">
-                    <img src="04_Bardot.png" alt="Bardot Illustration">
-                    <p data-en="Bardot restaurant, Illustrations made for restaurant Bardot essential for their brand identity." data-nl="Bardot restaurant, illustraties gemaakt voor restaurant Bardot, essentieel voor hun merkidentiteit.">Bardot restaurant, Illustrations made for restaurant Bardot essential for their brand identity.</p>
-                </div>
-                <div class="work-item">
-                    <img src="video_Illustrations_loop_02.gif" alt="Backgrounds mobile game">
-                    <p data-en="Into the Shadows game, Background illustrations showcasing artistic detail." data-nl="Into the Shadows-spel, achtergrondillustraties die artistieke details tonen.">Into the Shadows game, Background illustrations showcasing artistic detail.</p>
-                </div>
-                <div class="work-item">
-                    <img src="The_Babies_Club_Andy_VS.png" alt="Babies Club Andy VS Illustration">
-                    <p data-en="The Babies Club, Illustrations for a crypto brand." data-nl="The Babies Club, illustraties voor een cryptomerk.">The Babies Club, Illustrations for a crypto brand.</p>
-                </div>
-                <div class="work-item">
-                    <img src="BabiesClubX_Andy.png" alt="Babies Club X Andy Branding">
-                    <p data-en="Playful branding for The Babies Club X, targeting a young audience." data-nl="Speelse branding voor The Babies Club X, gericht op een jong publiek.">Playful branding for The Babies Club X, targeting a young audience.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Branding -->
-        <div class="portfolio-subsection branding">
-            <h3 data-en="Branding" data-nl="Branding">Branding</h3>
-            <p data-en="Not sure why you’re overlooked? We’ve got answers. Our animation and motion brand analysis dives into your visuals, spotting where old tools or tight budgets hold you back. We map out exactly how a smart animation or motion graphic can lift you up and drive action. For franchises in Zaandam or Krommenie, this is your custom key to breaking through." data-nl="Niet zeker waarom u over het hoofd wordt gezien? Wij hebben antwoorden. Onze animatie- en motion-brandanalyse duikt in uw visuals en ontdekt waar oude tools of krappe budgetten u tegenhouden. We laten precies zien hoe een slimme animatie of motion graphic u kan opheffen en actie kan stimuleren. Voor franchises in Zaandam of Krommenie is dit uw op maat gemaakte sleutel om door te breken.">Not sure why you’re overlooked? We’ve got answers. Our animation and motion brand analysis dives into your visuals, spotting where old tools or tight budgets hold you back. We map out exactly how a smart animation or motion graphic can lift you up and drive action. For franchises in Zaandam or Krommenie, this is your custom key to breaking through.</p>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <img src="Arome__00.png" alt="Arome Branding 00">
-                    <p data-en="Modern branding for Arome, focusing on clean aesthetics." data-nl="Moderne branding voor Arome, gericht op strakke esthetiek.">Modern branding for Arome, focusing on clean aesthetics.</p>
-                </div>
-                <div class="work-item">
-                    <img src="01_Bardot.gif" alt="Bardot Branding">
-                    <p data-en="Bardot branding with a modern, minimalist design." data-nl="Bardot branding met een modern, minimalistisch ontwerp.">Bardot branding with a modern, minimalist design.</p>
-                </div>
-                <div class="work-item">
-                    <img src="miyako-Branding cans.png" alt="Miyako Branding Cans">
-                    <p data-en="Miyako Beverage design—modern and artistic branding." data-nl="Miyako drankontwerp—modern en artistieke branding.">Miyako Beverage design—modern and artistic branding.</p>
-                </div>
-                <div class="work-item">
-                    <img src="05_Bardot_brand.png" alt="Bardot Illustrative Branding">
-                    <p data-en="Illustrative branding for Bardot, combining art and design." data-nl="Illustratieve branding voor Bardot, een combinatie van kunst en ontwerp.">Illustrative branding for Bardot, combining art and design.</p>
-                </div>
-                <div class="work-item">
-                    <img src="gamaju.png" alt="Gamaju Branding">
-                    <p data-en="Luxury branding for Gamaju, focusing on design and graphics." data-nl="Luxe branding voor Gamaju, gericht op ontwerp en graphics.">Luxury branding for Gamaju, focusing on design and graphics.</p>
-                </div>
-                <div class="work-item">
-                    <img src="heinekenbakery.png" alt="Heineken Bakery Branding">
-                    <p data-en="Branding for Heineken Bakery, combining food and beverage elements." data-nl="Branding voor Heineken Bakery, een combinatie van voedsel- en drankelementen.">Branding for Heineken Bakery, combining food and beverage elements.</p>
-                </div>
-                <div class="work-item">
-                    <img src="bowermans.png" alt="Bowermans Egg Branding">
-                    <p data-en="Branding for Bowerman’s Egg, a restaurant brand rebranding." data-nl="Branding voor Bowerman’s Egg, een restaurantmerk herpositionering.">Branding for Bowerman’s Egg, a restaurant brand rebranding.</p>
-                </div>
-                <div class="work-item">
-                    <img src="binnenkomt.png" alt="Aegon Notification Design">
-                    <p data-en="Aegon branding with motion graphics for explanation videos." data-nl="Aegon branding met motion graphics voor uitlegvideo’s.">Aegon branding with motion graphics for explanation videos.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Logo Design -->
+        <!-- Logos That Lead -->
         <div class="portfolio-subsection logo-design">
-            <h3 data-en="Logo Design" data-nl="Logo Ontwerp">Logo Design</h3>
-            <p data-en="No design skills in-house? No worries. A weak logo or tired branding can’t compete with the big players. We craft bold, unique logos and identities that set you apart—built for your vibe, not some generic mold. For smaller brands, it’s the foundation to rival anyone, anywhere. Let’s shape a look that screams you." data-nl="Geen ontwerpvaardigheden in huis? Geen zorgen. Een zwak logo of vermoeide branding kan niet concurreren met de grote spelers. Wij maken gedurfde, unieke logo’s en identiteiten die u onderscheiden—gebouwd voor uw sfeer, niet een generieke mal. Voor kleinere merken is het de basis om met iedereen, overal te concurreren. Laten we een look vormen die schreeuwt om u.">No design skills in-house? No worries. A weak logo or tired branding can’t compete with the big players. We craft bold, unique logos and identities that set you apart—built for your vibe, not some generic mold. For smaller brands, it’s the foundation to rival anyone, anywhere. Let’s shape a look that screams you.</p>
+            <h3 data-en="Logos That Lead—Creative Foundations" data-nl="Logo’s die leiden—creatieve fundamenten">Logos That Lead—Creative Foundations</h3>
+            <p data-en="No design skills in-house? No worries. A weak logo or tired branding can’t compete with the big players. We craft bold, unique logos and identities that set you apart—built for your vibe, not some generic mold. For smaller brands, it’s the foundation to rival anyone, anywhere. Let’s shape a look that screams you." 
+                data-nl="Geen ontwerpvaardigheden in huis? Geen probleem. Een zwak logo of vermoeide branding kan niet concurreren met de grote spelers. Wij maken gedurfde, unieke logo’s en identiteiten die u onderscheiden—gebouwd voor uw vibe, niet een generieke mal. Voor kleinere merken is dit het fundament om iedereen, overal te evenaren. Laten we een look vormgeven die schreeuwt wie u bent.">No design skills in-house? No worries. A weak logo or tired branding can’t compete with the big players. We craft bold, unique logos and identities that set you apart—built for your vibe, not some generic mold. For smaller brands, it’s the foundation to rival anyone, anywhere. Let’s shape a look that screams you.</p>
             <div class="work-gallery">
-                <div class="work-item">
-                    <img src="Vichy-New_Branding.png" alt="Vichy Fun Sun Logo">
-                    <p data-en="Playful logo for Vichy Fun Sun—vibrant and eye-catching." data-nl="Speels logo voor Vichy Fun Sun—levendig en opvallend.">Playful logo for Vichy Fun Sun—vibrant and eye-catching.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Arome__00.png" alt="Arome Branding 00">
-                    <p data-en="Modern logo for Arome, focusing on clean aesthetics." data-nl="Modern logo voor Arome, gericht op strakke esthetiek.">Modern logo for Arome, focusing on clean aesthetics.</p>
-                </div>
-                <div class="work-item">
-                    <img src="Arome__02.png" alt="Arome Branding 02">
-                    <p data-en="Arome logo with a modern, minimalist design." data-nl="Arome logo met een modern, minimalistisch ontwerp.">Arome logo with a modern, minimalist design.</p>
-                </div>
-                <div class="work-item">
-                    <img src="05_Bardot_brand.png" alt="Bardot Illustrative Branding">
-                    <p data-en="Illustrative logo for Bardot, combining art and design." data-nl="Illustratief logo voor Bardot, een combinatie van kunst en ontwerp.">Illustrative logo for Bardot, combining art and design.</p>
-                </div>
+                <div class="work-item"><img src="Vichy-New_Branding.png" alt="Vichy Fun Sun Logo"><p data-en="Playful logo for Vichy Fun Sun—vibrant and eye-catching." data-nl="Speels logo voor Vichy Fun Sun—levendig en opvallend.">Playful logo for Vichy Fun Sun—vibrant and eye-catching.</p></div>
+                <div class="work-item"><img src="Arome__00.png" alt="Arome Branding 00"><p data-en="Modern logo for Arome, focusing on clean aesthetics." data-nl="Modern logo voor Arome, gericht op een strakke esthetiek.">Modern branding for Arome, focusing on clean aesthetics.</p></div>
+                <div class="work-item"><img src="Arome__02.png" alt="Arome Branding 02"><p data-en="Arome logo with a modern, minimalist design." data-nl="Arome logo met een modern, minimalistisch ontwerp.">Arome branding with a modern, minimalist design.</p></div>
+                <div class="work-item"><img src="05_Bardot_brand.png" alt="Bardot Illustrative Branding"><p data-en="Illustrative logo for Bardot, combining art and design." data-nl="Illustratief logo voor Bardot, een combinatie van kunst en ontwerp.">Illustrative branding for Bardot, combining art and design.</p></div>
+            </div>
+        </div>
+
+        <!-- Glow-Ups That Work -->
+        <div class="portfolio-subsection animation">
+            <h3 data-en="Glow-Ups That Work—Animation Boosts" data-nl="Glow-ups die werken—animatieboosts">Glow-Ups That Work—Animation Boosts</h3>
+            <p data-en="Got graphics or a website stuck in the past? We’ll bring them to life. Our animation and motion graphics transform dated visuals into fresh, eye-catching assets. It’s not about flashy trends—it’s about boosting what you’ve got to connect with your crowd. For local businesses, this is the tailored glow-up that keeps you current and clickable." 
+                data-nl="Heeft u graphics of een website die vastzitten in het verleden? Wij brengen ze tot leven. Onze animatie en motion graphics veranderen verouderde visuals in frisse, opvallende assets. Het gaat niet om flitsende trends—het gaat om het versterken van wat u heeft om contact te maken met uw publiek. Voor lokale bedrijven is dit de op maat gemaakte glow-up die u actueel en klikbaar houdt.">Got graphics or a website stuck in the past? We’ll bring them to life. Our animation and motion graphics transform dated visuals into fresh, eye-catching assets. It’s not about flashy trends—it’s about boosting what you’ve got to connect with your crowd. For local businesses, this is the tailored glow-up that keeps you current and clickable.</p>
+            <div class="work-gallery">
+                <div class="work-item"><img src="video_Postnl_Gif.gif" alt="Animated Characters"><p data-en="Post NL, a movie we helped with creating animated scenes." data-nl="Post NL, een film waarin wij de animaties van produceerde.">Post NL, a movie we helped with creating animated scenes.</p></div>
+                <div class="work-item"><img src="Video_Korra_loop_01.gif" alt="Korra Avatar Game Motion Graphic"><p data-en="2D animation for The Korra avatar game, frame-by-frame attack sequences." data-nl="2D-animatie voor het Korra Avatar-spel, frame-voor-frame aanvalssequenties.">2D animation for The Korra avatar game, we did a frame by frame animation creating her attacks.</p></div>
+            </div>
+        </div>
+
+        <!-- Stories That Stay -->
+        <div class="portfolio-subsection video-editing">
+            <h3 data-en="Stories That Stay—Video Magic" data-nl="Verhalen die blijven—videomagie">Stories That Stay—Video Magic</h3>
+            <p data-en="Turning passersby into loyalists is tough without a story that sticks. We shoot, edit, and polish videos—brand films, ads, intros—into moments your audience can’t forget. Paired with our motion expertise, it’s a custom fix for digital overwhelm. For <span class='dynamic-region-1'>randstad</span> brands, this is how you build a following that keeps coming back." 
+                data-nl="Voorbijgangers veranderen in trouwe fans is moeilijk zonder een verhaal dat blijft hangen. Wij filmen, bewerken en perfectioneren video’s—merkfilms, advertenties, intro’s—tot momenten die uw publiek niet vergeet. Gecombineerd met onze motion-expertise is het een op maat gemaakte oplossing voor digitale overvloed. Voor <span class='dynamic-region-1'>randstad</span>-merken is dit hoe u een volgersgroep bouwt die terug blijft komen.">Turning passersby into loyalists is tough without a story that sticks. We shoot, edit, and polish videos—brand films, ads, intros—into moments your audience can’t forget. Paired with our motion expertise, it’s a custom fix for digital overwhelm. For <span class='dynamic-region-1'>randstad</span> brands, this is how you build a following that keeps coming back.</p>
+            <div class="work-gallery">
+                <div class="work-item"><img src="EzGif.gif" alt="Leaseplan"><p data-en="Leaseplan, video editing and motion graphics." data-nl="Leaseplan, videobewerking en motion graphics.">Leaseplan, video editing and motion graphics.</p></div>
+                <div class="work-item"><img src="Video_Video_DCBrandMovie_Loop_01.gif" alt="DC, Brand Movie"><p data-en="Brand video editing for DC, a tech agency." data-nl="Merkvideo-bewerking voor DC, een techbureau.">Brand Video editing for DC a tech agency.</p></div>
+            </div>
+        </div>
+
+        <!-- Draw Them Close -->
+        <div class="portfolio-subsection illustration">
+            <h3 data-en="Draw Them Close—Illustrations & More" data-nl="Trek ze dichterbij—illustraties & meer">Draw Them Close—Illustrations & More</h3>
+            <p data-en="Engagement fades when you blend into the scroll. We sketch storyboards and craft stunning illustrations in any style, then animate them to pop. It’s a visual combo that turns your identity into a hook for local fans. Check our work—nothing generic, just yours. Let’s stun your audience and make them yours, too." 
+                data-nl="Betrokkenheid vervaagt als u opgaat in de scroll. Wij schetsen storyboards en maken verbluffende illustraties in elke stijl, en animeren ze om op te vallen. Het is een visuele combo die uw identiteit verandert in een haak voor lokale fans. Bekijk ons werk—niets generieks, alleen van u. Laten we uw publiek verbazen en ze van u maken.">Engagement fades when you blend into the scroll. We sketch storyboards and craft stunning illustrations in any style, then animate them to pop. It’s a visual combo that turns your identity into a hook for local fans. Check our work—nothing generic, just yours. Let’s stun your audience and make them yours, too.</p>
+            <div class="work-gallery">
+                <div class="work-item"><img src="StarBucks_coffee-illustration.png" alt="Starbucks Coffee Illustration"><p data-en="Illustrative storytelling for Starbucks franchises." data-nl="Illustratieve verhalen voor Starbucks-franchises.">Illustrative storytelling for Starbucks.</p></div>
+                <div class="work-item"><img src="video_Illustrations_loop_03.gif" alt="Mobile game background Illustrations"><p data-en="Into the Shadows game, background illustrations for a mobile game." data-nl="Into the Shadows-spel, achtergrondillustraties voor een mobiel spel.">Illustrative storytelling for a mobile game.</p></div>
             </div>
         </div>
     </section>
@@ -844,7 +208,8 @@
     <!-- Franchise Marketing Section -->
     <section id="franchise" class="section">
         <h2 data-en="We Dream Big for Local Brands" data-nl="We dromen groot voor lokale merken">We Dream Big for Local Brands</h2>
-        <p data-en="Hey there! We’re Lucid Sky Media, and our mission is to give local franchises the digital glow-up they deserve. We believe every store, restaurant, or business has a story worth telling—and we’re here to tell it through jaw-dropping visuals. Our goal? To modernize your brand with video edits, animations, motion graphics, and AI design that connect with your customers and drive growth. We’ve worked with the big dogs (think AAA brands), and now we’re bringing that expertise to your doorstep. Let’s create something amazing together!" data-nl="Hoi daar! Wij zijn Lucid Sky Media, en onze missie is om lokale franchises de digitale opfrisbeurt te geven die ze verdienen. Wij geloven dat elke winkel, restaurant of bedrijf een verhaal heeft dat het waard is om te vertellen—en wij zijn hier om dat te doen met verbluffende visuals. Ons doel? Uw merk moderniseren met videobewerkingen, animaties, motion graphics en AI-ontwerp die uw klanten aanspreken en groei stimuleren. We hebben gewerkt met de grote spelers (denk aan AAA-merken), en nu brengen we die expertise naar uw voordeur. Laten we samen iets geweldigs creëren!">Hey there! We’re Lucid Sky Media, and our mission is to give local franchises the digital glow-up they deserve. We believe every store, restaurant, or business has a story worth telling—and we’re here to tell it through jaw-dropping visuals. Our goal? To modernize your brand with video edits, animations, motion graphics, and AI design that connect with your customers and drive growth. We’ve worked with the big dogs (think AAA brands), and now we’re bringing that expertise to your doorstep. Let’s create something amazing together!</p>
+        <p data-en="Hey there! We’re Lucid Sky Media, and our mission is to give local franchises the digital glow-up they deserve. We believe every store, restaurant, or business has a story worth telling—and we’re here to tell it through jaw-dropping visuals. Our goal? To modernize your brand with video edits, animations, motion graphics, and AI design that connect with your customers and drive growth. We’ve worked with the big dogs (think AAA brands), and now we’re bringing that expertise to your doorstep. Let’s create something amazing together!" 
+            data-nl="Hoi daar! Wij zijn Lucid Sky Media, en onze missie is om lokale franchises de digitale opfrisbeurt te geven die ze verdienen. Wij geloven dat elke winkel, restaurant of bedrijf een verhaal heeft dat het waard is om te vertellen—en wij zijn hier om dat te doen met verbluffende visuals. Ons doel? Uw merk moderniseren met videobewerkingen, animaties, motion graphics en AI-ontwerp die uw klanten aanspreken en groei stimuleren. We hebben gewerkt met de grote spelers (denk aan AAA-merken), en nu brengen we die expertise naar uw voordeur. Laten we samen iets geweldigs creëren!">Hey there! We’re Lucid Sky Media, and our mission is to give local franchises the digital glow-up they deserve. We believe every store, restaurant, or business has a story worth telling—and we’re here to tell it through jaw-dropping visuals. Our goal? To modernize your brand with video edits, animations, motion graphics, and AI design that connect with your customers and drive growth. We’ve worked with the big dogs (think AAA brands), and now we’re bringing that expertise to your doorstep. Let’s create something amazing together!</p>
         <div class="work-item">
             <img src="Arome__03.png" alt="Arome Branding">
             <p data-en="Elegant branding for Arome—elevated their presence." data-nl="Elegante branding voor Arome—verhoogde hun aanwezigheid.">Elegant branding for Arome—elevated their presence.</p>
@@ -856,12 +221,12 @@
         <h2 data-en="Our Achievements" data-nl="Onze prestaties">Our Achievements</h2>
         <div class="awards-list">
             <div>
-                <h3 data-en="Award Name 1" data-nl="Prijsnaam 1">Award Name 1</h3>
+                <h3 data-en="Award Name 1" data-nl="Prijsnaam 1">Awards 1</h3>
                 <img src="awards_01.png" alt="Award 1">
                 <p data-en="Year - Description (e.g., Best Motion Graphics)." data-nl="Jaar - Beschrijving (bijv. Beste Motion Graphics).">Year - Description (e.g., Best Motion Graphics).</p>
             </div>
             <div>
-                <h3 data-en="Award Name 2" data-nl="Prijsnaam 2">Award Name 2</h3>
+                <h3 data-en="Award Name 2" data-nl="Prijsnaam 2">Awards 2</h3>
                 <img src="awards_02.png" alt="Award 2">
                 <p data-en="Year - Description (e.g., Innovation in Video)." data-nl="Jaar - Beschrijving (bijv. Innovatie in Video).">Year - Description (e.g., Innovation in Video).</p>
             </div>
@@ -871,7 +236,8 @@
     <!-- About Us Section -->
     <section id="about" class="section">
         <h2 data-en="Meet Your Creative Partners" data-nl="Ontmoet uw creatieve partners">Meet Your Creative Partners</h2>
-        <p data-en="We’re Lucid Sky Media—a team obsessed with helping local brands grow through stunning visuals. Led by a creative director with AAA-brand experience, we bring big-agency expertise to your franchise. From animated menus to web intros, we make your story pop." data-nl="Wij zijn Lucid Sky Media—een team dat geobsedeerd is met het helpen groeien van lokale merken door verbluffende visuals. Onder leiding van een creatief directeur met AAA-merkervaring brengen we expertise van grote bureaus naar uw franchise. Van geanimeerde menu’s tot webintro’s, wij maken uw verhaal opvallend.">We’re Lucid Sky Media—a team obsessed with helping local brands grow through stunning visuals. Led by a creative director with AAA-brand experience, we bring big-agency expertise to your franchise. From animated menus to web intros, we make your story pop.</p>
+        <p data-en="We’re Lucid Sky Media—a team obsessed with helping local brands grow through stunning visuals. Led by a creative director with AAA-brand experience, we bring big-agency expertise to your franchise. From animated menus to web intros, we make your story pop." 
+            data-nl="Wij zijn Lucid Sky Media—een team dat geobsedeerd is met het helpen groeien van lokale merken door verbluffende visuals. Onder leiding van een creatief directeur met AAA-merkervaring brengen we expertise van grote bureaus naar uw franchise. Van geanimeerde menu’s tot webintro’s, wij maken uw verhaal opvallend.">We’re Lucid Sky Media—a team obsessed with helping local brands grow through stunning visuals. Led by a creative director with AAA-brand experience, we bring big-agency expertise to your franchise. From animated menus to web intros, we make your story pop.</p>
         <div class="work-item">
             <img src="BabiesClubX_boxing.png" alt="Babies Club X Boxing">
             <p data-en="Bold campaign for Babies Club X—punched up their reach." data-nl="Gedurfde campagne voor Babies Club X—verhoogde hun bereik.">Bold campaign for Babies Club X—punched up their reach.</p>
@@ -881,7 +247,8 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <h2 data-en="Let’s Boost Your Brand Together" data-nl="Laten we uw merk samen versterken">Let’s Boost Your Brand Together</h2>
-        <p data-en="Ready to drive 500 extra sales or 500,000 views? Drop us a line!" data-nl="Klaar om 500 extra verkopen of 500.000 views te behalen? Stuur ons een bericht!">Ready to drive 500 extra sales or 500,000 views? Drop us a line!</p>
+        <p data-en="Ready to shine locally and cut through the noise? Drop us a line!" 
+            data-nl="Klaar om lokaal te schitteren en door het lawaai te breken? Stuur ons een bericht!">Ready to shine locally and cut through the noise? Drop us a line!</p>
         <div class="work-item">
             <img src="heinekenbakery.png" alt="Heineken Bakery Branding">
             <p data-en="Heineken Bakery branding—growth through visuals." data-nl="Heineken Bakery branding—groei door visuals.">Heineken Bakery branding—growth through visuals.</p>
@@ -902,10 +269,11 @@
             <button type="submit" class="cta-button" data-en="Send Message" data-nl="Bericht verzenden">Send Message</button>
         </form>
     </section>
-    
+
     <!-- Glow Up Section -->
     <section id="GlowUp" class="section">
-        <p data-en="Got graphics or a website stuck in the past? We’ll bring them to life. Our animation and motion graphics transform dated visuals into fresh, eye-catching assets. It’s not about flashy trends—it’s about boosting what you’ve got to connect with your crowd. For local businesses, this is the tailored glow-up that keeps you current and clickable." data-nl="Heeft u afbeeldingen of een website die in het verleden zijn blijven hangen? Wij brengen ze tot leven. Onze animaties en motion graphics transformeren verouderde visuals in frisse, opvallende middelen. Het gaat niet om flitsende trends—het gaat erom wat u heeft te versterken om contact te maken met uw publiek. Voor lokale bedrijven is dit de op maat gemaakte opfrisbeurt die u actueel en klikbaar houdt.">Got graphics or a website stuck in the past? We’ll bring them to life. Our animation and motion graphics transform dated visuals into fresh, eye-catching assets. It’s not about flashy trends—it’s about boosting what you’ve got to connect with your crowd. For local businesses, this is the tailored glow-up that keeps you current and clickable.</p>
+        <p data-en="Got graphics or a website stuck in the past? We’ll bring them to life. Our animation and motion graphics transform dated visuals into fresh, eye-catching assets. It’s not about flashy trends—it’s about boosting what you’ve got to connect with your crowd. For local businesses, this is the tailored glow-up that keeps you current and clickable." 
+            data-nl="Heeft u graphics of een website die vastzitten in het verleden? Wij brengen ze tot leven. Onze animatie en motion graphics veranderen verouderde visuals in frisse, opvallende assets. Het gaat niet om flitsende trends—het gaat om het versterken van wat u heeft om contact te maken met uw publiek. Voor lokale bedrijven is dit de op maat gemaakte glow-up die u actueel en klikbaar houdt.">Got graphics or a website stuck in the past? We’ll bring them to life. Our animation and motion graphics transform dated visuals into fresh, eye-catching assets. It’s not about flashy trends—it’s about boosting what you’ve got to connect with your crowd. For local businesses, this is the tailored glow-up that keeps you current and clickable.</p>
     </section>
 
     <!-- Testimonials Section (Placeholder) -->
@@ -920,6 +288,7 @@
     </footer>
 
     <script>
+        // Existing JavaScript functions
         function toggleLanguage() {
             const button = document.getElementById('language-toggle');
             const currentLang = button.textContent.trim().toLowerCase() === 'english' ? 'en' : 'nl';
@@ -927,7 +296,10 @@
             button.textContent = newLang === 'en' ? 'English' : 'Nederlands';
             
             document.querySelectorAll('[data-en]').forEach(element => {
-                element.textContent = element.getAttribute(`data-${newLang}`);
+                const text = element.getAttribute(`data-${newLang}`);
+                if (text) {
+                    element.innerHTML = text; // Preserve dynamic spans
+                }
             });
             document.querySelectorAll('a[data-en]').forEach(link => {
                 link.textContent = link.getAttribute(`data-${newLang}`);
@@ -937,12 +309,10 @@
             });
         }
 
-        // Hamburger Menu Toggle
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Scroll-triggered animations
         window.addEventListener('scroll', () => {
             document.querySelectorAll('.section, .highlight-section').forEach(section => {
                 const rect = section.getBoundingClientRect();
@@ -958,7 +328,6 @@
             });
         });
 
-        // Trigger animations on page load for elements already in view
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.section, .highlight-section, .work-item').forEach(element => {
                 const rect = element.getBoundingClientRect();
@@ -968,10 +337,93 @@
             });
         });
 
-        // Optional: Parallax effect for video background
         window.addEventListener('scroll', () => {
             const video = document.querySelector('#bg-video');
             video.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+        });
+
+        // New Geolocation Logic
+        const cities = [
+            { name: "Amsterdam", lat: 52.3676, lon: 4.9041, nearby: ["Haarlem", "Amstelveen", "Diemen"] },
+            { name: "Rotterdam", lat: 51.9244, lon: 4.4777, nearby: ["Schiedam", "Vlaardingen", "Capelle aan den IJssel"] },
+            { name: "The Hague", lat: 52.0705, lon: 4.3007, nearby: ["Rijswijk", "Voorburg", "Leidschendam"] },
+            { name: "Utrecht", lat: 52.0907, lon: 5.1214, nearby: ["Houten", "Zeist", "Nieuwegein"] },
+            { name: "Eindhoven", lat: 51.4416, lon: 5.4697, nearby: ["Best", "Veldhoven", "Nuenen"] },
+            { name: "Groningen", lat: 53.2194, lon: 6.5665, nearby: ["Haren", "Bedum", "Delfzijl"] },
+            { name: "Tilburg", lat: 51.5558, lon: 5.0919, nearby: ["Oisterwijk", "Goirle", "Hilvarenbeek"] },
+            { name: "Almere", lat: 52.3508, lon: 5.2647, nearby: ["Huizen", "Naarden", "Bussum"] },
+            { name: "Haarlem", lat: 52.3874, lon: 4.6462, nearby: ["Heemstede", "Bloemendaal", "Zandvoort"] },
+            { name: "Arnhem", lat: 51.9851, lon: 5.8987, nearby: ["Velp", "Oosterbeek", "Renkum"] },
+            { name: "Nijmegen", lat: 51.8449, lon: 5.8428, nearby: ["Wijchen", "Beuningen", "Lent"] },
+            { name: "Leiden", lat: 52.1601, lon: 4.4970, nearby: ["Oegstgeest", "Voorschoten", "Katwijk"] }
+        ];
+
+        const randstadCities = ["Amsterdam", "Rotterdam", "The Hague", "Utrecht"];
+
+        function haversineDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; // Earth's radius in km
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c; // Distance in km
+        }
+
+        function updateDynamicText(lat, lon) {
+            // Find nearest major city
+            let nearestCity = cities[0];
+            let minDistance = haversineDistance(lat, lon, nearestCity.lat, nearestCity.lon);
+            for (let i = 1; i < cities.length; i++) {
+                const distance = haversineDistance(lat, lon, cities[i].lat, cities[i].lon);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    nearestCity = cities[i];
+                }
+            }
+
+            // Select two random nearby towns
+            const nearbyTowns = nearestCity.nearby.slice();
+            const town1 = nearbyTowns.splice(Math.floor(Math.random() * nearbyTowns.length), 1)[0];
+            const town2 = nearbyTowns.splice(Math.floor(Math.random() * nearbyTowns.length), 1)[0];
+
+            // Update dynamic-city-1 and dynamic-city-2 (Intro and Section 1)
+            document.querySelectorAll('.dynamic-city-1').forEach(el => el.textContent = town1);
+            document.querySelectorAll('.dynamic-city-2').forEach(el => el.textContent = town2);
+
+            // Update dynamic-city-3 and dynamic-city-4 (Section 3)
+            document.querySelectorAll('.dynamic-city-3').forEach(el => el.textContent = town1);
+            document.querySelectorAll('.dynamic-city-4').forEach(el => el.textContent = town2);
+
+            // Handle Randstad dynamically (Section 6)
+            if (randstadCities.includes(nearestCity.name)) {
+                document.querySelectorAll('.dynamic-region-1').forEach(el => el.textContent = "Randstad");
+            } else {
+                document.querySelectorAll('.dynamic-region-1').forEach(el => el.textContent = `${nearestCity.name} region`);
+            }
+
+            // Trigger language toggle to refresh text if needed
+            toggleLanguage();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const { latitude, longitude } = position.coords;
+                        updateDynamicText(latitude, longitude);
+                    },
+                    (error) => {
+                        console.error("Geolocation error:", error);
+                        // Fallback: Use defaults (Purmerend, Best, Zaandam, Krommenie, Randstad)
+                        updateDynamicText(52.3676, 4.9041); // Amsterdam as default
+                    }
+                );
+            } else {
+                console.error("Geolocation not supported");
+                updateDynamicText(52.3676, 4.9041); // Amsterdam as default
+            }
         });
     </script>
 </body>
