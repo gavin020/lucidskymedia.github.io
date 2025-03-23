@@ -636,7 +636,7 @@
                     <img src="Video_Heinekenbakery_loop.gif" alt="Heineken Bakery Animation">
                     <p data-en="Heineken Bakery, motion graphics for Heineken's campaign." data-nl="Heineken Bakery, motion graphics voor Heineken's campagne .">Animated motion graphic for Heineken Bakery.</p>
                 </div>
-  <div class="work-item">
+                <div class="work-item">
                     <img src="Adidas_dof.gif" alt="Adidas, 3d motion and graphics for social ads and online deals">
                     <p data-en="Adidas, 3d motion and graphics for social ads and online deals" data-nl="Adidas, 3d motion and grafische design voor social reclame and online deals.">Adidas, 3d motion and graphics for social ads and online deals.</p>
                 </div>
@@ -957,8 +957,18 @@
         }
 
         // Hamburger Menu Toggle
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
 
         // Scroll-triggered animations
