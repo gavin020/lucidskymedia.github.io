@@ -2,6 +2,30 @@ old lucid sky css
 
 
 /* Reset default styles */
+/* Hamburger Menu Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        background: #000; /* Match your updated navbar color */
+        flex-wrap: wrap;
+    }
+    .nav-links a:hover {
+        color: #7209b7; /* Match your updated hover color */
+    }
+    #language-toggle {
+        background: #7209b7; /* Match your updated button color */
+    }
+    #language-toggle:hover {
+        background: #9b5de5; /* Match your updated hover color */
+    }
+}
+
+/* Video Fix for Mobile */
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Prevents interaction issues on mobile */
+}
 * {
     margin: 0;
     padding: 0;
