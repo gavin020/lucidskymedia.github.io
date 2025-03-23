@@ -96,6 +96,30 @@
         @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
         .hero { background-attachment: fixed; background-position: center; background-size: cover; }
+        /* New CSS for service boxes */
+        .service-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+        .service-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
+        .service-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -141,8 +165,26 @@
     <!-- Our Services Section -->
     <section id="services" class="section">
         <h2 data-en="Ditch the Static—Stand Out" data-nl="Weg met statisch—val op">Ditch the Static—Stand Out</h2>
-        <p data-en="Static visuals won’t save you from fading against big chains or online giants. If your digital presence is outdated, you’re losing ground. We make everything better with motion—guiding attention where it counts. Our animation hooks scrollers and turns them into fans, with social ads and intros that pop. Tailored for your local market, it’s your edge to stay unmissable." 
-            data-nl="Statische visuals redden u niet van vervaging tegen grote ketens of online reuzen. Als uw digitale aanwezigheid verouderd is, verliest u terrein. Wij maken alles beter met beweging—de aandacht sturend waar het telt. Onze animatie haakt scrollers en maakt ze fans, met sociale advertenties en intro’s die knallen. Op maat voor uw lokale markt, het is uw voorsprong om onmisbaar te blijven.">Static visuals won’t save you from fading against big chains or online giants. If your digital presence is outdated, you’re losing ground. We make everything better with motion—guiding attention where it counts. Our animation hooks scrollers and turns them into fans, with social ads and intros that pop. Tailored for your local market, it’s your edge to stay unmissable.</p>
+        <div class="service-boxes">
+            <div class="service-box">
+                <p data-en="Video Editing: Slick promos that drive engagement." data-nl="Videobewerking: Strakke promo's die betrokkenheid stimuleren.">Video Editing: Slick promos that drive engagement.</p>
+            </div>
+            <div class="service-box">
+                <p data-en="Animations & Motion Graphics: Dynamic visuals for menus, logos, and more." data-nl="Animaties & Motion Graphics: Dynamische visuals voor menu's, logo's en meer.">Animations & Motion Graphics: Dynamic visuals for menus, logos, and more.</p>
+            </div>
+            <div class="service-box">
+                <p data-en="AI Design & Animation: Next-gen creativity to stand out." data-nl="AI-ontwerp & Animatie: Next-gen creativiteit om op te vallen.">AI Design & Animation: Next-gen creativity to stand out.</p>
+            </div>
+            <div class="service-box">
+                <p data-en="Web Intros & Design: First impressions that convert." data-nl="Webintro's & Ontwerp: Eerste indrukken die converteren.">Web Intros & Design: First impressions that convert.</p>
+            </div>
+            <div class="service-box">
+                <p data-en="Brand Growth: Strategies to boost sales and visibility." data-nl="Merk groei: Strategieën om verkoop en zichtbaarheid te vergroten.">Brand Growth: Strategies to boost sales and visibility.</p>
+            </div>
+            <div class="service-box">
+                <p data-en="See it in action—check our reel <a href='#portfolio'>here</a>!" data-nl="Zie het in actie—bekijk onze reel <a href='#portfolio'>hier</a>!">See it in action—check our reel <a href="#portfolio">here</a>!</p>
+            </div>
+        </div>
     </section>
 
     <!-- Process Section -->
