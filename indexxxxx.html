@@ -1,56 +1,213 @@
-// Scroll-triggered animations
-window.addEventListener('scroll', () => {
-    document.querySelectorAll('.section, .highlight-section').forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
-            section.classList.add('visible');
-        }
-    });
-    document.querySelectorAll('.work-item').forEach(item => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
-            item.classList.add('visible');
-        }
-    });
-});
+/* Highlight Section */
+.highlight-section {
+    background: #f0f0f0;
+    padding: 4rem 2rem;
+    margin: 4rem 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
 
-// Shape Spawning Mechanism
-document.addEventListener('DOMContentLoaded', () => {
-    const shapeContainer = document.querySelector('.shape-container');
-    const shapeTypes = ['sphere-3d', 'cube-3d', 'tetrahedron-3d', 'dodecahedron-3d'];
-    const rotationDirections = ['clockwise', 'counterclockwise'];
-    const floatSpeeds = ['15s', '17s', '18s', '19s', '20s', '22s'];
+/* Shape Container for Masked Shapes */
+.shape-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
 
-    function spawnShape() {
-        const shape = document.createElement('div');
-        shape.classList.add('shape');
+/* Floating Shape Container for Shapes Above the Section */
+.floating-shape-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
 
-        // Random shape type
-        const shapeType = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-        shape.classList.add(shapeType);
+/* Ensure text stays above masked shapes */
+.highlight-section h3,
+.highlight-section p {
+    position: relative;
+    z-index: 2;
+}
 
-        // Random rotation direction
-        const rotation = rotationDirections[Math.floor(Math.random() * rotationDirections.length)];
-        shape.setAttribute('data-rotation', rotation);
+/* Shape Base Styles */
+.shape {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    transform-style: preserve-3d;
+    transition: clip-path 1s ease;
+}
 
-        // Random float speed
-        const floatSpeed = floatSpeeds[Math.floor(Math.random() * floatSpeeds.length)];
-        shape.setAttribute('data-float-speed', floatSpeed);
-        shape.style.setProperty('--float-speed', floatSpeed);
+/* Floating Up Animation */
+.shape {
+    animation: floatUp var(--float-speed) linear infinite;
+}
 
-        // Random horizontal position
-        const leftPosition = Math.random() * 90 + 5; // Between 5% and 95%
-        shape.style.left = `${leftPosition}%`;
-
-        // Append to container
-        shapeContainer.appendChild(shape);
-
-        // Remove shape after animation completes to prevent DOM clutter
-        setTimeout(() => {
-            shape.remove();
-        }, parseFloat(floatSpeed) * 1000);
+@keyframes floatUp {
+    0% {
+        transform: translateY(100%) translateX(0);
+        opacity: 0;
     }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%) translateX(0);
+        opacity: 0;
+    }
+}
 
-    // Initial shapes are already in the HTML, so start spawning additional shapes
-    setInterval(spawnShape, 2000); // Spawn a new shape every 2 seconds
-});
+/* 3D Sphere */
+.sphere-3d {
+    background: #5ce1e6;
+    border-radius: 50%;
+    animation: 
+        colorChange 5s infinite ease,
+        shapeChangeSphere 5s infinite ease;
+}
+
+/* 3D Cube */
+.cube-3d {
+    background: #ff6f61;
+    position: relative;
+    animation: 
+        colorChange 5s infinite ease,
+        shapeChangeCube 5s infinite ease;
+}
+
+.cube-3d::before,
+.cube-3d::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+}
+
+.cube-3d::before {
+    transform: rotate(45deg) translateY(-20px);
+    opacity: 0.7;
+}
+
+.cube-3d::after {
+    transform: rotate(-45deg) translateX(20px);
+    opacity: 0.5;
+}
+
+/* 3D Tetrahedron */
+.tetrahedron-3d {
+    background: #d3a7ff;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: 
+        colorChange 5s infinite ease,
+        shapeChangeTetrahedron 5s infinite ease;
+}
+
+/* 3D Dodecahedron */
+.dodecahedron-3d {
+    background: #feca57;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: 
+        colorChange 5s infinite ease,
+        shapeChangeDodecahedron 5s infinite ease;
+}
+
+/* Shape Positions (Initial Horizontal Positions) */
+.shape-1 {
+    left: 5%;
+}
+
+.shape-2 {
+    left: 20%;
+}
+
+.shape-3 {
+    left: 35%;
+}
+
+.shape-4 {
+    left: 50%;
+}
+
+/* Floating Shapes (Above the Section) */
+.floating-shape-1 {
+    left: 65%;
+}
+
+.floating-shape-2 {
+    left: 80%;
+}
+
+/* Rotation Animations */
+.shape[data-rotation="clockwise"] {
+    animation: rotateClockwise 10s linear infinite;
+}
+
+.shape[data-rotation="counterclockwise"] {
+    animation: rotateCounterClockwise 10s linear infinite;
+}
+
+@keyframes rotateClockwise {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(-360deg) rotateY(-360deg) rotateZ(-360deg); }
+}
+
+/* Color Change Animation */
+@keyframes colorChange {
+    0% { background: #5ce1e6; }
+    25% { background: #ff6f61; }
+    50% { background: #d3a7ff; }
+    75% { background: #feca57; }
+    100% { background: #5ce1e6; }
+}
+
+/* Shape Change Animations */
+@keyframes shapeChangeSphere {
+    0%, 20% { clip-path: circle(50% at 50% 50%); }
+    25%, 45% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+    50%, 70% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+    75%, 95% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+    100% { clip-path: circle(50% at 50% 50%); }
+}
+
+@keyframes shapeChangeCube {
+    0%, 20% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+    25%, 45% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+    50%, 70% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+    75%, 95% { clip-path: circle(50% at 50% 50%); }
+    100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+}
+
+@keyframes shapeChangeTetrahedron {
+    0%, 20% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+    25%, 45% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+    50%, 70% { clip-path: circle(50% at 50% 50%); }
+    75%, 95% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+    100% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+}
+
+@keyframes shapeChangeDodecahedron {
+    0%, 20% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+    25%, 45% { clip-path: circle(50% at 50% 50%); }
+    50%, 70% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+    75%, 95% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+    100% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+}
