@@ -142,18 +142,48 @@ p {
     }
 }
 
-/* Hero Section */
+/* Hero Section with Video */
 .hero {
-    padding: 6rem 2rem;
+    position: relative;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 3;
     max-width: 800px;
+    padding: 2rem;
 }
 
 .hero-content h1 {
@@ -362,6 +392,189 @@ p {
     .testimonials {
         flex-direction: column;
     }
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.benefits-section ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.benefits-section li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #ccc;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.benefits-section li:before {
+    content: "✔";
+    color: #ff5e62;
+    position: absolute;
+    left: 0;
+}
+
+.benefits-section .buttons {
+    margin-top: 2rem;
+}
+
+.benefits-section .btn {
+    margin-right: 1rem;
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.about-section ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.about-section li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #ccc;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about-section li:before {
+    content: "✔";
+    color: #ff5e62;
+    position: absolute;
+    left: 0;
+}
+
+.about-section .buttons {
+    margin-top: 2rem;
+}
+
+.about-section .btn {
+    margin-right: 1rem;
+}
+
+/* Use Case Section */
+.use-case-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.use-case-section .buttons {
+    margin-top: 2rem;
+}
+
+.use-case-section .btn {
+    margin-right: 1rem;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact-section p a {
+    color: #ff5e62;
+    text-decoration: none;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group label {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.privacy-note {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.privacy-note a {
+    color: #ff5e62;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.faq-item p {
+    display: none;
+    margin-top: 1rem;
+}
+
+.faq-item.active p {
+    display: block;
 }
 
 /* Possibilities Section */
