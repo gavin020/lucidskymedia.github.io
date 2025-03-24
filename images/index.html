@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucid Sky - Animatiebedrijf</title>
+    <title>Lucid Sky - 2D Animatie Laten Maken</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -21,11 +21,19 @@
         <button class="hamburger">☰</button>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Video -->
     <section class="hero">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="showreel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
         <div class="hero-content">
-            <h1>Animatiebedrijf Lucid Sky</h1>
-            <p>Jouw verhaal, instructie of proces van ingewikkeld naar simpel en visueel. Wij leggen jouw boodschap uit in creatieve en duidelijke animaties van hoge kwaliteit. Ontdek het zelf en bekijk ons werk!</p>
+            <h1>2D animatie laten maken</h1>
+            <p>Wil je dat jouw boodschap helder wordt verteld en opvalt tussen alle content die dagelijks om de aandacht van jouw doelgroep vraagt? Laat dan een 2D animatie maken door een professioneel animatiebedrijf!</p>
+            <p>Jij bepaalt het verhaal, de personages en de stijl van de animatie. Wij denken met je mee en helpen je stap voor stap naar een eindresultaat dat jouw doelgroep prikkelt en overtuigt.</p>
             <div class="hero-buttons">
                 <a href="#showreel" class="btn btn-pink">Bekijk showreel</a>
                 <a href="#contact" class="btn btn-dark">Neem contact op</a>
@@ -33,158 +41,122 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="services-content">
-            <div class="services-text">
-                <h2>Creatieve en duidelijke animaties</h2>
-                <p>Wij creëren inspirerende bewegende videocontent en verbluffende animaties voor alle online platformen. Ons doel: het maken van blijvende indrukken, emotionele connecties creëren en jouw product of dienst uitleggen in minder woorden met behulp van de kracht van beeld.</p>
-            </div>
-            <div class="services-benefits">
-                <h3>De kracht van animatiebedrijf Lucid Sky:</h3>
-                <ul>
-                    <li>Altijd maatwerk en oneindig veel mogelijkheden.</li>
-                    <li>Persoonlijke aandacht en service.</li>
-                    <li>Betrokken, meedenken en eerlijk advies.</li>
-                    <li>Animatie met visuals van zeer hoge kwaliteit.</li>
-                    <li>Wij werken voor A-merken (o.a. TransIP, Engle, Taco Bell).</li>
-                    <li>Een jong, creatief en gedreven animatiebedrijf.</li>
-                </ul>
-            </div>
+    <!-- Highlight Section (Reusing 3D Shapes) -->
+    <section class="highlight-section">
+        <h3>De kracht van 2D animaties</h3>
+        <p>Om een verhaal te vertellen of een (complex) proces uit te leggen, zijn vaak veel woorden nodig. Door jouw verhaal te visualiseren en verfrissend met 2D animatie, vat je boodschap meer op, is deze duidelijker en hou je de aandacht langer vast. Dit zijn dé ingrediënten om je doelgroep te raken.</p>
+        <!-- Masked Shapes (Inside the Section) -->
+        <div class="shape-container">
+            <div class="shape sphere-3d shape-1" data-rotation="clockwise" data-float-speed="15s"></div>
+            <div class="shape cube-3d shape-2" data-rotation="counterclockwise" data-float-speed="20s"></div>
+            <div class="shape tetrahedron-3d shape-3" data-rotation="clockwise" data-float-speed="18s"></div>
+            <div class="shape dodecahedron-3d shape-4" data-rotation="counterclockwise" data-float-speed="22s"></div>
         </div>
-        <div class="services-buttons">
+        <!-- Floating Shapes (Above the Section) -->
+        <div class="floating-shape-container">
+            <div class="shape sphere-3d floating-shape-1" data-rotation="clockwise" data-float-speed="17s"></div>
+            <div class="shape cube-3d floating-shape-2" data-rotation="counterclockwise" data-float-speed="19s"></div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <h3>Voordelen van een 2D animatie</h3>
+        <ul>
+            <li>In een beperkte video een boodschap visueel duidelijk maken.</li>
+            <li>100% op maat gemaakt en uniek.</li>
+            <li>De visuals uit de animatie kun je hergebruiken voor o.a. op social media, je site of in infographics.</li>
+            <li>Letterlijk alles is mogelijk. Je krijgt unieke illustraties, volledig passend bij jouw organisatie.</li>
+            <li>Jij hebt veel inspraak en denkt mee gedurende het hele traject.</li>
+            <li>We kunnen meteen naar de toekomst, want een short plannen en videobedekking maken is niet nodig.</li>
+            <li>Een 2D uitleganimatie laten maken biedt je de mogelijkheid een complex verhaal eenvoudig uit te leggen.</li>
+        </ul>
+        <div class="buttons">
             <a href="#voordelen" class="btn btn-pink">Bekijk voordelen</a>
+            <a href="#werkwijze" class="btn btn-dark">Onze werkwijze</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>Waarom Lucid Sky?</h2>
+        <p>Bij Lucid Sky hebben we al vele succesvolle 2D animaties gemaakt en hoe je een animatie een plezier wordt om naar te kijken.</p>
+        <ul>
+            <li>Altijd maatwerk, de mogelijkheden zijn onbeperkt.</li>
+            <li>Persoonlijke aandacht en service. Geen vraag is te gek of te veel.</li>
+            <li>Wij zijn betrokken, denken mee en geven eerlijk advies om ons gezamenlijk doel te bereiken.</li>
+            <li>Een team van visuals van zeer hoge kwaliteit.</li>
+            <li>Een animateur, gericht op reputatiemanagement en omzetsgroei.</li>
+            <li>Grip op jouw wensen en doelen.</li>
+            <li>Jong en gedreven team, dat enkel de beste kwaliteit levert.</li>
+        </ul>
+        <div class="buttons">
+            <a href="#prijslijst" class="btn btn-pink">Vraag prijslijst op</a>
             <a href="#over-ons" class="btn btn-dark">Meer over ons</a>
         </div>
     </section>
 
-    <!-- Animation Types Section -->
-    <section class="animation-types-section">
-        <h2>Animatie maken: dit doen we</h2>
-        <p>Wil je een animatie laten maken, dan kan dat in vele soorten en maten. Wij kunnen alles voor je wensen en ideeën en wij laten onze creativiteit en expertise als animatiebedrijf de vrije loop.</p>
-        <div class="animation-types-grid">
-            <div class="animation-card">
-                <h3>Bedrijfsanimatie</h3>
-                <p>Met oog voor kwaliteit en helderheid produceren wij verassende animaties. Wil je een boodschap of verhaal van jouw bedrijf? Ontdek onze creatieve professionals staan je bij in het proces.</p>
-                <a href="#bedrijfsanimatie">Meer over bedrijfsanimaties</a>
-            </div>
-            <div class="animation-card">
-                <h3>2D animatie</h3>
-                <p>Vertel je verhaal met een 2D animatie! Onze creatieve professionals gaan voor jou aan de slag met een unieke animatie, waarmee je jouw doelgroep maakt.</p>
-                <a href="animatie.html">Meer over 2D animaties</a>
-            </div>
-            <div class="animation-card">
-                <h3>3D animatie</h3>
-                <p>Inspireer en verras met 3D! Wij net het extra dimensie aan jouw verhaal toevoegen? Wij communiceren jouw boodschap met een meer realistische animatie.</p>
-                <a href="#3d-animatie">Meer over 3D animaties</a>
-            </div>
-            <div class="animation-card">
-                <h3>Uitleganimatie</h3>
-                <p>Vertel je uitleg? Kies dan voor een uitleganimatie. Samen zorgen we ervoor dat de visualisaties in houd versimpelen en verduidelijken. Zo vormen we jouw om tot een visueel sterk verhaal.</p>
-                <a href="#uitleganimatie">Meer over uitleganimaties</a>
-            </div>
-            <div class="animation-card">
-                <h3>Op zoek naar een uitleganimatie</h3>
-                <p>Op zoek naar een uitleganimatie? Deze maken wij voor je om complexe onderwerpen of visueel samen te vatten en jouw boodschap kracht bij te zetten, waarvoor jouw doelgroep.</p>
-                <a href="#uitleganimatie">Meer over uitleganimaties</a>
-            </div>
-            <div class="animation-card">
-                <h3>Technische animatie</h3>
-                <p>Wil je helpen in een complex en technisch verhaal over te brengen? Wij helpen bedrijven om het visueel te maken. Wij helpen jouw doelgroep om te begrijpen.</p>
-                <a href="#technische-animatie">Meer over technische animaties</a>
-            </div>
+    <!-- Use Case Section -->
+    <section class="use-case-section">
+        <h2>2D animatie laten maken: wat is jouw case?</h2>
+        <p>Overweeg om een 2D animatie te laten maken door ons animatiebedrijf? We gaan graag met je in gesprek om jouw ideeën met onze expertise en creativiteit te combineren.</p>
+        <p>Hoe moeilijk je verhaal ook is, wij zorgen altijd voor een makelijke en duidelijke animatie van 60 tot 90 seconden. Wij zorgen ervoor dat we 2D animaties maken waar jouw doelgroep geen genoeg van krijgt. En als je daarnaast ook interesse hebt in een 3D animatie maken, staan we klaar om jouw verhaal op een nieuwe manier tot leven te brengen.</p>
+        <div class="buttons">
+            <a href="#portfolio" class="btn btn-pink">Bekijk portfolio</a>
+            <a href="#prijslijst" class="btn btn-dark">Vraag prijslijst op</a>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio-section">
-        <h2>Een selectie van ons meesterwerk</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="portfolio-1.jpg" alt="Zonneplan">
-                <p>Zonneplan</p>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2>Vragen over een 2D animatie laten maken of wil je een prijslijst/aanvragen?</h2>
+        <p>Mail naar <a href="mailto:hello@lucidsky.nl">hello@lucidsky.nl</a>, bel 040 - 240 51 51 of vul het contactformulier in.</p>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Naam*" required>
+                <input type="text" placeholder="Achternaam*" required>
             </div>
-            <div class="portfolio-item">
-                <img src="portfolio-2.jpg" alt="Charge 2">
-                <p>Charge 2</p>
+            <div class="form-group">
+                <input type="tel" placeholder="Telefoonnummer">
+                <input type="text" placeholder="Bedrijfsnaam">
             </div>
-            <div class="portfolio-item">
-                <img src="portfolio-3.jpg" alt="Monoma">
-                <p>Monoma</p>
+            <div class="form-group">
+                <input type="email" placeholder="Email*" required>
             </div>
-            <div class="portfolio-item">
-                <img src="portfolio-4.jpg" alt="Schleifenbauer">
-                <p>Schleifenbauer</p>
+            <div class="form-group">
+                <textarea placeholder="Je vraag of opmerking" rows="5"></textarea>
             </div>
-            <div class="portfolio-item">
-                <img src="portfolio-5.jpg" alt="Ventasol">
-                <p>Ventasol</p>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox"> Ik ga ermee akkoord dat mijn gegevens worden opgeslagen en gebruikt kunnen worden voor marketingdoeleinden.
+                </label>
             </div>
-            <div class="portfolio-item">
-                <img src="portfolio-6.jpg" alt="Air Liquide">
-                <p>Air Liquide</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="portfolio-7.jpg" alt="Landelijke Energie Vergelijker">
-                <p>Landelijke Energie Vergelijker</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="portfolio-8.jpg" alt="NXTGEN Hightech">
-                <p>NXTGEN Hightech</p>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-pink">Versturen</button>
+            <p class="privacy-note">Door dit formulier in te vullen ga je akkoord met onze <a href="#privacy">Privacy</a> en <a href="#cookies">Cookies Policy</a>.</p>
+        </form>
     </section>
 
-    <!-- Clients Section -->
-    <section class="clients-section">
-        <h2>Trotse partners</h2>
-        <p>Wij mogen werken voor deze prachtige merken en zijn trots op het vertrouwen dat we van onze 500+ klanten hebben gekregen.</p>
-        <div class="clients-grid">
-            <img src="client-1.png" alt="Zonneplan">
-            <img src="client-2.png" alt="TransIP">
-            <img src="client-3.png" alt="TechSharks">
-            <img src="client-4.png" alt="Taco Bell">
-            <img src="client-5.png" alt="SintLucas">
-            <img src="client-6.png" alt="Samsung">
-            <img src="client-7.png" alt="Rabobank">
-            <img src="client-8.png" alt="Poyconiq">
-            <img src="client-9.png" alt="Opple">
-            <img src="client-10.png" alt="NXP">
-            <img src="client-11.png" alt="Nationale Nederlanden">
-            <img src="client-12.png" alt="Mini">
-            <img src="client-13.png" alt="MAN">
-            <img src="client-14.png" alt="Mars">
-            <img src="client-15.png" alt="Joulz">
-            <img src="client-16.png" alt="Engie">
-            <img src="client-17.png" alt="Endhoven">
-            <img src="client-18.png" alt="Deen">
-            <img src="client-19.png" alt="Danone">
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Veelgestelde vragen over 2D animaties</h2>
+        <div class="faq-item">
+            <h3>Wat is het verschil tussen een 2D en 3D animatie?</h3>
+            <p>Bij Lucid Sky krijgen we regelmatig vragen over 2D animaties en het verschil met 3D animaties. De verschillen staan voor je op een rij.</p>
         </div>
-        <a href="#klanten" class="btn btn-dark">Onze klanten</a>
-        <div class="testimonials">
-            <div class="testimonial">
-                <p>"De dienstverlening is uitstekend! Er wordt goed meegedacht en er wordt altijd in mogelijkheden."</p>
-                <p class="author">Richard de Witte - Vince People, Owner</p>
-                <div class="rating">★★★★★</div>
-            </div>
-            <div class="testimonial">
-                <p>"Vakkundig bedrijf met mooie animaties als resultaat. Ze zijn goed bereikbaar en antwoorden snel!"</p>
-                <p class="author">Erik Gorssen - WYL, Directeur</p>
-                <div class="rating">★★★★★</div>
-            </div>
-            <div class="testimonial">
-                <p>"Wat een fijn bedrijf om mee te werken. Ze zijn enthousiast en gaan meteen voor je aan de slag. Wij gaan hier zeker nog meerdere video's laten maken."</p>
-                <p class="author">Romy Oosterling - Ecobit, Stagiair Marketing Communicatie</p>
-                <div class="rating">★★★★★</div>
-            </div>
+        <div class="faq-item">
+            <h3>Waarom kiezen voor een 2D animatie?</h3>
+            <p>Content for this FAQ item.</p>
         </div>
-        <p class="trustpilot">See our 138 reviews on <a href="#trustpilot">Trustpilot</a> ★</p>
+        <div class="faq-item">
+            <h3>Wat kost een 2D animatie laten maken?</h3>
+            <p>Content for this FAQ item.</p>
+        </div>
     </section>
 
     <!-- Possibilities Section -->
     <section class="possibilities-section">
         <h2>Oneindige mogelijkheden?</h2>
-        <p>Animatiestudio Lucid Sky maakt alles mogelijk. Wil je samen met ons brainstormen, een verbluffende animatie maken en ontdekken hoe je je eindproduct uitstekend goed de wereld in brengt? Laten we kennismaken. Bel of mail ons! Let's animate your story.</p>
+        <p>Bij Lucid Sky maken we op het gebied van animatie alles mogelijk. Sta je te springen om samen met ons aan de slag te gaan met een verbluffende animatie? Geef ons een belletje of spreek ons er praten er klaar om jouw story.</p>
         <div class="contact-buttons">
             <a href="mailto:hello@lucidsky.nl" class="btn btn-dark">Mail ons</a>
             <a href="tel:+0402405151" class="btn btn-dark">040 240 51 51</a>
