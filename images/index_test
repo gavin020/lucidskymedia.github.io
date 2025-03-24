@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucid Sky - Animatiebedrijf</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">Lucid Sky</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="animatie.html">Animatie</a>
+            <a href="#ons-werk">Ons werk</a>
+            <a href="#over-ons">Over ons</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="hamburger">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Animatiebedrijf Lucid Sky</h1>
+            <p>Jouw verhaal, instructie of proces van ingewikkeld naar simpel en visueel. Wij leggen jouw boodschap uit in creatieve en duidelijke animaties van hoge kwaliteit. Ontdek het zelf en bekijk ons werk!</p>
+            <div class="hero-buttons">
+                <a href="#showreel" class="btn btn-pink">Bekijk showreel</a>
+                <a href="#contact" class="btn btn-dark">Neem contact op</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-content">
+            <div class="services-text">
+                <h2>Creatieve en duidelijke animaties</h2>
+                <p>Wij creëren inspirerende bewegende videocontent en verbluffende animaties voor alle online platformen. Ons doel: het maken van blijvende indrukken, emotionele connecties creëren en jouw product of dienst uitleggen in minder woorden met behulp van de kracht van beeld.</p>
+            </div>
+            <div class="services-benefits">
+                <h3>De kracht van animatiebedrijf Lucid Sky:</h3>
+                <ul>
+                    <li>Altijd maatwerk en oneindig veel mogelijkheden.</li>
+                    <li>Persoonlijke aandacht en service.</li>
+                    <li>Betrokken, meedenken en eerlijk advies.</li>
+                    <li>Animatie met visuals van zeer hoge kwaliteit.</li>
+                    <li>Wij werken voor A-merken (o.a. TransIP, Engle, Taco Bell).</li>
+                    <li>Een jong, creatief en gedreven animatiebedrijf.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="services-buttons">
+            <a href="#voordelen" class="btn btn-pink">Bekijk voordelen</a>
+            <a href="#over-ons" class="btn btn-dark">Meer over ons</a>
+        </div>
+    </section>
+
+    <!-- Animation Types Section -->
+    <section class="animation-types-section">
+        <h2>Animatie maken: dit doen we</h2>
+        <p>Wil je een animatie laten maken, dan kan dat in vele soorten en maten. Wij kunnen alles voor je wensen en ideeën en wij laten onze creativiteit en expertise als animatiebedrijf de vrije loop.</p>
+        <div class="animation-types-grid">
+            <div class="animation-card">
+                <h3>Bedrijfsanimatie</h3>
+                <p>Met oog voor kwaliteit en helderheid produceren wij verassende animaties. Wil je een boodschap of verhaal van jouw bedrijf? Ontdek onze creatieve professionals staan je bij in het proces.</p>
+                <a href="#bedrijfsanimatie">Meer over bedrijfsanimaties</a>
+            </div>
+            <div class="animation-card">
+                <h3>2D animatie</h3>
+                <p>Vertel je verhaal met een 2D animatie! Onze creatieve professionals gaan voor jou aan de slag met een unieke animatie, waarmee je jouw doelgroep maakt.</p>
+                <a href="animatie.html">Meer over 2D animaties</a>
+            </div>
+            <div class="animation-card">
+                <h3>3D animatie</h3>
+                <p>Inspireer en verras met 3D! Wij net het extra dimensie aan jouw verhaal toevoegen? Wij communiceren jouw boodschap met een meer realistische animatie.</p>
+                <a href="#3d-animatie">Meer over 3D animaties</a>
+            </div>
+            <div class="animation-card">
+                <h3>Uitleganimatie</h3>
+                <p>Vertel je uitleg? Kies dan voor een uitleganimatie. Samen zorgen we ervoor dat de visualisaties in houd versimpelen en verduidelijken. Zo vormen we jouw om tot een visueel sterk verhaal.</p>
+                <a href="#uitleganimatie">Meer over uitleganimaties</a>
+            </div>
+            <div class="animation-card">
+                <h3>Op zoek naar een uitleganimatie</h3>
+                <p>Op zoek naar een uitleganimatie? Deze maken wij voor je om complexe onderwerpen of visueel samen te vatten en jouw boodschap kracht bij te zetten, waarvoor jouw doelgroep.</p>
+                <a href="#uitleganimatie">Meer over uitleganimaties</a>
+            </div>
+            <div class="animation-card">
+                <h3>Technische animatie</h3>
+                <p>Wil je helpen in een complex en technisch verhaal over te brengen? Wij helpen bedrijven om het visueel te maken. Wij helpen jouw doelgroep om te begrijpen.</p>
+                <a href="#technische-animatie">Meer over technische animaties</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <h2>Een selectie van ons meesterwerk</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="portfolio-1.jpg" alt="Zonneplan">
+                <p>Zonneplan</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="portfolio-2.jpg" alt="Charge 2">
+                <p>Charge 2</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="portfolio-3.jpg" alt="Monoma">
+                <p>Monoma</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="portfolio-4.jpg" alt="Schleifenbauer">
+                <p>Schleifenbauer</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="portfolio-5.jpg" alt="Ventasol">
+                <p>Ventasol</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="portfolio-6.jpg" alt="Air Liquide">
+                <p>Air Liquide</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="portfolio-7.jpg" alt="Landelijke Energie Vergelijker">
+                <p>Landelijke Energie Vergelijker</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="portfolio-8.jpg" alt="NXTGEN Hightech">
+                <p>NXTGEN Hightech</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section">
+        <h2>Trotse partners</h2>
+        <p>Wij mogen werken voor deze prachtige merken en zijn trots op het vertrouwen dat we van onze 500+ klanten hebben gekregen.</p>
+        <div class="clients-grid">
+            <img src="client-1.png" alt="Zonneplan">
+            <img src="client-2.png" alt="TransIP">
+            <img src="client-3.png" alt="TechSharks">
+            <img src="client-4.png" alt="Taco Bell">
+            <img src="client-5.png" alt="SintLucas">
+            <img src="client-6.png" alt="Samsung">
+            <img src="client-7.png" alt="Rabobank">
+            <img src="client-8.png" alt="Poyconiq">
+            <img src="client-9.png" alt="Opple">
+            <img src="client-10.png" alt="NXP">
+            <img src="client-11.png" alt="Nationale Nederlanden">
+            <img src="client-12.png" alt="Mini">
+            <img src="client-13.png" alt="MAN">
+            <img src="client-14.png" alt="Mars">
+            <img src="client-15.png" alt="Joulz">
+            <img src="client-16.png" alt="Engie">
+            <img src="client-17.png" alt="Endhoven">
+            <img src="client-18.png" alt="Deen">
+            <img src="client-19.png" alt="Danone">
+        </div>
+        <a href="#klanten" class="btn btn-dark">Onze klanten</a>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"De dienstverlening is uitstekend! Er wordt goed meegedacht en er wordt altijd in mogelijkheden."</p>
+                <p class="author">Richard de Witte - Vince People, Owner</p>
+                <div class="rating">★★★★★</div>
+            </div>
+            <div class="testimonial">
+                <p>"Vakkundig bedrijf met mooie animaties als resultaat. Ze zijn goed bereikbaar en antwoorden snel!"</p>
+                <p class="author">Erik Gorssen - WYL, Directeur</p>
+                <div class="rating">★★★★★</div>
+            </div>
+            <div class="testimonial">
+                <p>"Wat een fijn bedrijf om mee te werken. Ze zijn enthousiast en gaan meteen voor je aan de slag. Wij gaan hier zeker nog meerdere video's laten maken."</p>
+                <p class="author">Romy Oosterling - Ecobit, Stagiair Marketing Communicatie</p>
+                <div class="rating">★★★★★</div>
+            </div>
+        </div>
+        <p class="trustpilot">See our 138 reviews on <a href="#trustpilot">Trustpilot</a> ★</p>
+    </section>
+
+    <!-- Possibilities Section -->
+    <section class="possibilities-section">
+        <h2>Oneindige mogelijkheden?</h2>
+        <p>Animatiestudio Lucid Sky maakt alles mogelijk. Wil je samen met ons brainstormen, een verbluffende animatie maken en ontdekken hoe je je eindproduct uitstekend goed de wereld in brengt? Laten we kennismaken. Bel of mail ons! Let's animate your story.</p>
+        <div class="contact-buttons">
+            <a href="mailto:hello@lucidsky.nl" class="btn btn-dark">Mail ons</a>
+            <a href="tel:+0402405151" class="btn btn-dark">040 240 51 51</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Lucid Sky</div>
+            <div class="footer-links">
+                <h4>Lucid Sky</h4>
+                <a href="index.html">Home</a>
+                <a href="animatie.html">Animatie</a>
+                <a href="#ons-werk">Ons werk</a>
+                <a href="#over-ons">Over ons</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contactgegevens</h4>
+                <p><a href="mailto:hello@lucidsky.nl">hello@lucidsky.nl</a></p>
+                <p><a href="tel:+0402405151">+31 40 240 51 51</a></p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="#"><img src="vimeo-icon.png" alt="Vimeo"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p>Lucid Sky, een animatie- en filmagency onderdeel van Agency Group. Copyright © 2025.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
