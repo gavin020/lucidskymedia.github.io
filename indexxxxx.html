@@ -1,0 +1,197 @@
+/* Highlight Section */
+.highlight-section {
+    background: #f0f0f0;
+    padding: 4rem 2rem;
+    margin: 4rem 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shape Container for Masked Shapes */
+.shape-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Floating Shape Container for Shapes Above the Section */
+.floating-shape-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+/* Ensure text stays above masked shapes */
+.highlight-section h3,
+.highlight-section p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Shape Base Styles */
+.shape {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    transition: clip-path 1s ease; /* Smooth shape transformation */
+}
+
+/* 3D Sphere (Simplified as a 2D Circle with 3D Rotation) */
+.sphere-3d {
+    background: #5ce1e6; /* Cyan */
+    border-radius: 50%;
+    animation: 
+        colorChange 5s infinite ease, /* Color change every 5 seconds */
+        shapeChangeSphere 5s infinite ease; /* Shape change every 5 seconds */
+}
+
+/* 3D Cube */
+.cube-3d {
+    background: #ff6f61; /* Coral */
+    position: relative;
+    animation: 
+        colorChange 5s infinite ease,
+        shapeChangeCube 5s infinite ease;
+}
+
+.cube-3d::before,
+.cube-3d::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+}
+
+.cube-3d::before {
+    transform: rotate(45deg) translateY(-20px);
+    opacity: 0.7;
+}
+
+.cube-3d::after {
+    transform: rotate(-45deg) translateX(20px);
+    opacity: 0.5;
+}
+
+/* 3D Tetrahedron (Simplified) */
+.tetrahedron-3d {
+    background: #d3a7ff; /* Light Purple */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: 
+        colorChange 5s infinite ease,
+        shapeChangeTetrahedron 5s infinite ease;
+}
+
+/* 3D Dodecahedron (Simplified) */
+.dodecahedron-3d {
+    background: #feca57; /* Yellow */
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: 
+        colorChange 5s infinite ease,
+        shapeChangeDodecahedron 5s infinite ease;
+}
+
+/* Shape Positions */
+.shape-1 {
+    top: 10%;
+    right: 5%;
+}
+
+.shape-2 {
+    bottom: 15%;
+    left: 5%;
+}
+
+.shape-3 {
+    top: 20%;
+    left: 10%;
+}
+
+.shape-4 {
+    bottom: 10%;
+    right: 10%;
+}
+
+/* Floating Shapes (Above the Section) */
+.floating-shape-1 {
+    top: -20px;
+    right: 15%;
+}
+
+.floating-shape-2 {
+    bottom: -30px;
+    left: 20%;
+}
+
+/* Rotation Animations */
+.shape[data-rotation="clockwise"] {
+    animation: rotateClockwise 10s linear infinite;
+}
+
+.shape[data-rotation="counterclockwise"] {
+    animation: rotateCounterClockwise 10s linear infinite;
+}
+
+@keyframes rotateClockwise {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(-360deg) rotateY(-360deg) rotateZ(-360deg); }
+}
+
+/* Color Change Animation */
+@keyframes colorChange {
+    0% { background: #5ce1e6; } /* Cyan */
+    25% { background: #ff6f61; } /* Coral */
+    50% { background: #d3a7ff; } /* Light Purple */
+    75% { background: #feca57; } /* Yellow */
+    100% { background: #5ce1e6; } /* Back to Cyan */
+}
+
+/* Shape Change Animations */
+@keyframes shapeChangeSphere {
+    0%, 20% { clip-path: circle(50% at 50% 50%); } /* Sphere */
+    25%, 45% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); } /* Cube */
+    50%, 70% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); } /* Tetrahedron */
+    75%, 95% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); } /* Dodecahedron */
+    100% { clip-path: circle(50% at 50% 50%); } /* Back to Sphere */
+}
+
+@keyframes shapeChangeCube {
+    0%, 20% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); } /* Cube */
+    25%, 45% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); } /* Tetrahedron */
+    50%, 70% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); } /* Dodecahedron */
+    75%, 95% { clip-path: circle(50% at 50% 50%); } /* Sphere */
+    100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); } /* Back to Cube */
+}
+
+@keyframes shapeChangeTetrahedron {
+    0%, 20% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); } /* Tetrahedron */
+    25%, 45% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); } /* Dodecahedron */
+    50%, 70% { clip-path: circle(50% at 50% 50%); } /* Sphere */
+    75%, 95% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); } /* Cube */
+    100% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); } /* Back to Tetrahedron */
+}
+
+@keyframes shapeChangeDodecahedron {
+    0%, 20% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); } /* Dodecahedron */
+    25%, 45% { clip-path: circle(50% at 50% 50%); } /* Sphere */
+    50%, 70% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); } /* Cube */
+    75%, 95% { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); } /* Tetrahedron */
+    100% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); } /* Back to Dodecahedron */
+}
