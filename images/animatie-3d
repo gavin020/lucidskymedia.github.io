@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucid Sky Media | 3D Animatie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .navbar .logo {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-right: 0;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #7209b7;
+            transform: scale(1.1);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #7209b7;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #language-toggle {
+            background: #7209b7;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+        #language-toggle:hover {
+            background: #9b5de5;
+            transform: scale(1.05);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #000;
+                padding: 1rem;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .dropdown-content {
+                position: static;
+                display: none;
+                background: #333;
+            }
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+        }
+
+        /* General Section Styles */
+        .section {
+            padding: 4rem 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 50vh;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            color: #fff;
+        }
+
+        .hero-content p {
+            color: #ddd;
+        }
+
+        .highlight {
+            color: #fc5c7d;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .contact-form {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group.checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group.checkbox input {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .form-group.checkbox label {
+            font-weight: 400;
+            color: #666;
+        }
+
+        .cta-button {
+            background: #fc5c7d;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .cta-button:hover {
+            background: #ff7f94;
+            transform: scale(1.05);
+            animation: none;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .content-section .text-block {
+            flex: 1;
+            min-width: 300px;
+            margin: 1rem;
+        }
+
+        .content-section .text-block ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .content-section .text-block ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: #666;
+        }
+
+        .content-section .text-block ul li:before {
+            content: '✔';
+            color: #fc5c7d;
+            position: absolute;
+            left: 0;
+        }
+
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            background: #f0f0f0;
+            padding: 4rem 2rem;
+        }
+
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .portfolio-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .portfolio-item p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: #1e3c72;
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .reviews-section h2 {
+            color: #fff;
+        }
+
+        .reviews-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .review-item p {
+            color: #ddd;
+            text-align: left;
+        }
+
+        .review-item .author {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .review-item .author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .review-item .author span {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .review-item .stars {
+            color: #fc5c7d;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        footer a {
+            color: #7209b7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #9b5de5;
+        }
+
+        /* Buttons */
+        .button-primary {
+            background: #fc5c7d;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .button-primary:hover {
+            background: #ff7f94;
+            transform: scale(1.05);
+        }
+
+        .button-secondary {
+            background: #2c3e50;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .button-secondary:hover {
+            background: #3e5a7a;
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <img src="Lucid_Sky_Logo_Alpha.png" alt="Lucid Sky Media Logo" class="logo">
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html" data-en="Home" data-nl="Home">Home</a></li>
+            <li><a href="#services" data-en="Services" data-nl="Diensten">Services</a></li>
+            <li><a href="#portfolio" data-en="Portfolio" data-nl="Portfolio">Portfolio</a></li>
+            <li><a href="#franchise" data-en="Franchise Marketing" data-nl="Franchise Marketing">Franchise Marketing</a></li>
+            <li class="dropdown">
+                <a href="#" data-en="Animation" data-nl="Animatie">Animation</a>
+                <div class="dropdown-content">
+                    <a href="2d-animatie.html" data-en="2D Animation" data-nl="2D Animatie">2D Animatie</a>
+                    <a href="bedrijfsanimatie.html" data-en="Business Animation" data-nl="Bedrijfsanimatie">Bedrijfsanimatie</a>
+                    <a href="explanimation.html" data-en="Explanimation" data-nl="Explanimation">Explanimation</a>
+                    <a href="animatie-3d.html" data-en="3D Animation" data-nl="3D Animatie">3D Animatie</a>
+                </div>
+            </li>
+            <li><a href="#about" data-en="About" data-nl="Over Ons">About</a></li>
+            <li><a href="#contact" data-en="Contact" data-nl="Contact">Contact</a></li>
+            <li><button id="language-toggle" onclick="toggleLanguage()">English</button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-en="3D Animation: Extra Dimension" data-nl="3D Animatie: Extra Dimensie">3D Animatie: Extra Dimensie</h1>
+            <p data-en="Will the extra dimension add more realism to your story? Will 3D animation make your message clearer, more realistic visuals, and more engaging? Animation Agency ensures a striking result. Discover the possibilities!" data-nl="Wil je nét even die extra dimensie toevoegen aan jouw verhaal? Wil 3D animatie laten maken door Animation Agency zorgt voor een strak resultaat. Je denkt met ons mee bij de ontwikkeling van de personages, het verhaal en de stijl van de animatie. Wij helpen je om tot een bedijfsfilm animatie te komen die de aandacht van jouw doelgroep trekt en natuurlijk duidelijk is. Ontdek de mogelijkheden!">
+                Wil je nét even die extra dimensie toevoegen aan jouw verhaal? Wil 3D animatie laten maken door Animation Agency zorgt voor een strak resultaat. Je denkt met ons mee bij de ontwikkeling van de personages, het verhaal en de stijl van de animatie. Wij helpen je om tot een bedijfsfilm animatie te komen die de aandacht van jouw doelgroep trekt en natuurlijk duidelijk is. Ontdek de mogelijkheden!
+            </p>
+            <a href="#portfolio" class="button-primary" data-en="View Showreel" data-nl="Bekijk Showreel">Bekijk Showreel</a>
+            <a href="#contact" class="button-secondary" data-en="Get in Touch" data-nl="Neem Contact Op">Neem Contact Op</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-section">
+            <h2 data-en="Request a 3D Animation Quote" data-nl="Vragen over een 3D animatie laten maken? Wil je prijsindicatie">Vragen over een 3D animatie laten maken? Wil je prijsindicatie</h2>
+            <p data-en="Interested in having a 3D animation made? Email us at <a href='mailto:hello@animation-agency.nl'>hello@animation-agency.nl</a>, call 040 - 240 51 51, or fill out the contact form below." data-nl="Aanvragen? Mail naar <a href='mailto:hello@animation-agency.nl'>hello@animation-agency.nl</a>, bel 040 - 240 51 51 of vul het contactformulier in.">
+                Aanvragen? Mail naar <a href='mailto:hello@animation-agency.nl'>hello@animation-agency.nl</a>, bel 040 - 240 51 51 of vul het contactformulier in.
+            </p>
+            <form action="mailto:hello@animation-agency.nl" method="post" enctype="text/plain" class="contact-form">
+                <div class="form-group">
+                    <label for="name" data-en="Name*" data-nl="Naam*">Naam*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname" data-en="Surname*" data-nl="Achternaam*">Achternaam*</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-en="Phone Number" data-nl="Telefoonnummer">Telefoonnummer</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="company" data-en="Company Name" data-nl="Bedrijfsnaam">Bedrijfsnaam</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-en="Email*" data-nl="Email*">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" data-en="Your Question or Comment" data-nl="Je Vraag of Opmerking">Je Vraag of Opmerking</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy" data-en="I agree that my information may be stored and used for marketing purposes." data-nl="Ik ga ermee akkoord dat mijn gegevens worden opgeslagen en gebruikt kunnen worden voor marketingdoeleinden.">
+                        Ik ga ermee akkoord dat mijn gegevens worden opgeslagen en gebruikt kunnen worden voor marketingdoeleinden.
+                    </label>
+                </div>
+                <button type="submit" class="cta-button" data-en="Send" data-nl="Versturen">Versturen</button>
+            </form>
+            <p style="font-size: 0.9rem; color: #fc5c7d;" data-en="By submitting this form, you agree to our Privacy Policy and Cookie Policy." data-nl="Door dit formulier in te vullen ga je akkoord met onze Privacy Policy en Cookie Policy.">
+                Door dit formulier in te vullen ga je akkoord met onze Privacy Policy en Cookie Policy.
+            </p>
+        </div>
+    </section>
+
+    <!-- How Does a Technical 3D Animation Work Section -->
+    <section class="section">
+        <h2 data-en="How Does a Technical 3D Animation Work?" data-nl="Hoe werkt een technische 3D animatie?">Hoe werkt een technische 3D animatie?</h2>
+        <p data-en="A technical 3D animation helps to visualize complex processes. For example, for product presentations, manuals, or instructional videos. The process starts with a 3D animation studio like ours, where we translate your story. Here, we determine which steps in the 3D animation will be shown in detail. Technical 3D animations often take precise steps to ensure accuracy, especially in product animations where every detail matters. Using animation software such as an advanced 3D animation program, we bring each aspect to life with precision. This approach ensures that your target audience quickly grasps the information. Technical 3D animation has many advantages. It is clear, interactive, and often more engaging than text alone. Curious about how we can bring your technical 3D animation to life? Choose Animation Agency to ensure your idea comes to life in a unique way. Contact us today and discover how our expertise can make your message clear and compelling!" data-nl="Een technische 3D animatie helpt om complexe processen visueel te maken. Bijvoorbeeld voor productpresentaties, handleidingen of instructievideo’s. Het proces start bij onze 3D animatie studio die jouw wensen omzet in een storyboard. Hierin wordt duidelijk welke stappen de animatie 3D zal tonen. Vervolgens zet onze animatie maker jouw verhaal om in gedetailleerde visuals. Technische 3D animaties vragen vaak om precisie. Dit geldt zeker voor 3D product animaties of processen waarbij detail telt. Door animatie software zoals een geavanceerd 3D animatie programma te gebruiken, blijft elk aspect nauwkeurig en realistisch. Deze aanpak zorgt ervoor dat jouw doelgroep de informatie snel begrijpt. Technische 3D animatie heeft veel voordelen. Ze zijn duidelijk, interactief en laten geen ruimte voor misinterpretaties. Kies daarom voor ons ervaren animatie bedrijf Animation Agency dat jouw ideeën tot leven brengt. Benieuwd hoe jij technische 3D animatie studio staan we klaar om jouw proces op een unieke manier te visualiseren. Neem vandaag nog contact op met Animation Agency en ontdek hoe onze expertise jouw boodschap helder en overtuigend maakt!">
+            Een technische 3D animatie helpt om complexe processen visueel te maken. Bijvoorbeeld voor productpresentaties, handleidingen of instructievideo’s. Het proces start bij onze 3D animatie studio die jouw wensen omzet in een storyboard. Hierin wordt duidelijk welke stappen de animatie 3D zal tonen. Vervolgens zet onze animatie maker jouw verhaal om in gedetailleerde visuals. Technische 3D animaties vragen vaak om precisie. Dit geldt zeker voor 3D product animaties of processen waarbij detail telt. Door animatie software zoals een geavanceerd 3D animatie programma te gebruiken, blijft elk aspect nauwkeurig en realistisch. Deze aanpak zorgt ervoor dat jouw doelgroep de informatie snel begrijpt. Technische 3D animatie heeft veel voordelen. Ze zijn duidelijk, interactief en laten geen ruimte voor misinterpretaties. Kies daarom voor ons ervaren animatie bedrijf Animation Agency dat jouw ideeën tot leven brengt. Benieuwd hoe jij technische 3D animatie studio staan we klaar om jouw proces op een unieke manier te visualiseren. Neem vandaag nog contact op met Animation Agency en ontdek hoe onze expertise jouw boodschap helder en overtuigend maakt!
+        </p>
+        <a href="#portfolio" class="button-primary" data-en="View Examples" data-nl="Bekijk Voorbeelden">Bekijk Voorbeelden</a>
+        <a href="#about" class="button-secondary" data-en="Our Approach" data-nl="Onze Werkwijze">Onze Werkwijze</a>
+    </section>
+
+    <!-- Which Animation Software Section -->
+    <section class="section">
+        <h2 data-en="Which Animation Software Is Used for 3D Animation?" data-nl="Welke animatie software wordt gebruikt voor 3D animatie maken?">Welke animatie software wordt gebruikt voor 3D animatie maken?</h2>
+        <p data-en="To create a 3D animation, various animation programs are available. The choice depends on the type of 3D animation you want to have made. Professional 3D animation studios use software like Maya, Blender, or Cinema 4D. These tools offer the ability to create realistic models and animations. Beginners who want to create an animation film often use simpler options. These animation software options work well for simple projects. Want to create a 3D animation yourself? Then use our experienced animation maker with the most advanced animation software for 3D visuals. Here, we ensure precision in the smallest details of the digital animation. Whether you need a 3D animation video, digital animation, 3D, or technical animation, the animation software plays a significant role in the quality of the final product. At Animation Agency, we ensure that your 3D animation stands out. We determine the best approach based on your specific needs. Want to be sure of a professional result? Contact our animation agency for a 3D animation or to have an animation made. Our team uses the best tools and techniques to bring your 3D animation to life in the Netherlands and beyond. Together, we create a 3D animation that brings your story to life!" data-nl="Voor een 3D animatie maken zijn er diverse animatie programma’s beschikbaar. De keuze hangt af van het type animatie 3D dat je wilt laten maken. Professionele 3D animatie studio’s gebruiken software zoals Maya, Blender of Cinema 4D. Deze tools bieden de mogelijkheid om realistische modellen en animaties te creëren. Daarnaast zijn er opties voor beginners die zelf een animatie filmpje willen maken. Deze animatie software werkt goed voor eenvoudige projecten. Wil je een 3D animatie laten maken door een expert? Dan gebruikt onze ervaren animatie maker de meest geavanceerde animatie software voor de 3D visuals. Hiermee worden zelfs de kleinste details perfect weergegeven in de digitale animatie. Een goed animatie programma is onmisbaar voor het maken van een 3D animatie video, digitale animatie 3D of technische animatie, de animatie software bepaalt voor een groot deel de kwaliteit. Bij Animation Agency zorgen we ervoor dat jouw animatie 3D eruit springt. We bepalen op dat jouw verhaal op een unieke manier wordt gepresenteerd. Wil je zeker zijn van een professioneel resultaat? Neem contact op met ons animatie bureau voor een 3D animatie maken of animatie laten maken. Ons team gebruikt de beste tools en technieken om jouw animatie 3D in Nederland en daarbuiten in vertrouwen hebben we samen een 3D animation die jouw verhaal tot leven brengt. Voor een 3D animatie Nederland ben je bij Animation Agency in vertrouwde handen!">
+            Voor een 3D animatie maken zijn er diverse animatie programma’s beschikbaar. De keuze hangt af van het type animatie 3D dat je wilt laten maken. Professionele 3D animatie studio’s gebruiken software zoals Maya, Blender of Cinema 4D. Deze tools bieden de mogelijkheid om realistische modellen en animaties te creëren. Daarnaast zijn er opties voor beginners die zelf een animatie filmpje willen maken. Deze animatie software werkt goed voor eenvoudige projecten. Wil je een 3D animatie laten maken door een expert? Dan gebruikt onze ervaren animatie maker de meest geavanceerde animatie software voor de 3D visuals. Hiermee worden zelfs de kleinste details perfect weergegeven in de digitale animatie. Een goed animatie programma is onmisbaar voor het maken van een 3D animatie video, digitale animatie 3D of technische animatie, de animatie software bepaalt voor een groot deel de kwaliteit. Bij Animation Agency zorgen we ervoor dat jouw animatie 3D eruit springt. We bepalen op dat jouw verhaal op een unieke manier wordt gepresenteerd. Wil je zeker zijn van een professioneel resultaat? Neem contact op met ons animatie bureau voor een 3D animatie maken of animatie laten maken. Ons team gebruikt de beste tools en technieken om jouw animatie 3D in Nederland en daarbuiten in vertrouwen hebben we samen een 3D animation die jouw verhaal tot leven brengt. Voor een 3D animatie Nederland ben je bij Animation Agency in vertrouwde handen!
+        </p>
+        <a href="#portfolio" class="button-primary" data-en="View Examples" data-nl="Bekijk Voorbeelden">Bekijk Voorbeelden</a>
+        <a href="#about" class="button-secondary" data-en="Our Approach" data-nl="Onze Werkwijze">Onze Werkwijze</a>
+    </section>
+
+    <!-- Why Animation Agency Section -->
+    <section class="section">
+        <div class="content-section">
+            <div class="text-block">
+                <h2 data-en="Why Animation Agency?" data-nl="Waarom Animation Agency?">Waarom Animation Agency?</h2>
+                <p data-en="At Animation Agency, we have created many successful 3D animations. We know exactly how realistic visuals, attention to detail, and a good story come together to create a perfect 3D animation." data-nl="Bij Animation Agency hebben we al vele succesvolle 3D animaties gemaakt. We weten precies hoe de realistische visuals, aandacht voor detail en een goed verhaal gecombineerd worden tot één verhaal.">
+                    Bij Animation Agency hebben we al vele succesvolle 3D animaties gemaakt. We weten precies hoe de realistische visuals, aandacht voor detail en een goed verhaal gecombineerd worden tot één verhaal.
+                </p>
+                <a href="#portfolio" class="button-primary" data-en="Request a Quote" data-nl="Vraag Prijslijst Op">Vraag Prijslijst Op</a>
+                <a href="#about" class="button-secondary" data-en="More About Us" data-nl="Meer Over Ons">Meer Over Ons</a>
+            </div>
+            <div class="text-block">
+                <h3 data-en="What You Can Expect from Us as an Animation Agency:" data-nl="Wat je van ons als animatiebureau mag verwachten:">Wat je van ons als animatiebureau mag verwachten:</h3>
+                <ul>
+                    <li data-en="Always custom work, the possibilities are endless." data-nl="Altijd maatwerk, de mogelijkheden zijn oneindig.">
+                        Altijd maatwerk, de mogelijkheden zijn oneindig.
+                    </li>
+                    <li data-en="Personal attention and service. No question is too much." data-nl="Persoonlijke aandacht en service. Geen vraag is te gek of te veel.">
+                        Persoonlijke aandacht en service. Geen vraag is te gek of te veel.
+                    </li>
+                    <li data-en="We are involved, think along, and provide honest advice to achieve the best result." data-nl="Wij zijn betrokken, denken mee en geven eerlijk advies om ons animatiedoel te bereiken.">
+                        Wij zijn betrokken, denken mee en geven eerlijk advies om ons animatiedoel te bereiken.
+                    </li>
+                    <li data-en="Animation with realistic visuals of very high quality." data-nl="Animatie met realistische visuals van zeer hoge kwaliteit.">
+                        Animatie met realistische visuals van zeer hoge kwaliteit.
+                    </li>
+                    <li data-en="A 3D animation, focused on reputation management and conversion." data-nl="Een 3D animatie, gericht op reputatiemanagement en omzettroei.">
+                        Een 3D animatie, gericht op reputatiemanagement en omzettroei.
+                    </li>
+                    <li data-en="Young team, driven, and focused on the best quality delivery." data-nl="Jong en gedreven team, dat enkel de beste kwaliteit levert.">
+                        Jong en gedreven team, dat enkel de beste kwaliteit levert.
+                    </li>
+                    <li data-en="Extensive experience with top-notch animations, from explainer videos to business animations." data-nl="Uitgebreide ervaring met uiteenlopende animaties, van explanimations tot bedrijfsanimaties.">
+                        Uitgebreide ervaring met uiteenlopende animaties, van explanimations tot bedrijfsanimaties.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Animation Cost Section -->
+    <section class="section">
+        <h2 data-en="What Does a 3D Animation Cost?" data-nl="Wat kost een 3D animatie?">Wat kost een 3D animatie?</h2>
+        <p data-en="The cost of a short 3D animation ranges from a few seconds to several minutes. For example, the length of the animation, the level of detail, and the complexity of the animation play a role. A short 3D animation of 30 seconds costs around €5,000, while a more detailed 3D animation can cost between €10,000 and €20,000. Animation Agency ensures transparency in pricing and possibilities. Want to know the exact cost of your 3D animation? Contact us for a quote!" data-nl="De kosten van een korte 3D animatie hangen af van meerdere factoren. Bijvoorbeeld de lengte van de animatie, het detailniveau en de complexiteit van de animatie 3D. Een korte animatie van 30 seconden vraagt minder tijd dan een uitgebreide animatie van een paar minuten. Ook speelt de stijl een belangrijke rol. Kies je voor een simpele, heldere stijl of een volledig realistische 3D animatie video? Daarnaast speelt de mate van detail een rol. Hoe meer details, hoe meer tijd er in de animatie gaat zitten. Ons 3D animatie bedrijf maakt een 3D animatie van 30 seconden voor ongeveer €5.000. Voor een meer gedetailleerde 3D animatie liggen de kosten tussen de €10.000 en €20.000. Bij Animation Agency zorgen we voor transparantie in prijzen en mogelijkheden. Of je nu een eenvoudige computer animatie zoekt of een complexe digitale animatie, wij bieden oplossingen op maat. Zo ontvang je een animatie 3D die jouw boodschap krachtig overbrengt, zonder verrassingen in de kosten. Wat kost een 3D animatie laten maken precies? De prijs voor een animatie video laten maken ligt doorghaans tussen de €5.000 en €20.000. Voor een project op maat stemmen wij jouw ideeën af. Dit biedt een helder beeld van de kosten, welke je binnen 10 minuten weet.">
+            De kosten van een korte 3D animatie hangen af van meerdere factoren. Bijvoorbeeld de lengte van de animatie, het detailniveau en de complexiteit van de animatie 3D. Een korte animatie van 30 seconden vraagt minder tijd dan een uitgebreide animatie van een paar minuten. Ook speelt de stijl een belangrijke rol. Kies je voor een simpele, heldere stijl of een volledig realistische 3D animatie video? Daarnaast speelt de mate van detail een rol. Hoe meer details, hoe meer tijd er in de animatie gaat zitten. Ons 3D animatie bedrijf maakt een 3D animatie van 30 seconden voor ongeveer €5.000. Voor een meer gedetailleerde 3D animatie liggen de kosten tussen de €10.000 en €20.000. Bij Animation Agency zorgen we voor transparantie in prijzen en mogelijkheden. Of je nu een eenvoudige computer animatie zoekt of een complexe digitale animatie, wij bieden oplossingen op maat. Zo ontvang je een animatie 3D die jouw boodschap krachtig overbrengt, zonder verrassingen in de kosten. Wat kost een 3D animatie laten maken precies? De prijs voor een animatie video laten maken ligt doorghaans tussen de €5.000 en €20.000. Voor een project op maat stemmen wij jouw ideeën af. Dit biedt een helder beeld van de kosten, welke je binnen 10 minuten weet.
+        </p>
+        <a href="#contact" class="button-secondary" data-en="Get in Touch" data-nl="Neem Contact Met Ons Op">Neem Contact Met Ons Op</a>
+    </section>
+
+    <!-- What Is a 3D Animation Section -->
+    <section class="section">
+        <h2 data-en="What Is a 3D Animation?" data-nl="Wat is een 3D animatie?">Wat is een 3D animatie?</h2>
+        <p data-en="A 3D animation is a three-dimensional animation that contains drawings up to 2D animation, but in depth. A 3D animation can be very useful for technical subjects, as a simple animation can often be more cost-effective. 3D animations can be interesting if you want to see the inside of a product, for example, to save on photo shoots or videos. The created 3D assets can also be reused for marketing/sales, making it easier to adapt, for example, in quality. Curious about having a 3D animation made? Contact us!" data-nl="Een 3D animatie is een driedimensionale animatie die bevat in tegenstelling tot een 2D animatie ook diepte. Een 3D animatie leent zich vooral goed voor technische onderwerpen, omdat een simpele animatie vaak al heel concreet kan worden gemaakt. 3D animaties zijn interessant als je bijvoorbeeld de binnenkant van een product wilt laten zien, zonder dat je hiervoor een fotoshoot of videoshoot hoeft te organiseren. De gemaakte 3D assets kun je daarnaast hergebruiken voor marketing / sales, en tevens makkelijk aanpassen, bijvoorbeeld qua kleur. Hierdoor heb je talrijke mogelijkheden. Meer weten over een 3D animatie laten maken? Of over de mogelijkheden? Neem contact op.">
+            Een 3D animatie is een driedimensionale animatie die bevat in tegenstelling tot een 2D animatie ook diepte. Een 3D animatie leent zich vooral goed voor technische onderwerpen, omdat een simpele animatie vaak al heel concreet kan worden gemaakt. 3D animaties zijn interessant als je bijvoorbeeld de binnenkant van een product wilt laten zien, zonder dat je hiervoor een fotoshoot of videoshoot hoeft te organiseren. De gemaakte 3D assets kun je daarnaast hergebruiken voor marketing / sales, en tevens makkelijk aanpassen, bijvoorbeeld qua kleur. Hierdoor heb je talrijke mogelijkheden. Meer weten over een 3D animatie laten maken? Of over de mogelijkheden? Neem contact op.
+        </p>
+        <a href="#contact" class="button-secondary" data-en="Get in Touch" data-nl="Neem Contact Met Ons Op">Neem Contact Met Ons Op</a>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <h2 data-en="Frequently Asked Questions About 3D Animations" data-nl="Veelgestelde vragen over 3D animaties">Veelgestelde vragen over 3D animaties</h2>
+        <p data-en="Some questions about 3D animations come up regularly. Check out the frequently asked questions below:" data-nl="Sommige vragen over 3D animaties komen regelmatig terug. Misschien heb jij ook een specifieke vraag? Bekijk de veelgestelde vragen hieronder.">
+            Sommige vragen over 3D animaties komen regelmatig terug. Misschien heb jij ook een specifieke vraag? Bekijk de veelgestelde vragen hieronder.
+        </p>
+        <div class="content-section">
+            <div class="text-block">
+                <p><a href="#" data-en="Why choose a 3D animation?" data-nl="Waarom kiezen voor een 3D animatie?">Waarom kiezen voor een 3D animatie?</a></p>
+                <p><a href="#" data-en="What is the difference between a 3D and 2D animation?" data-nl="Wat is het verschil tussen een 3D en 2D animatie?">Wat is het verschil tussen een 3D en 2D animatie?</a></p>
+                <p><a href="#" data-en="What does it cost to have a 3D animation made?" data-nl="Wat kost een 3D animatie laten maken?">Wat kost een 3D animatie laten maken?</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Animation: What Is Your Case Section -->
+    <section class="section">
+        <h2 data-en="3D Animation: What Is Your Case?" data-nl="3D animatie laten maken: wat is jouw case?">3D animatie laten maken: wat is jouw case?</h2>
+        <p data-en="In most cases, we create a 3D animation to develop a story that matches your creativity! We combine your vision with our expertise to create a 3D animation of up to 90 seconds. Your story will be clear, realistic, and engaging, ensuring that your audience understands it." data-nl="Overwegend je om een 3D animatie te laten maken door onze animatiestudio? We gaan graag met je in gesprek om jouw ideeën met onze expertise en creativiteit te combineren. Wat voor verhaal je ook wilt vertellen, wij zorgen voor een realistische en duidelijke animatie van 60 tot 90 seconden. Jouw doelgroep krijgt geen kans om af te haken, want we zorgen dat jouw 3D animatie de aandacht vasthoudt.">
+            Overwegend je om een 3D animatie te laten maken door onze animatiestudio? We gaan graag met je in gesprek om jouw ideeën met onze expertise en creativiteit te combineren. Wat voor verhaal je ook wilt vertellen, wij zorgen voor een realistische en duidelijke animatie van 60 tot 90 seconden. Jouw doelgroep krijgt geen kans om af te haken, want we zorgen dat jouw 3D animatie de aandacht vasthoudt.
+        </p>
+        <a href="#contact" class="button-secondary" data-en="Get in Touch" data-nl="Neem Contact Met Ons Op">Neem Contact Met Ons Op</a>
+    </section>
+
+    <!-- Power of 3D Animations Section -->
+    <section class="section">
+        <div class="content-section">
+            <div class="text-block">
+                <h2 data-en="The Power of 3D Animations" data-nl="De kracht van 3D animaties">De kracht van 3D animaties</h2>
+                <p data-en="To explain a (complex) process, you often need many words, especially for companies with complex processes. With a 3D animation, you can visualize the story realistically, making it easier to understand and more engaging for your audience. This makes it an essential ingredient to engage and convince your target audience." data-nl="Om een (complex) proces uit te leggen, zijn vaak veel woorden nodig en voor bedrijven de hoofdzaken om een animatie te laten maken. Door jouw verhaal realistisch te visualiseren en te vertalen met 3D animatie, valt je boodschap meer op, is deze duidelijker en houd je de aandacht langer vast. Dit zijn dé ingrediënten om je doelgroep te prikkelen en te overtuigen.">
+                    Om een (complex) proces uit te leggen, zijn vaak veel woorden nodig en voor bedrijven de hoofdzaken om een animatie te laten maken. Door jouw verhaal realistisch te visualiseren en te vertalen met 3D animatie, valt je boodschap meer op, is deze duidelijker en houd je de aandacht langer vast. Dit zijn dé ingrediënten om je doelgroep te prikkelen en te overtuigen.
+                </p>
+                <a href="#portfolio" class="button-primary" data-en="View Examples" data-nl="Bekijk Voorbeelden">Bekijk Voorbeelden</a>
+                <a href="#about" class="button-secondary" data-en="Our Work" data-nl="Onze Werkwijze">Onze Werkwijze</a>
+            </div>
+            <div class="text-block">
+                <h3 data-en="Advantages of a 3D Animation:" data-nl="Voordelen van een 3D animatie:">Voordelen van een 3D animatie:</h3>
+                <ul>
+                    <li data-en="In a short video, your message is visually clear." data-nl="In een beknopte video je boodschap visueel duidelijk maken.">
+                        In een beknopte video je boodschap visueel duidelijk maken.
+                    </li>
+                    <li data-en="100% custom-made, realistic, and unique." data-nl="100% op maat gemaakt, realistisch en uniek.">
+                        100% op maat gemaakt, realistisch en uniek.
+                    </li>
+                    <li data-en="The visuals from the animation can be reused for other purposes, such as social media, your website, or infographics." data-nl="De visuals uit de animatie kun je hergebruiken voor o.a. social media, je site of in infographics.">
+                        De visuals uit de animatie kun je hergebruiken voor o.a. social media, je site of in infographics.
+                    </li>
+                    <li data-en="All elements are unique. You get realistic renders, perfectly tailored to your product or service." data-nl="Letterlijk alles is mogelijk. Je krijgt realistische renders, volledig passend bij jouw product of dienst.">
+                        Letterlijk alles is mogelijk. Je krijgt realistische renders, volledig passend bij jouw product of dienst.
+                    </li>
+                    <li data-en="It speaks volumes and resonates throughout the entire process." data-nl="Jij hebt veel inspraak en denkt mee gedurende het hele traject.">
+                        Jij hebt veel inspraak en denkt mee gedurende het hele traject.
+                    </li>
+                    <li data-en="We can take it to the drawing board, as a shoot isn’t necessary." data-nl="We kunnen meteen naar de tekentafel, want een shoot inplannen en voorbereiden is niet nodig.">
+                        We kunnen meteen naar de tekentafel, want een shoot inplannen en voorbereiden is niet nodig.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <h2 data-en="A Glimpse of Our 3D Animations" data-nl="Een greep uit onze 3D animaties">Een greep uit onze 3D animaties</h2>
+        <p data-en="Curious about our work? Here are some examples of 3D animations we’ve created for our clients:" data-nl="Benieuwd naar ons werk? Een aantal voorbeelden van 3D animaties die we voor en met onze klanten hebben ontwikkeld:">
+            Benieuwd naar ons werk? Een aantal voorbeelden van 3D animaties die we voor en met onze klanten hebben ontwikkeld:
+        </p>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item">
+                <img src="zonneplan-micro-omvormers.jpg" alt="Zonneplan Micro-omvormers">
+                <p data-en="Zonneplan - Micro-omvormers" data-nl="Zonneplan - Micro-omvormers">Zonneplan - Micro-omvormers</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="zonneplan-charge-2.jpg" alt="Zonneplan Charge 2">
+                <p data-en="Zonneplan - Charge 2" data-nl="Zonneplan - Charge 2">Zonneplan - Charge 2</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="zonneplan-nexus-thuisbatterij.jpg" alt="Zonneplan Nexus Thuisbatterij">
+                <p data-en="Zonneplan - Nexus Thuisbatterij" data-nl="Zonneplan - Nexus Thuisbatterij">Zonneplan - Nexus Thuisbatterij</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="schleifenbauer-pou-hardware.jpg" alt="Schleifenbauer POU Hardware">
+                <p data-en="Schleifenbauer - POU Hardware" data-nl="Schleifenbauer - POU Hardware">Schleifenbauer - POU Hardware</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="air-liquide.jpg" alt="Air Liquide Animation">
+                <p data-en="Air Liquide - Technical Explainers" data-nl="Air Liquide - Technische Uitleg">Air Liquide - Technische Uitleg</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="neen-watches.jpg" alt="Neen Watches Animation">
+                <p data-en="Neen Watches - Traveler OM1" data-nl="Neen Watches - Traveler OM1">Neen Watches - Traveler OM1</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="watchtower-security.jpg" alt="Watchtower Security Animation">
+                <p data-en="Watchtower Security - Bedrijfsanimatie & Lesgeven" data-nl="Watchtower Security - Bedrijfsanimatie & Lesgeven">Watchtower Security - Bedrijfsanimatie & Lesgeven</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="jp-cars.jpg" alt="JP Cars Animation">
+                <p data-en="JP Cars - Marktleider op gebied van data science" data-nl="JP Cars - Marktleider op gebied van data science">JP Cars - Marktleider op gebied van data science</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="vge.jpg" alt="VGE Animation">
+                <p data-en="VGE - Partner in UV-C Solutions" data-nl="VGE - Partner in UV-C Solutions">VGE - Partner in UV-C Solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h2 data-en="Reviews & Logos" data-nl="Reviews & Logo’s">Reviews & Logo’s</h2>
+        <p data-en="We are proud to work for these great brands and have earned the trust of over 500+ clients." data-nl="Wij mogen werken voor deze prachtige merken en zijn trots op het vertrouwen dat we van onze 500+ klanten hebben gekregen.">
+            Wij mogen werken voor deze prachtige merken en zijn trots op het vertrouwen dat we van onze 500+ klanten hebben gekregen.
+        </p>
+        <div class="reviews-gallery">
+            <div class="review-item">
+                <p data-en="“A technically challenging product was well translated into a simple yet clear animation, which worked perfectly!”" data-nl="“Een technisch en moeilijk product werd goed vertaald naar een simpele maar duidelijke animatie, die perfect aansluit!”">
+                    “Een technisch en moeilijk product werd goed vertaald naar een simpele maar duidelijke animatie, die perfect aansluit!”
+                </p>
+                <div class="author">
+                    <img src="harrie.jpg" alt="Harrie Neefs">
+                    <span data-en="Harrie Neefs - Ecconex - Algemeen manager" data-nl="Harrie Neefs - Ecconex - Algemeen manager">Harrie Neefs - Ecconex - Algemeen manager</span>
+                </div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-item">
+                <p data-en="“The communication was perfect. We are very satisfied with the solution for our problem.”" data-nl="“De communicatie was perfect. We zijn zeer tevreden met de oplossing voor ons probleem.”">
+                    “De communicatie was perfect. We zijn zeer tevreden met de oplossing voor ons probleem.”
+                </p>
+                <div class="author">
+                    <img src="furkan.jpg" alt="Furkan Gocuroglu">
+                    <span data-en="Furkan Gocuroglu - Kingswrap - Owner" data-nl="Furkan Gocuroglu - Kingswrap - Owner">Furkan Gocuroglu - Kingswrap - Owner</span>
+                </div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-item">
+                <p data-en="“To support our sales team, we wanted a 3D video. Animation Agency delivered beyond our expectations!”" data-nl="“Ter ondersteuning van ons team en sales hadden wij een 3D video nodig. Animation Agency heeft onze verwachtingen overtroffen!”">
+                    “Ter ondersteuning van ons team en sales hadden wij een 3D video nodig. Animation Agency heeft onze verwachtingen overtroffen!”
+                </p>
+                <div class="author">
+                    <img src="steven.jpg" alt="Steven van Haveningen">
+                    <span data-en="Steven van Haveningen - HoogWonen - Co Founder / Managing partner" data-nl="Steven van Haveningen - HoogWonen - Co Founder / Managing partner">Steven van Haveningen - HoogWonen - Co Founder / Managing partner</span>
+                </div>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item"><img src="zonneplan.png" alt="Zonneplan"></div>
+            <div class="portfolio-item"><img src="transip.png" alt="TransIP"></div>
+            <div class="portfolio-item"><img src="techsharks.png" alt="TechSharks"></div>
+            <div class="portfolio-item"><img src="taco-bell.png" alt="Taco Bell"></div>
+            <div class="portfolio-item"><img src="sintlucas.png" alt="SintLucas"></div>
+            <div class="portfolio-item"><img src="samsung.png" alt="Samsung"></div>
+            <div class="portfolio-item"><img src="rabobank.png" alt="Rabobank"></div>
+            <div class="portfolio-item"><img src="payconiq.png" alt="Payconiq"></div>
+            <div class="portfolio-item"><img src="opple.png" alt="Opple"></div>
+            <div class="portfolio-item"><img src="nxp.png" alt="NXP"></div>
+            <div class="portfolio-item"><img src="national.png" alt="National"></div>
+            <div class="portfolio-item"><img src="mini.png" alt="Mini"></div>
+            <div class="portfolio-item"><img src="mars.png" alt="Mars"></div>
+            <div class="portfolio-item"><img src="joulz.png" alt="Joulz"></div>
+            <div class="portfolio-item"><img src="engie.png" alt="Engie"></div>
+            <div class="portfolio-item"><img src="endhoven.png" alt="Endhoven"></div>
+            <div class="portfolio-item"><img src="deen.png" alt="Deen"></div>
+            <div class="portfolio-item"><img src="danone.png" alt="Danone"></div>
+        </div>
+        <a href="#clients" class="button-secondary" data-en="Our Clients" data-nl="Onze Klanten">Onze Klanten</a>
+    </section>
+
+    <!-- Endless Possibilities Section -->
+    <section class="section">
+        <h2 data-en="Endless Possibilities?" data-nl="Oneindige Mogelijkheden?">Oneindige Mogelijkheden?</h2>
+        <p data-en="At Animation Agency, we make everything possible in the field of animation. Are you eager to work with us on a stunning animation? Give us a call or email us, and let’s discuss further. Let’s animate your story." data-nl="Bij animatiebedrijf Animation Agency maken we op het gebied van animatie alles mogelijk. Sta je te springen om samen met ons aan de slag te gaan met een verbluffende animatie? Geef ons een belletje of mail ons en praten er verder over. Let’s animate your story.">
+            Bij animatiebedrijf Animation Agency maken we op het gebied van animatie alles mogelijk. Sta je te springen om samen met ons aan de slag te gaan met een verbluffende animatie? Geef ons een belletje of mail ons en praten er verder over. Let’s animate your story.
+        </p>
+        <a href="mailto:hello@animation-agency.nl" class="button-secondary" data-en="Email Us" data-nl="Mail Ons">Mail Ons</a>
+        <a href="tel:0402405151" class="button-secondary" data-en="Call 040 240 51 51" data-nl="(040) 240 51 51">(040) 240 51 51</a>
+        <a href="tel:0202446550" class="button-secondary" data-en="Call 020 244 65 50" data-nl="(020) 244 65 50">(020) 244 65 50</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-en="© 2025 Lucid Sky Media. Ready to grow? Contact us!" data-nl="© 2025 Lucid Sky Media. Klaar om te groeien? Neem contact op!">© 2025 Lucid Sky Media. Ready to grow? <a href="#contact">Contact us!</a></p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const button = document.getElementById('language-toggle');
+            const currentLang = button.textContent.trim().toLowerCase() === 'english' ? 'en' : 'nl';
+            const newLang = currentLang === 'en' ? 'nl' : 'en';
+            button.textContent = newLang === 'en' ? 'English' : 'Nederlands';
+            
+            document.querySelectorAll('[data-en]').forEach(element => {
+                element.textContent = element.getAttribute(`data-${newLang}`);
+            });
+            document.querySelectorAll('a[data-en]').forEach(link => {
+                link.textContent = link.getAttribute(`data-${newLang}`);
+            });
+        }
+
+        // Hamburger Menu Toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Scroll-triggered animations
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Trigger animations on page load for elements already in view
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.section').forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    element.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
