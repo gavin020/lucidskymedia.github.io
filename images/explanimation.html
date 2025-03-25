@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucid Sky Media | Explanimation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .navbar .logo {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-right: 0;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #7209b7;
+            transform: scale(1.1);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #7209b7;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #language-toggle {
+            background: #7209b7;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+        #language-toggle:hover {
+            background: #9b5de5;
+            transform: scale(1.05);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #000;
+                padding: 1rem;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .dropdown-content {
+                position: static;
+                display: none;
+                background: #333;
+            }
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+        }
+
+        /* General Section Styles */
+        .section {
+            padding: 4rem 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 50vh;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            color: #fff;
+        }
+
+        .hero-content p {
+            color: #ddd;
+        }
+
+        .highlight {
+            color: #fc5c7d;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .contact-form {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group.checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group.checkbox input {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .form-group.checkbox label {
+            font-weight: 400;
+            color: #666;
+        }
+
+        .cta-button {
+            background: #fc5c7d;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .cta-button:hover {
+            background: #ff7f94;
+            transform: scale(1.05);
+            animation: none;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .content-section .text-block {
+            flex: 1;
+            min-width: 300px;
+            margin: 1rem;
+        }
+
+        .content-section .text-block ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .content-section .text-block ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: #666;
+        }
+
+        .content-section .text-block ul li:before {
+            content: '✔';
+            color: #fc5c7d;
+            position: absolute;
+            left: 0;
+        }
+
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            background: #f0f0f0;
+            padding: 4rem 2rem;
+        }
+
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .portfolio-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .portfolio-item p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: #1e3c72;
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .reviews-section h2 {
+            color: #fff;
+        }
+
+        .reviews-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .review-item p {
+            color: #ddd;
+            text-align: left;
+        }
+
+        .review-item .author {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .review-item .author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .review-item .author span {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .review-item .stars {
+            color: #fc5c7d;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        footer a {
+            color: #7209b7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #9b5de5;
+        }
+
+        /* Buttons */
+        .button-primary {
+            background: #fc5c7d;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .button-primary:hover {
+            background: #ff7f94;
+            transform: scale(1.05);
+        }
+
+        .button-secondary {
+            background: #2c3e50;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .button-secondary:hover {
+            background: #3e5a7a;
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <img src="Lucid_Sky_Logo_Alpha.png" alt="Lucid Sky Media Logo" class="logo">
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html" data-en="Home" data-nl="Home">Home</a></li>
+            <li><a href="#services" data-en="Services" data-nl="Diensten">Services</a></li>
+            <li><a href="#portfolio" data-en="Portfolio" data-nl="Portfolio">Portfolio</a></li>
+            <li><a href="#franchise" data-en="Franchise Marketing" data-nl="Franchise Marketing">Franchise Marketing</a></li>
+            <li class="dropdown">
+                <a href="#" data-en="Animation" data-nl="Animatie">Animation</a>
+                <div class="dropdown-content">
+                    <a href="2d-animatie.html" data-en="2D Animation" data-nl="2D Animatie">2D Animatie</a>
+                    <a href="bedrijfsanimatie.html" data-en="Business Animation" data-nl="Bedrijfsanimatie">Bedrijfsanimatie</a>
+                    <a href="explanimation.html" data-en="Explanimation" data-nl="Explanimation">Explanimation</a>
+                </div>
+            </li>
+            <li><a href="#about" data-en="About" data-nl="Over Ons">About</a></li>
+            <li><a href="#contact" data-en="Contact" data-nl="Contact">Contact</a></li>
+            <li><button id="language-toggle" onclick="toggleLanguage()">English</button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-en="Explanimation: Clear Visuals" data-nl="Explanimation: Duidelijke Visuals">Explanimation: Duidelijke Visuals</h1>
+            <p data-en="Do you want to simplify complex matters? An explanimation provides a clear solution. Explanimations, whether small or large, are often enough to make an impact on tech-savvy audiences. Together, we work towards creating that 'aha' moment for the viewer. Discover the power of an explanimation!" data-nl="Wil je complexe materie versimpelen? Een explanimation laten maken biedt hier een effectieve oplossing. Explanimations, ook wel uitleganimaties genoemd, draaien om het omzetten van een technisch ingewikkeld proces naar een eenvoudig verhaal. Uiteraard heb jij ook veel inspraak in de visualisaties en stijl van de explanimation. Samen gaan we voor het realiseren van dat ‘aha’-moment bij de kijker. Ontdek de kracht van een explanimation!">
+                Wil je complexe materie versimpelen? Een explanimation laten maken biedt hier een effectieve oplossing. Explanimations, ook wel uitleganimaties genoemd, draaien om het omzetten van een technisch ingewikkeld proces naar een eenvoudig verhaal. Uiteraard heb jij ook veel inspraak in de visualisaties en stijl van de explanimation. Samen gaan we voor het realiseren van dat ‘aha’-moment bij de kijker. Ontdek de kracht van een explanimation!
+            </p>
+            <a href="#portfolio" class="button-primary" data-en="View Showreel" data-nl="Bekijk Showreel">Bekijk Showreel</a>
+            <a href="#contact" class="button-secondary" data-en="Get in Touch" data-nl="Neem Contact Op">Neem Contact Op</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-section">
+            <h2 data-en="Request an Explanimation Quote" data-nl="Vragen over een explanimation laten maken? Wil je prijsindicatie">Vragen over een explanimation laten maken? Wil je prijsindicatie</h2>
+            <p data-en="Interested in having an explanimation made? Email us at <a href='mailto:hello@animation-agency.nl'>hello@animation-agency.nl</a>, call 040 - 240 51 51, or fill out the contact form below." data-nl="Aanvragen? Mail naar <a href='mailto:hello@animation-agency.nl'>hello@animation-agency.nl</a>, bel 040 - 240 51 51 of vul het contactformulier in.">
+                Aanvragen? Mail naar <a href='mailto:hello@animation-agency.nl'>hello@animation-agency.nl</a>, bel 040 - 240 51 51 of vul het contactformulier in.
+            </p>
+            <form action="mailto:hello@animation-agency.nl" method="post" enctype="text/plain" class="contact-form">
+                <div class="form-group">
+                    <label for="name" data-en="Name*" data-nl="Naam*">Naam*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname" data-en="Surname*" data-nl="Achternaam*">Achternaam*</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-en="Phone Number" data-nl="Telefoonnummer">Telefoonnummer</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="company" data-en="Company Name" data-nl="Bedrijfsnaam">Bedrijfsnaam</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-en="Email*" data-nl="Email*">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" data-en="Your Question or Comment" data-nl="Je Vraag of Opmerking">Je Vraag of Opmerking</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy" data-en="I agree that my information may be stored and used for marketing purposes." data-nl="Ik ga ermee akkoord dat mijn gegevens worden opgeslagen en gebruikt kunnen worden voor marketingdoeleinden.">
+                        Ik ga ermee akkoord dat mijn gegevens worden opgeslagen en gebruikt kunnen worden voor marketingdoeleinden.
+                    </label>
+                </div>
+                <button type="submit" class="cta-button" data-en="Send" data-nl="Versturen">Versturen</button>
+            </form>
+            <p style="font-size: 0.9rem; color: #fc5c7d;" data-en="By submitting this form, you agree to our Privacy Policy and Cookie Policy." data-nl="Door dit formulier in te vullen ga je akkoord met onze Privacy Policy en Cookie Policy.">
+                Door dit formulier in te vullen ga je akkoord met onze Privacy Policy en Cookie Policy.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Animation Agency Section -->
+    <section class="section">
+        <div class="content-section">
+            <div class="text-block">
+                <h2 data-en="Why Animation Agency?" data-nl="Waarom Animation Agency?">Waarom Animation Agency?</h2>
+                <p data-en="We have experience in creating both 2D and 3D animations at Animation Agency. For us, an explainer video is created with the highest quality in all details. Quality is our top priority." data-nl="Wij hebben bij Animation Agency al vele explanimations ontwikkeld. We zijn gedreven in het maken van 2D animaties en 3D animaties. Voor ons is een explainer video pas geslaagd als alle details kloppen. Hoogstaande kwaliteit is bij ons standaard.">
+                    Wij hebben bij Animation Agency al vele explanimations ontwikkeld. We zijn gedreven in het maken van 2D animaties en 3D animaties. Voor ons is een explainer video pas geslaagd als alle details kloppen. Hoogstaande kwaliteit is bij ons standaard.
+                </p>
+                <a href="#portfolio" class="button-primary" data-en="Request a Quote" data-nl="Vraag Prijslijst Op">Vraag Prijslijst Op</a>
+                <a href="#about" class="button-secondary" data-en="More About Us" data-nl="Meer Over Ons">Meer Over Ons</a>
+            </div>
+            <div class="text-block">
+                <h3 data-en="What to Expect from Us:" data-nl="Dit mag je van ons animatiebedrijf verwachten:">Dit mag je van ons animatiebedrijf verwachten:</h3>
+                <ul>
+                    <li data-en="We create animations with high-quality visuals." data-nl="Wij maken explanimations met visuals van hoge kwaliteit.">
+                        Wij maken explanimations met visuals van hoge kwaliteit.
+                    </li>
+                    <li data-en="Personal approach and service, with short and fast communication lines." data-nl="Persoonlijke aandacht en service. Enkel korte en snelle lijnen.">
+                        Persoonlijke aandacht en service. Enkel korte en snelle lijnen.
+                    </li>
+                    <li data-en="100% custom work, tailored to your unique needs." data-nl="100% maatwerk. Dat biedt jou oneindig veel mogelijkheden.">
+                        100% maatwerk. Dat biedt jou oneindig veel mogelijkheden.
+                    </li>
+                    <li data-en="A creative, motivated, and young team that provides honest advice based on our expertise." data-nl="Een creatief, gemotiveerd en jong team. We denken met je mee en geven je altijd eerlijk advies op basis van onze expertise.">
+                        Een creatief, gemotiveerd en jong team. We denken met je mee en geven je altijd eerlijk advies op basis van onze expertise.
+                    </li>
+                    <li data-en="An animation that clarifies and engages your audience." data-nl="Een explanimation die verduidelijkt, de kijker vasthoudt en aanspreekt.">
+                        Een explanimation die verduidelijkt, de kijker vasthoudt en aanspreekt.
+                    </li>
+                    <li data-en="We create a plan based on your wishes and goals." data-nl="Aan de hand van jouw wensen en doelen maken we een aanvalsplan.">
+                        Aan de hand van jouw wensen en doelen maken we een aanvalsplan.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explanimation Benefits Section -->
+    <section class="section">
+        <div class="content-section">
+            <div class="text-block">
+                <h2 data-en="An Explanimation That Stays Memorable" data-nl="Een Explanimation Laten Maken Die Blijft Hangen">Een Explanimation Laten Maken Die Blijft Hangen</h2>
+                <p data-en="Creating an explanimation is a fun challenge for us. We help you, starting from our strong position, to strengthen your message through clear visuals and a compelling story. We combine our expertise with your vision to create an animation that resonates." data-nl="Het maken van een explanimation is voor ons een leuke uitdaging. Bovendien kunnen we jou, vanuit onze externe positie, helpen om het verhaal te vereenvoudigen en te versterken door middel van een krachtige animatie. We combineren jouw input met onze expertise en ervaring. Hoe complex je proces of verhaal ook is, wij zorgen voor eenvoud en duidelijkheid. Dit leidt tot een effectieve animatie die bij de doelgroep blijft hangen. Meer weten over onze werkwijze? Neem contact op.">
+                    Het maken van een explanimation is voor ons een leuke uitdaging. Bovendien kunnen we jou, vanuit onze externe positie, helpen om het verhaal te vereenvoudigen en te versterken door middel van een krachtige animatie. We combineren jouw input met onze expertise en ervaring. Hoe complex je proces of verhaal ook is, wij zorgen voor eenvoud en duidelijkheid. Dit leidt tot een effectieve animatie die bij de doelgroep blijft hangen. Meer weten over onze werkwijze? Neem contact op.
+                </p>
+                <a href="#portfolio" class="button-primary" data-en="View Examples" data-nl="Bekijk Voorbeelden">Bekijk Voorbeelden</a>
+                <a href="#about" class="button-secondary" data-en="Our Approach" data-nl="Onze Werkwijze">Onze Werkwijze</a>
+            </div>
+            <div class="text-block">
+                <h3 data-en="Benefits of an Explanimation:" data-nl="De voordelen van een explanimation:">De voordelen van een explanimation:</h3>
+                <ul>
+                    <li data-en="Fully unique and custom-made." data-nl="Volledig uniek en op maat gemaakt.">
+                        Volledig uniek en op maat gemaakt.
+                    </li>
+                    <li data-en="Your message can also be used on your website or in an infographic." data-nl="De explanimation en visuals kun je ook gebruiken op je website of in bijvoorbeeld een infographic.">
+                        De explanimation en visuals kun je ook gebruiken op je website of in bijvoorbeeld een infographic.
+                    </li>
+                    <li data-en="Simplified illustrations, making the message and animation visually strong and clear." data-nl="De illustraties zijn versimpeld, waardoor de boodschap en animatie visueel sterk en duidelijk zijn.">
+                        De illustraties zijn versimpeld, waardoor de boodschap en animatie visueel sterk en duidelijk zijn.
+                    </li>
+                    <li data-en="Everything we create is exclusively designed for your explainer video." data-nl="Alles is mogelijk en alles wat we maken is exclusief ontwikkeld voor jouw explainer video.">
+                        Alles is mogelijk en alles wat we maken is exclusief ontwikkeld voor jouw explainer video.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explanimation: Clear Visuals Section -->
+    <section class="section">
+        <h2 data-en="Explanimation: Clear Visuals" data-nl="Explanimation: Duidelijke Visuals">Explanimation: Duidelijke Visuals</h2>
+        <p data-en="Thanks to an explanimation, you need fewer words to convey your message, as the illustrations and visuals tell the story in a clear way. This is the ideal mix of clear storytelling, simplified visuals, and a good voice-over. This combination ensures that the viewer retains the message." data-nl="Dankzij een explanimation zijn er minder woorden nodig om de boodschap van het verhaal op een laagdrempelige en duidelijke manier te vertalen. Belangrijk bij een explainer video is de ideale mix van een helder verhaallijn, duidelijke visualisaties en goede voice-over teksten. Deze combinatie zorgt ervoor dat de aandacht van de kijker vastgehouden wordt.">
+            Dankzij een explanimation zijn er minder woorden nodig om de boodschap van het verhaal op een laagdrempelige en duidelijke manier te vertalen. Belangrijk bij een explainer video is de ideale mix van een helder verhaallijn, duidelijke visualisaties en goede voice-over teksten. Deze combinatie zorgt ervoor dat de aandacht van de kijker vastgehouden wordt.
+        </p>
+        <a href="#portfolio" class="button-primary" data-en="View Examples" data-nl="Bekijk Voorbeelden">Bekijk Voorbeelden</a>
+        <a href="#about" class="button-secondary" data-en="Our Approach" data-nl="Onze Werkwijze">Onze Werkwijze</a>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <h2 data-en="A Glimpse of Our Explanimations" data-nl="Een Greep uit Onze Explanimations">Een Greep uit Onze Explanimations</h2>
+        <p data-en="Curious about our previous creations? Below are some examples of explanimations we’ve developed:" data-nl="Benieuwd naar onze eerdere creaties? Hieronder vind je een voorbeeld van de uitleganimaties die we eerder hebben ontwikkeld:">
+            Benieuwd naar onze eerdere creaties? Hieronder vind je een voorbeeld van de uitleganimaties die we eerder hebben ontwikkeld:
+        </p>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item">
+                <img src="air-liquide.jpg" alt="Air Liquide Animation">
+                <p data-en="Air Liquide - Technical Explainers" data-nl="Air Liquide - Technische Uitleg">Air Liquide - Technische Uitleg</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="sint-lucas.jpg" alt="Sint Lucas Animation">
+                <p data-en="Sint Lucas - Mini-Lucas Portal" data-nl="Sint Lucas - Mini-Lucas Portaal">Sint Lucas - Mini-Lucas Portaal</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="krn.jpg" alt="KRN Animation">
+                <p data-en="KRN - Creating Future Sustainable Resources" data-nl="KRN - Toekomstbestendige Oplossingen">KRN - Toekomstbestendige Oplossingen</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="refnat4life.jpg" alt="RefNat4Life Animation">
+                <p data-en="RefNat4Life - Small Retail" data-nl="RefNat4Life - Small Retail">RefNat4Life - Small Retail</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="montessori.jpg" alt="Montessori College Animation">
+                <p data-en="Montessori College - Vision" data-nl="Montessori College - Visie">Montessori College - Visie</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="vcn.jpg" alt="VCN Verzekeringen Animation">
+                <p data-en="VCN Verzekeringen - Reliability Focused" data-nl="VCN Verzekeringen - Betrouwbaarheid">VCN Verzekeringen - Betrouwbaarheid</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="puzzel.jpg" alt="Puzzel Animation">
+                <p data-en="Puzzel - The Customer Experience Platform" data-nl="Puzzel - The Customer Experience Platform">Puzzel - The Customer Experience Platform</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="bouwgrondvinden.jpg" alt="Bouwgrondvinden Animation">
+                <p data-en="Bouwgrondvinden.nl - Find and Sell Your Building Land" data-nl="Bouwgrondvinden.nl - Zoek, Vind of Verkoop Jouw Bouwgrond">Bouwgrondvinden.nl - Zoek, Vind of Verkoop Jouw Bouwgrond</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="sessy.jpg" alt="SESSY Animation">
+                <p data-en="SESSY - Your Smart Battery" data-nl="SESSY - Jouw Slimme Thuisbatterij">SESSY - Jouw Slimme Thuisbatterij</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="we-care-college.jpg" alt="We Care College Animation">
+                <p data-en="We Care College - Your Next Step in Care" data-nl="We Care College - Jouw Volgende Stap in Zorg">We Care College - Jouw Volgende Stap in Zorg</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h2 data-en="Reviews & Logos" data-nl="Reviews & Logo’s">Reviews & Logo’s</h2>
+        <p data-en="We are proud to work for these great brands and have earned the trust of over 500+ clients." data-nl="Wij mogen werken voor deze prachtige merken en zijn trots op het vertrouwen dat we van onze 500+ klanten hebben gekregen.">
+            Wij mogen werken voor deze prachtige merken en zijn trots op het vertrouwen dat we van onze 500+ klanten hebben gekregen.
+        </p>
+        <div class="reviews-gallery">
+            <div class="review-item">
+                <p data-en="“I’m very satisfied, they listened to our requests and created a cool animation for us.”" data-nl="“Ze reageren snel, houden zich aan afspraken hebben een hele coole animatie voor ons gemaakt.”">
+                    “Ze reageren snel, houden zich aan afspraken hebben een hele coole animatie voor ons gemaakt.”
+                </p>
+                <div class="author">
+                    <img src="joel.jpg" alt="Joel Singling">
+                    <span data-en="Joel Singling - Interling - General Director" data-nl="Joel Singling - Interling - Algemeen Directeur">Joel Singling - Interling - Algemeen Directeur</span>
+                </div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-item">
+                <p data-en="“With their passion for animation, Animation Agency delivers amazing work! Great work!”" data-nl="“Met hun passie voor het vak en animatie als expertise maakt Animation Agency zeer tof werk! Geweldig werk!”">
+                    “Met hun passie voor het vak en animatie als expertise maakt Animation Agency zeer tof werk! Geweldig werk!”
+                </p>
+                <div class="author">
+                    <img src="dirk.jpg" alt="Dirk Kremers">
+                    <span data-en="Dirk Kremers - Box to Box - Founder" data-nl="Dirk Kremers - Box to Box - Founder">Dirk Kremers - Box to Box - Founder</span>
+                </div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-item">
+                <p data-en="“Great team, professional approach, and good results. Thanks guys!”" data-nl="“Leuk team, professionele aanpak en goed resultaat. Thanks guys!”">
+                    “Leuk team, professionele aanpak en goed resultaat. Thanks guys!”
+                </p>
+                <div class="author">
+                    <img src="bram.jpg" alt="Bram Verdonk">
+                    <span data-en="Bram Verdonk - No Comply - Owner" data-nl="Bram Verdonk - No Comply - Eigenaar">Bram Verdonk - No Comply - Eigenaar</span>
+                </div>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item"><img src="zonneplan.png" alt="Zonneplan"></div>
+            <div class="portfolio-item"><img src="transip.png" alt="TransIP"></div>
+            <div class="portfolio-item"><img src="techsharks.png" alt="TechSharks"></div>
+            <div class="portfolio-item"><img src="taco-bell.png" alt="Taco Bell"></div>
+            <div class="portfolio-item"><img src="sintlucas.png" alt="SintLucas"></div>
+            <div class="portfolio-item"><img src="samsung.png" alt="Samsung"></div>
+            <div class="portfolio-item"><img src="rabobank.png" alt="Rabobank"></div>
+            <div class="portfolio-item"><img src="payconiq.png" alt="Payconiq"></div>
+            <div class="portfolio-item"><img src="opple.png" alt="Opple"></div>
+            <div class="portfolio-item"><img src="nxp.png" alt="NXP"></div>
+            <div class="portfolio-item"><img src="national.png" alt="National"></div>
+            <div class="portfolio-item"><img src="mini.png" alt="Mini"></div>
+            <div class="portfolio-item"><img src="mars.png" alt="Mars"></div>
+            <div class="portfolio-item"><img src="joulz.png" alt="Joulz"></div>
+            <div class="portfolio-item"><img src="engie.png" alt="Engie"></div>
+            <div class="portfolio-item"><img src="endhoven.png" alt="Endhoven"></div>
+            <div class="portfolio-item"><img src="deen.png" alt="Deen"></div>
+            <div class="portfolio-item"><img src="danone.png" alt="Danone"></div>
+        </div>
+        <a href="#clients" class="button-secondary" data-en="Our Clients" data-nl="Onze Klanten">Onze Klanten</a>
+    </section>
+
+    <!-- Explanimation: Video with Impact Section -->
+    <section class="section">
+        <h2 data-en="Explanimation: A Video with Impact" data-nl="Explanimation: Een Video met Impact">Explanimation: Een Video met Impact</h2>
+        <p data-en="An explanimation is the ideal medium for processes that you want to explain directly and impact your business. It can increase sales by up to 80%. It also helps you stand out more and makes your message more memorable. An explanimation is versatile and can be used for complex matters that need to be clear and concise. It’s proven that text in an explainer video is 12x more memorable than text alone. Experience what an explanimation can do for your business. Contact us!" data-nl="Een explanimation is een ideaal middel om processen of wat jouw bedrijf doet te leggen. Daarbijk kan een explainer video direct impact hebben op sales. Ten eerste omdta mensen beter begrijpen wat je doet en ten tweede omdat je met een video meer indruk maakt dan met foto’s. Een explanimation is zeer geschikt om visueel complexe materie begrijpelijk te maken en kort en krachtig een uitleg te geven. Het is bewezen dat een uitleganimatie 12x beter wordt onthouden ten opzichte van tekst. Ervaar wat een explanimation voor je bedrijf kan doen. Neem contact met ons op.">
+            Een explanimation is een ideaal middel om processen of wat jouw bedrijf doet te leggen. Daarbijk kan een explainer video direct impact hebben op sales. Ten eerste omdta mensen beter begrijpen wat je doet en ten tweede omdat je met een video meer indruk maakt dan met foto’s. Een explanimation is zeer geschikt om visueel complexe materie begrijpelijk te maken en kort en krachtig een uitleg te geven. Het is bewezen dat een uitleganimatie 12x beter wordt onthouden ten opzichte van tekst. Ervaar wat een explanimation voor je bedrijf kan doen. Neem contact met ons op.
+        </p>
+        <a href="#contact" class="button-secondary" data-en="Get in Touch" data-nl="Neem Contact Met Ons Op">Neem Contact Met Ons Op</a>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <h2 data-en="Frequently Asked Questions About Explanimations" data-nl="Veelgestelde Vragen over Explanimations">Veelgestelde Vragen over Explanimations</h2>
+        <p data-en="We often receive questions about explanimations. Here are some of the most common ones:" data-nl="We krijgen regelmatig vragen over explanimations. De meest voorkomende hebben we hieronder voor je op een rij gezet. Vind jouw vraag over explainer video.">
+            We krijgen regelmatig vragen over explanimations. De meest voorkomende hebben we hieronder voor je op een rij gezet. Vind jouw vraag over explainer video.
+        </p>
+        <div class="content-section">
+            <div class="text-block">
+                <p><a href="#" data-en="Why choose an explanimation?" data-nl="Waarom kiezen voor een explanimation?">Waarom kiezen voor een explanimation?</a></p>
+                <p><a href="#" data-en="Which type of explainer video is best?" data-nl="Welk type explainer video is het beste?">Welk type explainer video is het beste?</a></p>
+                <p><a href="#" data-en="What does it cost to have an explanimation made?" data-nl="Wat kost een explanimation laten maken?">Wat kost een explanimation laten maken?</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Endless Possibilities Section -->
+    <section class="section">
+        <h2 data-en="Endless Possibilities?" data-nl="Oneindige Mogelijkheden?">Oneindige Mogelijkheden?</h2>
+        <p data-en="At Animation Agency, we make everything possible in the field of animation. Are you eager to work with us on a stunning animation? Give us a call or email us, and let’s discuss further. Let’s animate your story." data-nl="Bij animatiebedrijf Animation Agency maken we op het gebied van animatie alles mogelijk. Sta je te springen om samen met ons aan de slag te gaan met een verbluffende animatie? Geef ons een belletje of mail ons en praten er verder over. Let’s animate your story.">
+            Bij animatiebedrijf Animation Agency maken we op het gebied van animatie alles mogelijk. Sta je te springen om samen met ons aan de slag te gaan met een verbluffende animatie? Geef ons een belletje of mail ons en praten er verder over. Let’s animate your story.
+        </p>
+        <a href="mailto:hello@animation-agency.nl" class="button-secondary" data-en="Email Us" data-nl="Mail Ons">Mail Ons</a>
+        <a href="tel:0402405151" class="button-secondary" data-en="Call 040 240 51 51" data-nl="(040) 240 51 51">(040) 240 51 51</a>
+        <a href="tel:0202446550" class="button-secondary" data-en="Call 020 244 65 50" data-nl="(020) 244 65 50">(020) 244 65 50</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-en="© 2025 Lucid Sky Media. Ready to grow? Contact us!" data-nl="© 2025 Lucid Sky Media. Klaar om te groeien? Neem contact op!">© 2025 Lucid Sky Media. Ready to grow? <a href="#contact">Contact us!</a></p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const button = document.getElementById('language-toggle');
+            const currentLang = button.textContent.trim().toLowerCase() === 'english' ? 'en' : 'nl';
+            const newLang = currentLang === 'en' ? 'nl' : 'en';
+            button.textContent = newLang === 'en' ? 'English' : 'Nederlands';
+            
+            document.querySelectorAll('[data-en]').forEach(element => {
+                element.textContent = element.getAttribute(`data-${newLang}`);
+            });
+            document.querySelectorAll('a[data-en]').forEach(link => {
+                link.textContent = link.getAttribute(`data-${newLang}`);
+            });
+        }
+
+        // Hamburger Menu Toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Scroll-triggered animations
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Trigger animations on page load for elements already in view
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.section').forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    element.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
