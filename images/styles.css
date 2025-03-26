@@ -1,83 +1,3 @@
-.hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
-
-.video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-#bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    back
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    z-index: 2;
-    max-width: 800px;
-}
-
-.hero-content h1 {
-    color: #fff;
-    text-align: center;
-}
-
-.hero-content p {
-    color: #fff;
-    text-align: center;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.btn-pink {
-    background: #ff5e9d;
-    color: #fff;
-}
-
-.btn-pink:hover {
-    background: #ff7ab2;
-    transform: scale(1.05);
-}
-
-.btn-dark {
-    background: #2c3e50;
-    color: #fff;
-}
-
-.btn-dark:hover {
-    background: #3e5367;
-    transform: scale(1.05);
-}
 /* Reset default styles */
 * {
     margin: 0;
@@ -294,95 +214,66 @@ p {
     }
 }
 
-/* Hero Section */
+/* Hero Section with YouTube Video */
 .hero {
     position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #6a00f4 0%, #1e1e2f 100%); /* Gradient to match the image */
+    text-align: center;
+    overflow: hidden;
 }
 
-/* Remove video-related styles since they're not needed */
-.video-container,
-#bg-video,
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-video iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+}
+
 .video-overlay {
-    display: none;
-}
-
-.hero-logo {
-    position: relative; /* Changed from absolute to relative for flex centering */
-    width: 300px;
-    z-index: 10;
-    margin-bottom: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .hero-content {
-    text-align: center;
-    color: #fff;
-    z-index: 10;
+    position: relative;
+    z-index: 3;
     max-width: 800px;
     padding: 2rem;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #fff; /* Ensure text is visible on dark background */
+    font-size: 3.5rem;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #ddd; /* Lighter color for readability */
+.hero-buttons {
+    margin-top: 2rem;
 }
 
 .hero-buttons .btn {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 700;
-    margin: 0 0.5rem;
-    transition: all 0.3s ease;
+    margin-right: 1rem;
 }
 
-.hero-buttons .btn-pink {
-    background: #ff4d94;
-    color: #fff;
-}
-
-.hero-buttons .btn-pink:hover {
-    background: #ff6ba8;
-    transform: scale(1.05);
-}
-
-.hero-buttons .btn-dark {
-    background: #2c3e50;
-    color: #fff;
-}
-
-.hero-buttons .btn-dark:hover {
-    background: #3e5367;
-    transform: scale(1.05);
-}
-
-/* Add the stylized "M" shape on the right side */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background: url('m-shape.png') no-repeat center right; /* Replace with your "M" shape image */
-    background-size: contain;
-    opacity: 0.3;
-    z-index: 5;
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 }
 
 /* Services Section */
