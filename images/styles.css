@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucid Sky - Animatiebedrijf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+        }
+
+        h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+        h2 { font-size: 2.5rem; font-weight: 400; margin-bottom: 1.5rem; }
+        h3 { font-size: 2.1rem; font-weight: 400; margin-bottom: 1rem; }
+        p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
+
+        /* Buttons */
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .btn-pink { background: #ff5e62; color: #fff; }
+        .btn-pink:hover { background: #ff7e82; transform: scale(1.05); }
+        .btn-dark { background: #2c1a5e; color: #fff; border: 2px solid #fff; }
+        .btn-dark:hover { background: #3a2a7e; transform: scale(1.05); }
+
+        /* Header */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo { color: #fff; font-size: 1.5rem; font-weight: bold; }
+        .nav-links { display: flex; list-style: none; align-items: center; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; margin-left: 1.5rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: #ff5e62; }
+
+        /* Dropdown Menu */
+        .dropdown { position: relative; }
+        .dropdown-toggle { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; margin-left: 1.5rem; transition: all 0.3s ease; }
+        .dropdown-toggle:hover { color: #ff5e62; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #1a1a3d; list-style: none; padding: 1rem; min-width: 200px; z-index: 1000; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+        .dropdown-menu li { margin: 0.5rem 0; }
+        .dropdown-menu a { color: #fff; text-decoration: none; font-weight: 400; font-size: 1rem; display: block; margin-left: 0; }
+        .dropdown-menu a:hover { color: #ff5e62; }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .hamburger { display: none; font-size: 2rem; background: none; border: none; color: #fff; cursor: pointer; }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #000; padding: 1rem; text-align: center; }
+            .nav-links.active { display: flex; }
+            .nav-links a, .dropdown-toggle { margin: 1rem 0; }
+            .dropdown { position: static; }
+            .dropdown-menu { position: static; background: #2c1a5e; padding: 0.5rem; display: none; width: 100%; text-align: center; }
+            .dropdown.active .dropdown-menu { display: block; }
+            .dropdown-toggle { margin-left: 0; }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for contrast */
+        }
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .hero-video iframe { width: 100%; height: 100%; object-fit: cover; filter: blur(5px); }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 800px; padding: 2rem; }
+        .hero-content h1 { font-size: 3.5rem; }
+        .hero-buttons { margin-top: 2rem; }
+        .hero-buttons .btn { margin: 0.5rem; }
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1rem; }
+            .hero-buttons { display: flex; flex-direction: column; align-items: center; }
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(44, 26, 94, 0.9); /* Dark purple background */
+        }
+        .services-content { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 2rem; }
+        .services-text, .services-benefits { flex: 1; }
+        .services-benefits ul { list-style: none; text-align: left; }
+        .services-benefits li { margin-bottom: 1rem; font-size: 1.1rem; color: #ccc; position: relative; padding-left: 1.5rem; }
+        .services-benefits li:before { content: "✔"; color: #ff5e62; position: absolute; left: 0; }
+        .services-buttons { margin-top: 2rem; }
+        .services-buttons .btn { margin: 0.5rem; }
+        @media (max-width: 768px) {
+            .services-content { flex-direction: column; }
+            .services-buttons { display: flex; flex-direction: column; align-items: center; }
+        }
+
+        /* Animation Types Section */
+        .animation-types-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05); /* Light translucent background */
+        }
+        .animation-types-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 2rem auto; }
+        .animation-card { background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 10px; text-align: left; }
+        .animation-card h3 { font-size: 1.5rem; }
+        .animation-card a { color: #ff5e62; text-decoration: none; font-weight: 700; }
+        .animation-card a:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .animation-types-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(26, 26, 61, 0.9); /* Dark blue background */
+        }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 1200px; margin: 2rem auto; }
+        .portfolio-item { background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 10px; }
+        .portfolio-item img { width: 100%; border-radius: 5px; }
+        .portfolio-item p { margin-top: 0.5rem; font-size: 1rem; }
+        @media (max-width: 768px) {
+            .portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        }
+
+        /* Clients Section */
+        .clients-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(255, 94, 98, 0.2); /* Light pink background */
+        }
+        .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; max-width: 1200px; margin: 2rem auto; }
+        .clients-grid img { width: 100%; filter: grayscale(100%); transition: all 0.3s ease; }
+        .clients-grid img:hover { filter: grayscale(0); }
+        .clients-section .btn { margin: 2rem 0; }
+        .testimonials { display: flex; justify-content: center; gap: 2rem; max-width: 1200px; margin: 2rem auto; }
+        .testimonial { background: rgba(255, 255, 250, 0.1); padding: 1.5rem; border-radius: 10px; text-align: left; flex: 1; }
+        .testimonial p { font-size: 1rem; }
+        .testimonial .author { font-weight: 700; margin-top: 1rem; }
+        .testimonial .rating { color: #ff5e62; margin-top: 0.5rem; }
+        @media (max-width: 768px) {
+            .testimonials { flex-direction: column; }
+            .clients-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+        }
+
+        /* Possibilities Section */
+        .possibilities-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(44, 26, 94, 0.8); /* Dark purple background */
+        }
+        .contact-buttons { margin-top: 2rem; }
+        .contact-buttons .btn { margin: 0.5rem; }
+        @media (max-width: 768px) {
+            .contact-buttons { display: flex; flex-direction: column; align-items: center; }
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer-content { display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 2rem; }
+        .footer-logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; }
+        .footer-links, .footer-contact { margin: 1rem; }
+        .footer-links h4, .footer-contact h4 { font-size: 1.2rem; margin-bottom: 1rem; }
+        .footer-links a, .footer-contact a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.5rem; }
+        .footer-links a:hover, .footer-contact a:hover { color: #ff5e62; }
+        @media (max-width: 768px) {
+            .footer-content { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
