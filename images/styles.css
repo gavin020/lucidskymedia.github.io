@@ -449,7 +449,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 
 .possibilities-section .btn-dark {
     background-color: #3a3a5d;
-    color: black !important; /* Ensure button text is black */
+    color: white !important; /* Ensure button text is black */
 }
 
 /* Media query for mobile devices */
