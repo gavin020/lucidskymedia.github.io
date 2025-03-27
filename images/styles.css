@@ -166,10 +166,10 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .shape[data-rotation="clockwise"] { animation: rotate-clockwise 20s linear infinite; }
 .shape[data-rotation="counterclockwise"] { animation: rotate-counterclockwise 20s linear infinite; }
 .shape[data-float-speed] { animation: float var(--float-speed) ease-in-out infinite; }
-.shape-1 { --float-speed: 15s; }
-.shape-2 { --float-speed: 20s; }
-.shape-3 { --float-speed: 18s; }
-.shape-4 { --float-speed: 22s; }
+.shape-1 { --float-speed: 45s; }
+.shape-2 { --float-speed: 40s; }
+.shape-3 { --float-speed: 38s; }
+.shape-4 { --float-speed: 42s; }
 .floating-shape-1 { --float-speed: 17s; }
 .floating-shape-2 { --float-speed: 19s; }
 
