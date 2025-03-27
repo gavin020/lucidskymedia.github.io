@@ -19,9 +19,9 @@ h1, h2, h3 {
     color: #fff;
 }
 
-h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; }
 h2 { font-size: 2.5rem; font-weight: 400; margin-bottom: 1.5rem; }
-h3 { font-size: 2.1rem; font-weight: 400; margin-bottom: 1rem; }
+h3 { font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; }
 p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 
 /* Buttons */
@@ -82,14 +82,21 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     position: relative;
     padding: 8rem 2rem 4rem; /* Adjusted padding to account for fixed navbar and content spacing */
     text-align: center;
-    background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%); /* Gradient background */
+    background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%); /* Consistent gradient background */
     min-height: auto; /* Removed min-height to allow content to dictate height */
 }
 .hero-content { 
     max-width: 800px; 
     margin: 0 auto 2rem; /* Margin to space out from video */
 }
-.hero-content h1 { font-size: 3.5rem; }
+.hero-content h1 { 
+    font-size: 3.5rem; 
+    color: #fff; /* Consistent font color */
+}
+.hero-content p { 
+    font-size: 1.1rem; 
+    color: #ccc; /* Consistent font color */
+}
 .hero-buttons { margin-top: 2rem; }
 .hero-buttons .btn { margin: 0.5rem; }
 .hero-video-embed { 
@@ -118,6 +125,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     position: relative;
     overflow: hidden;
 }
+.highlight-section h2 { color: #fff; }
 .highlight-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -131,7 +139,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     border-radius: 10px; 
 }
 .highlight-item img { width: 100%; border-radius: 5px; }
-.highlight-item p { margin-top: 0.5rem; font-size: 1rem; }
+.highlight-item p { margin-top: 0.5rem; font-size: 1rem; color: #ccc; }
 .highlight-section .buttons { margin-top: 2rem; }
 .highlight-section .buttons .btn { margin: 0.5rem; }
 @media (max-width: 768px) { 
@@ -169,12 +177,12 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .about-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: #e6e9ff; /* Light background as per image */
+    background: #e6e9ff; /* Consistent light background */
 }
 .about-content { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 2rem; }
 .about-text, .about-benefits { flex: 1; text-align: left; }
-.about-text h2 { color: #1a1a3d; } /* Darker text color for contrast */
-.about-text p { color: #333; }
+.about-text h2 { color: #1a1a3d; } /* Consistent dark text color */
+.about-text p { color: #333; } /* Consistent text color */
 .about-benefits h3 { color: #1a1a3d; }
 .about-benefits ul { list-style: none; }
 .about-benefits li { margin-bottom: 1rem; font-size: 1.1rem; color: #333; position: relative; padding-left: 1.5rem; }
@@ -194,12 +202,12 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .benefits-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%); /* Gradient background as per image */
+    background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%); /* Consistent gradient background */
 }
 .benefits-section h2 { color: #fff; }
 .benefits-section p { color: #ccc; }
 .benefits-section ul { list-style: none; max-width: 800px; margin: 2rem auto; text-align: left; }
-.benefits-section li { margin-bottom: 1rem; font-size: 1.1rem; position: relative; padding-left: 1.5rem; }
+.benefits-section li { margin-bottom: 1rem; font-size: 1.1rem; color: #ccc; position: relative; padding-left: 1.5rem; }
 .benefits-section li:before { content: "✔"; color: #ff5e62; position: absolute; left: 0; }
 .benefits-section .buttons { margin-top: 2rem; }
 .benefits-section .buttons .btn { margin: 0.5rem; }
@@ -211,7 +219,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     margin: 2rem auto; 
 }
 .animation-card { 
-    background: #1a1a3d; /* Dark card background */
+    background: #1a1a3d; /* Consistent dark card background */
     padding: 2rem; 
     border-radius: 10px; 
     text-align: left; 
@@ -247,7 +255,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .portfolio-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: #e6e9ff; /* Light background as per image */
+    background: #e6e9ff; /* Consistent light background */
 }
 .portfolio-section h2 { color: #1a1a3d; }
 .portfolio-grid { 
@@ -258,7 +266,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     margin: 2rem auto; 
 }
 .portfolio-item { 
-    background: #fff; /* White card background */
+    background: #fff; /* Consistent white card background */
     padding: 1rem; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -275,8 +283,10 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .clients-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: rgba(255, 94, 98, 0.2);
+    background: rgba(255, 94, 98, 0.2); /* Consistent background */
 }
+.clients-section h2 { color: #fff; }
+.clients-section p { color: #ccc; }
 .clients-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
@@ -301,10 +311,10 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     text-align: left; 
     flex: 1; 
 }
-.testimonial p { font-size: 1rem; }
-.testimonial .author { font-weight: 700; margin-top: 1rem; }
+.testimonial p { font-size: 1rem; color: #ccc; }
+.testimonial .author { font-weight: 700; margin-top: 1rem; color: #fff; }
 .testimonial .rating { color: #ff5e62; margin-top: 0.5rem; }
-.trustpilot { margin-top: 1rem; font-size: 1rem; }
+.trustpilot { margin-top: 1rem; font-size: 1rem; color: #ccc; }
 .trustpilot a { color: #ff5e62; text-decoration: none; }
 .trustpilot a:hover { text-decoration: underline; }
 @media (max-width: 768px) {
@@ -316,101 +326,4 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .use-case-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: rgba(26, 26, 61, 0.9);
-}
-.use-case-section .buttons { margin-top: 2rem; }
-.use-case-section .buttons .btn { margin: 0.5rem; }
-@media (max-width: 768px) {
-    .use-case-section .buttons { display: flex; flex-direction: column; align-items: center; }
-}
-
-/* Contact Section (Used in animatie-2d.html, animatie-3d.html, explanimation.html) */
-.contact-section {
-    padding: 4rem 2rem;
-    text-align: center;
-    background: rgba(44, 26, 94, 0.9);
-}
-.contact-form { max-width: 800px; margin: 2rem auto; }
-.form-group { margin-bottom: 1rem; display: flex; gap: 1rem; }
-.form-group input, .form-group textarea { 
-    width: 100%; 
-    padding: 0.75rem; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    font-size: 1rem; 
-}
-.form-group textarea { resize: vertical; }
-.form-group label { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #ccc; }
-.form-group input[type="checkbox"] { width: auto; }
-.contact-form button { margin-top: 1rem; }
-.privacy-note { margin-top: 1rem; font-size: 0.9rem; }
-.privacy-note a { color: #ff5e62; text-decoration: none; }
-.privacy-note a:hover { text-decoration: underline; }
-@media (max-width: 768px) {
-    .form-group { flex-direction: column; }
-}
-
-/* FAQ Section (Used in animatie-2d.html, animatie-3d.html, explanimation.html) */
-.faq-section {
-    padding: 4rem 2rem;
-    text-align: center;
-    background: rgba(26, 26, 61, 0.9);
-}
-.faq-item { 
-    max-width: 800px; 
-    margin: 1rem auto; 
-    background: rgba(255, 255, 255, 0.1); 
-    padding: 1rem; 
-    border-radius: 5px; 
-    text-align: left; 
-    cursor: pointer; 
-}
-.faq-item h3 { font-size: 1.5rem; }
-.faq-item p { display: none; }
-.faq-item.active p { display: block; }
-.faq-item a { color: #ff5e62; text-decoration: none; }
-.faq-item a:hover { text-decoration: underline; }
-
-/* Possibilities Section */
-.possibilities-section {
-    padding: 4rem 2rem;
-    text-align: center;
-    background: rgba(44, 26, 94, 0.8);
-}
-.contact-buttons { margin-top: 2rem; }
-.contact-buttons .btn { margin: 0.5rem; }
-@media (max-width: 768px) { 
-    .contact-buttons { display: flex; flex-direction: column; align-items: center; } 
-}
-
-/* Footer */
-footer {
-    background: #000;
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-}
-.footer-content { 
-    display: flex; 
-    justify-content: space-around; 
-    flex-wrap: wrap; 
-    margin-bottom: 2rem; 
-}
-.footer-logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; }
-.footer-links, .footer-contact, .footer-social, .footer-partners { margin: 1rem; }
-.footer-links h4, .footer-contact h4, .footer-partners h4 { font-size: 1.2rem; margin-bottom: 1rem; }
-.footer-links a, .footer-contact a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.5rem; }
-.footer-links a:hover, .footer-contact a:hover { color: #ff5e62; }
-.footer-social a { margin: 0 0.5rem; }
-.footer-social img { width: 24px; height: 24px; }
-.footer-partners .partners-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
-    gap: 1rem; 
-    max-width: 400px; 
-}
-.footer-partners img { width: 100%; filter: grayscale(100%); transition: all 0.3s ease; }
-.footer-partners img:hover { filter: grayscale(0); }
-@media (max-width: 768px) { 
-    .footer-content { flex-direction: column; align-items: center; } 
-}
+    background: rgbaSorry about that, something didn't go as planned. Please try again, and if you're still seeing this message, go ahead and restart the app.
