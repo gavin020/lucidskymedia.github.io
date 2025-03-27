@@ -1,13 +1,13 @@
 // Hamburger menu toggle
 document.querySelector('.hamburger').addEventListener('click', () => {
- document.querySelector('.nav-links').classList.toggle('active');
+    document.querySelector('.nav-links').classList.toggle('active');
 });
 
 // FAQ toggle
 document.querySelectorAll('.faq-item').forEach(item => {
- item.addEventListener('click', () => {
- item.classList.toggle('active');
- });
+    item.addEventListener('click', () => {
+        item.classList.toggle('active');
+    });
 });
 
 // Close menu when a nav link is clicked
