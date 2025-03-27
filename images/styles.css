@@ -385,6 +385,59 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     text-decoration: none;
 }
 
+/* Footer */
+footer {
+    background: #000;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-links, .footer-contact {
+    margin: 1rem;
+}
+
+.footer-links h4, .footer-contact h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a, .footer-contact a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a:hover, .footer-contact a:hover {
+    color: #ff5e62;
+}
+
+.footer-social {
+    margin: 1rem 0;
+}
+
+.footer-social a {
+    margin: 0 0.5rem;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+}
 
 /* Use Case Section (Used in animatie-2d.html, animatie-3d.html, explanimation.html) */
 .use-case-section {
