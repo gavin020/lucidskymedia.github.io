@@ -414,20 +414,39 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     display: block;
 }
 
-/* Possibilities Section */
 .possibilities-section {
-    padding: 4rem 2rem;
+    padding: 50px 20px;
     text-align: center;
+    background-color: #f8f8f8;
+}
+
+.possibilities-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.possibilities-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .contact-buttons {
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.contact-buttons .btn {
-    margin-right: 1rem;
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
+.btn-dark {
+    background-color: #1a1a3d;
+    color: white;
+}
 
 /* Footer */
 footer {
