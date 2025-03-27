@@ -251,6 +251,8 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     .benefits-section .buttons { display: flex; flex-direction: column; align-items: center; }
 }
 
+
+
 /* Portfolio Section */
 .portfolio-section {
     padding: 4rem 2rem;
@@ -321,6 +323,68 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     .testimonials { flex-direction: column; }
     .clients-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
 }
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact-section p a {
+    color: #ff5e62;
+    text-decoration: none;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group label {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.privacy-note {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.privacy-note a {
+    color: #ff5e62;
+    text-decoration: none;
+}
+
 
 /* Use Case Section (Used in animatie-2d.html, animatie-3d.html, explanimation.html) */
 .use-case-section {
