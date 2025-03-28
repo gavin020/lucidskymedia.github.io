@@ -213,7 +213,10 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     text-align: center;
     background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%); /* Consistent gradient background */
     min-height: auto; /* Removed min-height to allow content to dictate height */
-    background: url('BG_2.png') no-repeat center center/cover; /* Bg image */
+    background-image: url('BG_2.png'); /* Bg image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 
