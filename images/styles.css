@@ -837,6 +837,24 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     display: block;
 }
 
+/* Portfolio Section */ 
+.portfolio-section {
+color: black; /* Ensure h2 text is black */
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #000000
+}
+.portfolio-section h2{
+     font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black; /* Ensure h2 text is black */
+}
+.possibilities-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: black; /* Ensure p text is black */
+}
+
 /* Possibilities Section */
 .possibilities-section {
     padding: 50px 20px;
