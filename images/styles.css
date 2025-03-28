@@ -831,6 +831,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .faq-item p {
     display: none;
     margin-top: 1rem;
+    color: #fff;
 }
 
 .faq-item.active p {
