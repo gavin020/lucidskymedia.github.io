@@ -402,7 +402,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .about-content { 
     display: flex; 
     justify-content: space-between; 
-    max-width: 1200px; 
+    max-width: 1400px; 
     margin: 0 auto; 
     gap: 2rem; 
 }
@@ -413,15 +413,15 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .about-text h2 { 
-    color: #1a1a3d; 
+    color: #444; 
 }
 
 .about-text p { 
-    color: #333; 
+    color: #444; 
 }
 
 .about-benefits h3 { 
-    color: #1a1a3d; 
+    color: #444; 
 }
 
 .about-benefits ul { 
