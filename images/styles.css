@@ -539,7 +539,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .animation-card { 
-    background: #1a1a3d; /* Consistent dark card background */
+    background: #000000; /* Consistent dark card background */
     padding: 2rem; 
     border-radius: 10px; 
     text-align: left; 
