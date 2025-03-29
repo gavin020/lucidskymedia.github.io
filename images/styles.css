@@ -604,6 +604,9 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     background: #e6e9ff; /* Consistent light background */
 }
 
+.portfolio-section h3 { 
+    color: #1a1a3d; 
+}
 .portfolio-section h2 { 
     color: #1a1a3d; 
 }
