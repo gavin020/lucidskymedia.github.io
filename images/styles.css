@@ -221,8 +221,8 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .hero-content { 
-    max-width: 800px; 
-    margin: 0 auto 2rem; /* Margin to space out from video */
+    max-width: 1200px; 
+    margin: 0 auto 4rem; /* Margin to space out from video */
 }
 
 .hero-content h1 { 
@@ -236,7 +236,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .hero-buttons { 
-    margin-top: 2rem; 
+    margin-top: 4rem; 
 }
 
 .hero-buttons .btn { 
@@ -301,7 +301,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     text-align: center;
     background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%);
     position: relative; /* Create a new positioning context */
-    min-height: 300px; /* Ensure the section has a height for the shapes */
+    min-height: 400px; /* Ensure the section has a height for the shapes */
     overflow: hidden;
 }
 
@@ -539,7 +539,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .animation-card { 
-    background: #000000; /* Consistent dark card background */
+    background: white; /* Consistent dark card background */
     padding: 2rem; 
     border-radius: 10px; 
     text-align: left; 
@@ -601,7 +601,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .portfolio-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: #e6e9ff; /* Consistent light background */
+    background: white; /* Consistent light background */
 }
 
 .portfolio-section h3 { 
@@ -670,7 +670,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
     gap: 1rem; 
-    max-width: 1200px; 
+    max-width: 1400px; 
     margin: 2rem auto; 
 }
 
