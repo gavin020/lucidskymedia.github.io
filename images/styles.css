@@ -206,32 +206,46 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     }
 }
 
-/* Hero Section */
+/* Hero Section with Background Image */
 .hero {
     position: relative;
-    padding: 8rem 2rem 4rem; /* Adjusted padding to account for fixed navbar and content spacing */
+    padding: 8rem 2rem 4rem;
     text-align: center;
-    /* background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%); /* Consistent gradient background */
-    min-height: auto; /* Removed min-height to allow content to dictate height */
-    background-image: url('BG_2.png'); /* Bg image */
+    background-image: url('BG_2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark overlay for readability */
+    z-index: 1;
+}
+
+.hero-content, .hero-video-embed {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
 .hero-content { 
     max-width: 800px; 
-    margin: 0 auto 2rem; /* Margin to space out from video */
+    margin: 0 auto 2rem;
 }
 
 .hero-content h1 { 
     font-size: 3.5rem; 
-    color: #fff; /* Consistent font color */
+    color: #fff;
 }
 
 .hero-content p { 
     font-size: 1.1rem; 
-    color: #ccc; /* Consistent font color */
+    color: #ccc;
 }
 
 .hero-buttons { 
@@ -243,31 +257,21 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .hero-video-embed {
-    width: 800px; /* Fixed width */
-    height: 450px; /* Fixed height */
+    width: 800px;
+    height: 450px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
 }
 
 .hero-video-embed iframe {
-    width: 100%; /* Ensure it fills the container */
+    width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.hero-video-embed .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Optional: Adds a dark overlay for better text readability */
-    z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -290,7 +294,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     }
 
     .hero-video-embed { 
-        max-width: 100%; /* Ensure it fits smaller screens */
+        max-width: 100%;
     }
 }
 
@@ -299,8 +303,8 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     padding: 4rem 2rem;
     text-align: center;
     background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%);
-    position: relative; /* Create a new positioning context */
-    min-height: 300px; /* Ensure the section has a height for the shapes */
+    position: relative;
+    min-height: 300px;
     overflow: hidden;
 }
 
@@ -393,7 +397,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .about-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: #e6e9ff; /* Consistent light background */
+    background: #e6e9ff;
 }
 
 .about-content { 
@@ -433,14 +437,6 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     padding-left: 1.5rem; 
 }
 
-.about-benefits li:before { 
-    content: "\2713"; /* Fixed: Use Unicode escape sequence for checkmark ✓ */
-    color: #ff5e62; 
-    position: absolute; 
-    left: 0; 
-    font-family: Arial, sans-serif; /* Fallback font to ensure checkmark renders */
-}
-
 .about-image img { 
     max-width: 100%; 
     height: auto; 
@@ -472,10 +468,6 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
         padding-left: 0; 
     }
 
-    .about-benefits li:before { 
-        display: none; 
-    }
-
     .about-section .buttons { 
         display: flex; 
         flex-direction: column; 
@@ -487,7 +479,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .benefits-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%); /* Consistent gradient background */
+    background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%);
 }
 
 .benefits-section h2 { 
@@ -513,14 +505,6 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     padding-left: 1.5rem; 
 }
 
-.benefits-section li:before { 
-    content: "\2713"; /* Fixed: Use Unicode escape sequence for checkmark ✓ */
-    color: #ff5e62; 
-    position: absolute; 
-    left: 0; 
-    font-family: Arial, sans-serif; /* Fallback font to ensure checkmark renders */
-}
-
 .benefits-section .buttons { 
     margin-top: 2rem; 
 }
@@ -538,7 +522,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .animation-card { 
-    background: #1a1a3d; /* Consistent dark card background */
+    background: #1a1a3d;
     padding: 2rem; 
     border-radius: 10px; 
     text-align: left; 
@@ -585,10 +569,6 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
         padding-left: 0; 
     }
 
-    .benefits-section li:before { 
-        display: none; 
-    }
-
     .benefits-section .buttons { 
         display: flex; 
         flex-direction: column; 
@@ -598,16 +578,16 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 
 /* Portfolio Section */
 .portfolio-section {
-    color: black; /* Ensure h2 text is black */
+    color: black;
     padding: 50px 20px;
     text-align: center;
-    background-color: #000000;
+    background-color: #ffffff;
 }
 
 .portfolio-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: black; /* Ensure h2 text is black */
+    color: black;
 }
 
 .portfolio-grid { 
@@ -619,7 +599,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .portfolio-item { 
-    background: #fff; /* Consistent white card background */
+    background: #fff;
     padding: 1rem; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -654,7 +634,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .clients-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: rgba(255, 94, 98, 0.2); /* Consistent background */
+    background: rgba(255, 94, 98, 0.2);
 }
 
 .clients-section h2 { 
@@ -748,6 +728,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .contact-section {
     padding: 4rem 2rem;
     text-align: center;
+    background: #e6e9ff; /* Added a light background color */
 }
 
 .contact-section p a {
@@ -807,7 +788,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 
 /* FAQ Section */
 .faq-section {
-    background-image: url('BG_2.png'); /* Bg image */
+    background-image: url('BG_2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -849,13 +830,13 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .possibilities-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: black; /* Ensure h2 text is black */
+    color: black;
 }
 
 .possibilities-section p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: black; /* Ensure p text is black */
+    color: black;
 }
 
 .contact-buttons {
@@ -866,15 +847,14 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 
 .possibilities-section .btn-dark {
     background-color: #3a3a5d;
-    color: white !important; /* Ensure button text is white */
+    color: white !important;
 }
 
 .possibilities-section .btn-dark:hover {
-    background-color: #4a4a6d; /* Slightly lighter shade on hover */
-    transform: scale(1.05); /* Consistent hover effect */
+    background-color: #4a4a6d;
+    transform: scale(1.05);
 }
 
-/* Media query for mobile devices */
 @media (max-width: 768px) {
     .contact-buttons {
         flex-direction: column;
