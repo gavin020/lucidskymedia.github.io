@@ -31,7 +31,6 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     text-decoration: none;
     font-weight: 700;
     transition: all 0.3s ease;
-    display: inline-block;
 }
 
 .btn-pink { 
@@ -225,13 +224,13 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark overlay for readability */
     z-index: 1;
 }
 
 .hero-content, .hero-video-embed {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Ensure content is above the overlay */
 }
 
 .hero-content { 
@@ -258,12 +257,10 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .hero-video-embed {
-    max-width: 800px;
-    width: 100%;
+    width: 800px;
+    height: 450px;
     margin: 0 auto;
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
     overflow: hidden;
 }
 
@@ -291,6 +288,105 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     }
 
     .hero-buttons { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .hero-video-embed { 
+        max-width: 100%;
+    }
+}
+
+/* Highlight Section (Used in animatie.html, animatie-3d.html, explanimation.html) */
+.highlight-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%);
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.highlight-section h2 { 
+    color: #fff; 
+}
+
+.highlight-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+    max-width: 1200px; 
+    margin: 2rem auto; 
+}
+
+.highlight-item { 
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 1rem; 
+    border-radius: 10px; 
+}
+
+.highlight-item img { 
+    width: 100%; 
+    border-radius: 5px; 
+}
+
+.highlight-item p { 
+    margin-top: 0.5rem; 
+    font-size: 1rem; 
+    color: #ccc; 
+}
+
+.highlight-section .buttons { 
+    margin-top: 2rem; 
+}
+
+.highlight-section .buttons .btn { 
+    margin: 0.5rem; 
+}
+
+@media (max-width: 768px) { 
+    .highlight-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    .highlight-section .buttons { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+}
+
+/* Appeal Section (Used in bedrijfsanimatie.html) */
+.appeal-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, #1a1a3d 0%, #2c1a5e 100%);
+}
+
+.appeal-section h2 { 
+    color: #fff; 
+}
+
+.appeal-section p { 
+    max-width: 800px; 
+    margin: 0 auto 1rem; 
+}
+
+.appeal-section .buttons { 
+    margin-top: 2rem; 
+}
+
+.appeal-section .buttons .btn { 
+    margin: 0.5rem; 
+}
+
+@media (max-width: 768px) {
+    .appeal-section { 
+        padding: 2rem 1rem; 
+    }
+
+    .appeal-section .buttons { 
         display: flex; 
         flex-direction: column; 
         align-items: center; 
@@ -341,12 +437,10 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     padding-left: 1.5rem; 
 }
 
-.about-benefits li i {
-    color: #ff5e62;
-    margin-right: 0.5rem;
-    position: absolute;
-    left: 0;
-    top: 0.3rem;
+.about-image img { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
 }
 
 .about-section .buttons { 
@@ -394,8 +488,6 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 
 .benefits-section p { 
     color: #ccc; 
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 .benefits-section ul { 
@@ -411,14 +503,6 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     color: #ccc; 
     position: relative; 
     padding-left: 1.5rem; 
-}
-
-.benefits-section li i {
-    color: #ff5e62;
-    margin-right: 0.5rem;
-    position: absolute;
-    left: 0;
-    top: 0.3rem;
 }
 
 .benefits-section .buttons { 
@@ -579,6 +663,10 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     filter: grayscale(0); 
 }
 
+.clients-section .btn { 
+    margin: 2rem 0; 
+}
+
 .testimonials { 
     display: flex; 
     justify-content: center; 
@@ -611,6 +699,21 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     margin-top: 0.5rem; 
 }
 
+.trustpilot { 
+    margin-top: 1rem; 
+    font-size: 1rem; 
+    color: #ccc; 
+}
+
+.trustpilot a { 
+    color: #ff5e62; 
+    text-decoration: none; 
+}
+
+.trustpilot a:hover { 
+    text-decoration: underline; 
+}
+
 @media (max-width: 768px) {
     .testimonials { 
         flex-direction: column; 
@@ -625,7 +728,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .contact-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: #e6e9ff;
+    background: #e6e9ff; /* Added a light background color */
 }
 
 .contact-section p a {
@@ -656,12 +759,12 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     background: rgba(255, 255, 255, 0.2);
-    color: #333;
+    color: #fff;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #999;
+    color: #ccc;
 }
 
 .form-group textarea {
@@ -669,18 +772,52 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .form-group label {
-    color: #333;
+    color: #ccc;
     font-size: 0.9rem;
 }
 
 .privacy-note {
     font-size: 0.9rem;
-    color: #333;
+    color: #ccc;
 }
 
 .privacy-note a {
     color: #ff5e62;
     text-decoration: none;
+}
+
+/* FAQ Section */
+.faq-section {
+    background-image: url('BG_2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.faq-item p {
+    display: none;
+    margin-top: 1rem;
+    color: #fff;
+}
+
+.faq-item.active p {
+    display: block;
 }
 
 /* Possibilities Section */
@@ -782,25 +919,53 @@ footer {
     margin: 0 0.5rem;
 }
 
-.footer-social i {
-    color: #fff;
-    font-size: 1.5rem;
+.footer-social img {
+    width: 24px;
+    height: 24px;
 }
 
-.footer-social a:hover i {
-    color: #ff5e62;
-}
-
-.footer-policies {
+.footer-partners {
     margin: 1rem 0;
 }
 
-.footer-policies a {
-    color: #ccc;
-    text-decoration: none;
-    margin: 0 0.5rem;
+.footer-partners h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
-.footer-policies a:hover {
-    color: #ff5e62;
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.partners-grid img {
+    width: 100px;
+    height: auto;
+}
+
+/* Use Case Section (Used in animatie-2d.html, animatie-3d.html, explanimation.html) */
+.use-case-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: rgba(255, 94, 98, 0.2);
+}
+
+.use-case-section h2 {
+    color: #fff;
+}
+
+.use-case-section p {
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+.use-case-section .buttons {
+    margin-top: 2rem;
+}
+
+.use-case-section .buttons .btn {
+    margin: 0.5rem;
 }
