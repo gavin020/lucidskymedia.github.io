@@ -753,7 +753,7 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .contact-section p a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
 }
 
@@ -775,17 +775,17 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid #000;
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    color: #000;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #ccc;
+    color: #000;
 }
 
 .form-group textarea {
@@ -793,13 +793,13 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .form-group label {
-    color: #ccc;
+    color: #000;
     font-size: 0.9rem;
 }
 
 .privacy-note {
     font-size: 0.9rem;
-    color: #fff;
+    color: #000;
 }
 
 .privacy-note a {
@@ -856,7 +856,6 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 }
 
 .possibilities-section p {
-    max-width: 800px;
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 30px;
