@@ -752,8 +752,13 @@ p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
     background: #E2C4B1; /* Added a light background color */
 }
 
-.contact-section p a {
+.contact-section p {
     color: #000;
+    text-decoration: none;
+}
+
+.contact-section a {
+    color: rgb(255, 94, 98);
     text-decoration: none;
 }
 
