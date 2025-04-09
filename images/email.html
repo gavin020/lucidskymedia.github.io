@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Raleway', sans-serif;
-            background-color: #f8f8f8;
+            background-color: #f5f5f5;
             color: #333;
         }
         .container {
@@ -26,13 +26,15 @@
         }
         .header h1 {
             font-family: 'Playfair Display', serif;
-            color: #fff;
-            font-size: 28px;
+            color: #ffc107;
+            font-size: 32px;
             margin: 0;
+            text-transform: uppercase;
         }
         .content {
             padding: 30px;
             text-align: center;
+            background: #f5f5f5;
         }
         .content h2 {
             font-family: 'Playfair Display', serif;
@@ -47,7 +49,7 @@
         }
         .steps {
             padding: 20px;
-            background: #e6e9ff;
+            background: #ffc107;
             text-align: center;
         }
         .steps h3 {
@@ -61,7 +63,7 @@
         }
         .step h4 {
             font-family: 'Raleway', sans-serif;
-            color: #ff5e62;
+            color: #1a1a3d;
             font-size: 18px;
             margin-bottom: 10px;
         }
@@ -69,23 +71,69 @@
             font-size: 14px;
             color: #333;
         }
+        .portfolio {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+        .portfolio h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1a1a3d;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .portfolio-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .portfolio-item {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            width: 150px;
+        }
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .portfolio-item p {
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
         .cta {
             padding: 30px;
-            background: #fff;
+            background: #f5f5f5;
             text-align: center;
         }
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: #ff5e62;
-            color: #fff;
+            background: #ffc107;
+            color: #1a1a3d;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 700;
             transition: background 0.3s ease;
         }
         .btn:hover {
-            background: #ff7e82;
+            background: #ffca28;
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #1a1a3d;
+            color: #ffc107;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: background 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: #2c1a5e;
         }
         .footer {
             background: #1a1a3d;
@@ -95,7 +143,7 @@
             font-size: 14px;
         }
         .footer a {
-            color: #ff5e62;
+            color: #ffc107;
             text-decoration: none;
             margin: 0 5px;
         }
@@ -105,7 +153,7 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>Lucid Sky AnimatieStudio</h1>
+            <h1>LUCID SKY</h1>
         </div>
 
         <!-- Introduction -->
@@ -133,6 +181,27 @@
             </div>
         </div>
 
+        <!-- Portfolio Highlight -->
+        <div class="portfolio">
+            <h3>A Peek at Our Work</h3>
+            <p>We’ve had the pleasure of working on a variety of projects we’re really proud of! Here are a few examples:</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="50_korting.jpg" alt="50% korting op alle abonnementen">
+                    <p>50% korting op alle abonnementen</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="vogue_lobby.jpg" alt="Vogue Lobby">
+                    <p>Vogue Lobby</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="chaos.jpg" alt="Chaos">
+                    <p>Chaos</p>
+                </div>
+            </div>
+            <p><a href="https://www.lucidsky.nl/ons-werk.html" style="color: #ffc107; text-decoration: none;">See More of Our Work!</a></p>
+        </div>
+
         <!-- Why Animation Matters -->
         <div class="content">
             <h2>Why Animation Matters</h2>
@@ -144,8 +213,9 @@
         <!-- Call to Action -->
         <div class="cta">
             <h2>Ready to Shine?</h2>
-            <p>At Lucid Sky Animation Studio, anything is possible! Want to brainstorm together, create a stunning animation, and find out how to showcase your final product to the world in the best way? Let’s get to know each other! Give us a call or send us an email, and let’s animate your business!</p>
+            <p>At Lucid Sky Animation Studio, anything is possible! Want to brainstorm together, create a stunning animation, and find out how to showcase your final product to the world in the best way? Let’s get to know each other!</p>
             <a href="https://www.lucidsky.nl/#contact" class="btn">Let’s Create Something Amazing!</a>
+            <a href="https://www.lucidsky.nl/ons-werk.html" class="btn-secondary">View Our Reel</a>
         </div>
 
         <!-- Footer -->
