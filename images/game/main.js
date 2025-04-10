@@ -10,41 +10,36 @@ const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(5, 5, 5).normalize();
 scene.add(light);
 
-// Loaders
-const objLoader = new THREE.OBJLoader();
-const mtlLoader = new THREE.MTLLoader();
-
-// Target model
-let targetModel;
-let targetTemplate; // Store the loaded OBJ for reuse
+// Cube target
+let targetCube;
+const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+const cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 });
 function spawnTarget() {
-    if (targetTemplate) {
-        targetModel = targetTemplate.clone();
-        targetModel.position.set(0, 0, -10);
-        scene.add(targetModel);
-    }
+    targetCube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+    targetCube.position.set(0, 0, -10);
+    scene.add(targetCube);
 }
 
-// Projectile model
+// Projectile
 let projectile;
-let projectileTemplate;
+const projectileGeometry = new THREE.SphereGeometry(0.2, 32, 32);
+const projectileMaterial = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
 function shoot() {
-    if (projectileTemplate) {
-        projectile = projectileTemplate.clone();
-        projectile.position.set(0, 0, 0); // Start at camera
-        scene.add(projectile);
-    }
+    projectile = new THREE.Mesh(projectileGeometry, projectileMaterial);
+    projectile.position.set(0, 0, 0); // Start at camera
+    scene.add(projectile);
 }
 
 // Explosion effect
-function explodeModel() {
-    scene.remove(targetModel);
+function explodeCube() {
+    scene.remove(targetCube);
     const fragments = [];
-    const fragmentGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.2); // Simple placeholder
-    const material = targetModel.children[0].material; // Reuse target's material
     for (let i = 0; i < 10; i++) {
-        const fragment = new THREE.Mesh(fragmentGeometry, material);
-        fragment.position.copy(targetModel.position);
+        const fragment = new THREE.Mesh(
+            new THREE.BoxGeometry(0.2, 0.2, 0.2),
+            cubeMaterial
+        );
+        fragment.position.copy(targetCube.position);
         fragment.velocity = new THREE.Vector3(
             (Math.random() - 0.5) * 5,
             (Math.random() - 0.5) * 5,
@@ -53,48 +48,27 @@ function explodeModel() {
         scene.add(fragment);
         fragments.push(fragment);
     }
+    // Remove fragments after a delay
     setTimeout(() => {
         fragments.forEach(f => scene.remove(f));
     }, 1000);
 }
 
-// Load custom models (replace paths with your own)
-function loadModels() {
-    // Load target model with texture
-    mtlLoader.load('path/to/your/target.mtl', (materials) => {
-        materials.preload();
-        objLoader.setMaterials(materials);
-        objLoader.load('path/to/your/target.obj', (object) => {
-            targetTemplate = object;
-            spawnTarget(); // Spawn first target
-        });
-    });
-
-    // Load projectile model with texture
-    mtlLoader.load('path/to/your/projectile.mtl', (materials) => {
-        materials.preload();
-        objLoader.setMaterials(materials);
-        objLoader.load('path/to/your/projectile.obj', (object) => {
-            projectileTemplate = object;
-        });
-    });
-}
-
 // Game state
-let modelSpeed = 0.05;
+let cubeSpeed = 0.05;
 camera.position.z = 5;
 
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
 
-    // Move target model
-    if (targetModel) {
-        targetModel.position.z -= modelSpeed;
-        targetModel.rotation.x += 0.01;
-        targetModel.rotation.y += 0.01;
-        if (targetModel.position.z < -50) {
-            scene.remove(targetModel);
+    // Move target cube
+    if (targetCube) {
+        targetCube.position.z -= cubeSpeed;
+        targetCube.rotation.x += 0.01;
+        targetCube.rotation.y += 0.01;
+        if (targetCube.position.z < -50) {
+            scene.remove(targetCube);
             spawnTarget();
         }
     }
@@ -107,13 +81,13 @@ function animate() {
             projectile = null;
         }
         // Collision detection
-        if (targetModel && projectile) {
-            const distance = projectile.position.distanceTo(targetModel.position);
-            if (distance < 1) { // Adjust distance based on model size
-                explodeModel();
+        if (targetCube && projectile) {
+            const distance = projectile.position.distanceTo(targetCube.position);
+            if (distance < 1) {
+                explodeCube();
                 scene.remove(projectile);
                 projectile = null;
-                setTimeout(spawnTarget, 1000);
+                setTimeout(spawnTarget, 1000); // Respawn after explosion
             }
         }
     }
@@ -123,11 +97,11 @@ function animate() {
 
 // Event listener for shooting
 document.addEventListener('click', () => {
-    if (!projectile && projectileTemplate) shoot();
+    if (!projectile) shoot();
 });
 
 // Start game
-loadModels();
+spawnTarget();
 animate();
 
 // Resize handler
